@@ -1,0 +1,17 @@
+{
+    "name": "Snatcher",
+    "rootNamespace": "Snatcher",
+    "references": [
+        "GUID:5ade3ce02e061cc48913d0928e9643e0",
+        "GUID:75469ad4d38634e559750d17036d5f7c"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
