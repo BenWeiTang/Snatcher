@@ -3,5 +3,5 @@
 namespace Snatcher
 {
     [CreateAssetMenu(menuName = "Snatcher/Reference/Int", fileName = "New Int Reference")]
-    public class IntReference : AGameEvent<int> { }
+    public class IntReference : AReference<int> { }
 }
