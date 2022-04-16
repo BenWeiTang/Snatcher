@@ -6,7 +6,7 @@ namespace Snatcher
 {
     public abstract class AGameEvent<T> : ScriptableObject
     {
-        public event Action<T> Event;
+        private event Action<T> Event;
         private readonly List<IGameEventListener<T>> _eventListeners = new List<IGameEventListener<T>>();
 
         /// <summary>
