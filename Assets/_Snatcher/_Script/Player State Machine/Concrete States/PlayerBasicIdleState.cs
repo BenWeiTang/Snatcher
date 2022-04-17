@@ -1,25 +1,19 @@
-﻿using UnityEngine;
-using UnityEngine.InputSystem;
+﻿using UnityEngine.InputSystem;
 
 namespace Snatcher
 {
     public class PlayerBasicIdleState : APlayerBasicState
     {
-        public PlayerBasicIdleState(PlayerStateMachine currentContext, PlayerStateFactory currentFactory) : base(currentContext, currentFactory)
-        {
-        }
+        public PlayerBasicIdleState(PlayerStateMachine currentContext, PlayerStateFactory currentFactory) : base(currentContext, currentFactory) { }
 
         public override void EnterState(bool hasSameSuperState)
         {
-            Debug.Log("Enter Idle State");
             base.EnterState(hasSameSuperState);
             Context.PlayerInput.Player.Movement.started += OnMovementStarted;
         }
 
         public override void ExitState()
         {
-            Debug.Log("Exit Idle State");
-            
             // IMPORTANT!!! Make sure you unsubscribe from the event when exiting this state
             Context.PlayerInput.Player.Movement.started -= OnMovementStarted;
         }
@@ -29,9 +23,7 @@ namespace Snatcher
             CheckSwitchState();
         }
 
-        protected override void CheckSwitchState()
-        {
-        }
+        protected override void CheckSwitchState() { }
 
         // When the movement started, we want to transition to PlayerBasicMoveState
         // Since PlayerBasicMoveState and our current state, PlayerBasicIdleState, have the same Super State, APlayerBasicState,

@@ -1,16 +1,18 @@
-using System;
 using UnityEngine;
 
 namespace Snatcher
 {
+    [RequireComponent(typeof(CharacterController))]
     public class PlayerStateMachine : MonoBehaviour
     {
         // Public getter(s) for the states to check conditions
         public PlayerControls PlayerInput => _playerInput;
+        public CharacterController Controller => _controller;
         
         private APlayerState _currentState;
         private PlayerStateFactory _factory;
         private PlayerControls _playerInput;
+        private CharacterController _controller;
 
         public void SwitchState(APlayerState nextState, bool hasSameSuperState)
         {
@@ -23,6 +25,7 @@ namespace Snatcher
         { 
             _factory = new PlayerStateFactory(this);
             _playerInput = new PlayerControls();
+            _controller = GetComponent<CharacterController>();
         }
 
         private void OnEnable()

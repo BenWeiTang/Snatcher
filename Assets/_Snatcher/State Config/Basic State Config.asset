@@ -9,7 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a16e19f2018a9e44cbbed19be4d1ef08, type: 3}
-  m_Name: StateConfigManager
+  m_Script: {fileID: 11500000, guid: 3d5ac67b54a1d1748a31b2855886700e, type: 3}
+  m_Name: Basic State Config
   m_EditorClassIdentifier: 
-  BasicStateConfig: {fileID: 11400000, guid: 95cb6c7e0c721514789abf7edd10747e, type: 2}
+  MoveSpeed: 7.5
+  TurnSpeed: 15
+  Limb: {fileID: 0}
