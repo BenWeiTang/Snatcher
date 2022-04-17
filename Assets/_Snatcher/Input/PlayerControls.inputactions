@@ -15,22 +15,22 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Jump",
+                    "name": "Snatch",
                     "type": "Button",
-                    "id": "3423a45d-fae4-4248-aa0d-3f76f78ee10d",
+                    "id": "5b901fc4-6c41-492a-8361-2847fd45bba1",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "UseAbility",
+                    "type": "Button",
+                    "id": "149eac73-0e66-465d-9d0d-d504cca628f0",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
-                },
-                {
-                    "name": "Snatch",
-                    "type": "Value",
-                    "id": "5b901fc4-6c41-492a-8361-2847fd45bba1",
-                    "expectedControlType": "Vector2",
-                    "processors": "NormalizeVector2",
-                    "interactions": "",
-                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -90,11 +90,66 @@
                     "isPartOfComposite": true
                 },
                 {
+                    "name": "Arrow Keys",
+                    "id": "e89f1e85-57dd-4395-967b-177781872fe4",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "d9641caf-edf0-47dd-8d0f-350fd3cebc05",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mouse & Keyboard",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "5f1d730e-036b-4b8d-9d61-8f2de9001886",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mouse & Keyboard",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "e44f3db3-835e-4fa9-8885-aff58f0faa53",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mouse & Keyboard",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "bd044cea-006b-4e6a-9929-bcaa4cfd574b",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mouse & Keyboard",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
                     "name": "",
                     "id": "25b32977-6d8a-4a99-b73b-66f185c893db",
                     "path": "<Gamepad>/leftStick",
                     "interactions": "",
-                    "processors": "StickDeadzone",
+                    "processors": "StickDeadzone,NormalizeVector2",
                     "groups": "Gamepad",
                     "action": "Movement",
                     "isComposite": false,
@@ -102,45 +157,45 @@
                 },
                 {
                     "name": "",
-                    "id": "e4631c70-85de-467c-bd6c-b4114a1904e7",
-                    "path": "<Keyboard>/space",
+                    "id": "0bd22393-645b-4846-af7c-f5f762385c72",
+                    "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "Mouse & Keyboard",
-                    "action": "Jump",
+                    "action": "Snatch",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "4b07cc09-778a-4bca-96fd-6f0dd72b6b6d",
+                    "id": "0a936fdd-7d3f-4a0c-b2f1-f3e8180dfee9",
                     "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "Jump",
+                    "action": "Snatch",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "9bf1d36b-a424-4b01-acbc-366d629749e5",
-                    "path": "<Mouse>/position",
+                    "id": "ebf31efa-d6fb-491a-b0dd-ca40bdcc7264",
+                    "path": "<Mouse>/rightButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "Mouse & Keyboard",
-                    "action": "Snatch",
+                    "action": "UseAbility",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "a90cbfc0-44eb-4490-afe3-81189901febc",
-                    "path": "<Gamepad>/rightStick",
+                    "id": "5a33b9b4-23c6-4301-828b-88605e92b8aa",
+                    "path": "<Gamepad>/buttonEast",
                     "interactions": "",
-                    "processors": "StickDeadzone",
+                    "processors": "",
                     "groups": "Gamepad",
-                    "action": "Snatch",
+                    "action": "UseAbility",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
