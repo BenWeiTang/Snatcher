@@ -12,7 +12,14 @@ namespace Snatcher
             {
                 if (_instance == null)
                 {
-                    _instance = Resources.Load<T>("Manager/" + typeof(T).ToString());
+                    // The Mangers will sit in the Manager folder which is a sub-folder of a Resources folder
+                    // Therefore the path needs to be prefixed with "Manager/"
+                    // The typeof(T) will return the type, but prefixed "Snatcher."
+                    // This is because the managers are all under the namespace "Snatcher"
+                    // To get rid of that we call the C# String.Substring method and get the substring starting from index 9
+                    // 9 because "Snatcher." is 9 characters long and the index is zero-based
+                    string path = "Manager/" + typeof(T).ToString().Substring(9);
+                    _instance = Resources.Load<T>(path);
                     if (_instance == null)
                     {
                         Debug.LogError("Did not load an instance from /Assets/_Snatcher/Resources/Manager. Did you forget to put in the Scriptable Object Singleton?");
