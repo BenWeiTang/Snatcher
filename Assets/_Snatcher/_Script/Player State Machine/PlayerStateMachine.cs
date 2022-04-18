@@ -8,6 +8,9 @@ namespace Snatcher
         // Public getter(s) for the states to check conditions
         public PlayerControls PlayerInput => _playerInput;
         public CharacterController Controller => _controller;
+        public Animator Animator => _animator;
+        
+        [SerializeField] private Animator _animator;
         
         private APlayerState _currentState;
         private PlayerStateFactory _factory;

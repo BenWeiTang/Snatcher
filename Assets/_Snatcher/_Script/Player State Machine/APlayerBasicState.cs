@@ -25,5 +25,10 @@ namespace Snatcher
                 // Put initialization-related code here, if entering from a state whose super state isn't this state
             }
         }
+
+        public override void UpdateState()
+        {
+            
+        }
     }
 }

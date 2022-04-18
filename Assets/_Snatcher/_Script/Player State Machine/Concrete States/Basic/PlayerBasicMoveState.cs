@@ -5,24 +5,31 @@ namespace Snatcher
 {
     public class PlayerBasicMoveState : APlayerBasicState
     {
+        private readonly int _isMovingHash;
         private Vector3 _currentDirection;
-        
-        public PlayerBasicMoveState(PlayerStateMachine currentContext, PlayerStateFactory currentFactory) : base(currentContext, currentFactory) { }
+
+        public PlayerBasicMoveState(PlayerStateMachine currentContext, PlayerStateFactory currentFactory) : base(currentContext, currentFactory)
+        {
+            _isMovingHash = Animator.StringToHash("IsMoving");
+        }
 
         public override void EnterState(bool hasSameSuperState)
         {
             base.EnterState(hasSameSuperState);
             Context.PlayerInput.Player.Movement.canceled += OnMovementCanceled;
+            Context.Animator.SetBool(_isMovingHash, true);
         }
 
         public override void ExitState()
         {
             // IMPORTANT!!! Make sure you unsubscribe from the event when exiting this state
             Context.PlayerInput.Player.Movement.canceled -= OnMovementCanceled;
+            Context.Animator.SetBool(_isMovingHash, false);
         }
 
         public override void UpdateState()
         {
+            base.UpdateState();
             UpdateDirection();
             UpdateRotation();
             UpdateMovement();

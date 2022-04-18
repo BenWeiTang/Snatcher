@@ -20,6 +20,7 @@ namespace Snatcher
 
         public override void UpdateState()
         {
+            base.UpdateState();
             CheckSwitchState();
         }
 
