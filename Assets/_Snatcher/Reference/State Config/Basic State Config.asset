@@ -17,4 +17,7 @@ MonoBehaviour:
   GroundedGravity: -0.5
   AirborneGravity: -9.8
   MaxFallSpeed: 50
+  DashDuration: 0.5
+  DashDistance: 5
+  EaseMode: 6
   Limb: {fileID: 0}
