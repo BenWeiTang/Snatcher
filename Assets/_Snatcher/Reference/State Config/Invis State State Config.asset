@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d5ac67b54a1d1748a31b2855886700e, type: 3}
   m_Name: Invis State State Config
   m_EditorClassIdentifier: 
-  MoveSpeed: 0
-  TurnSpeed: 0
+  MoveSpeed: 7.5
+  TurnSpeed: 15
+  GroundedGravity: -0.05
+  AirborneGravity: -9.8
+  MaxFallSpeed: 100
   Limb: {fileID: 0}

@@ -14,4 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MoveSpeed: 7.5
   TurnSpeed: 15
+  GroundedGravity: -0.5
+  AirborneGravity: -9.8
+  MaxFallSpeed: 50
   Limb: {fileID: 0}
