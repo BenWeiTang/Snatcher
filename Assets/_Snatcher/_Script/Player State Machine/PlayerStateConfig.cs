@@ -1,5 +1,5 @@
-using System;
 using UnityEngine;
+using DG.Tweening;
 
 namespace Snatcher
 {
@@ -15,7 +15,12 @@ namespace Snatcher
         public float AirborneGravity = -9.8f;
         [Min(0f)]
         public float MaxFallSpeed = 50f;
-        
+
+        [Header("Dash")]
+        public float DashDuration = 0.5f;
+        public float DashDistance = 5f;
+        public Ease EaseMode;
+
         [Header("Visual")]
         public GameObject Limb;
 
@@ -26,6 +31,8 @@ namespace Snatcher
             GroundedGravity = -0.5f;
             AirborneGravity = -9.8f;
             MaxFallSpeed = 50f;
+            DashDuration = 0.5f;
+            DashDistance = 5f;
             Limb = null;
         }
     }
