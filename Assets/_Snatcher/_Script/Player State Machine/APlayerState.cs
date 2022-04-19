@@ -4,11 +4,12 @@ namespace Snatcher
     {
         protected PlayerStateMachine Context => _context;
         protected PlayerStateFactory Factory => _factory;
+        protected abstract PlayerStateConfig StateConfig { get; }
 
         private readonly PlayerStateMachine _context;
         private readonly PlayerStateFactory _factory;
 
-        public APlayerState(PlayerStateMachine currentContext, PlayerStateFactory currentFactory)
+        protected APlayerState(PlayerStateMachine currentContext, PlayerStateFactory currentFactory)
         {
             _context = currentContext;
             _factory = currentFactory;
