@@ -20,6 +20,8 @@ namespace Snatcher
             
             // Subscribe to the canceled event on Movement
             Context.PlayerInput.Player.Movement.canceled += OnMovementCanceled;
+            // Subscribe to the started event on Dash
+            Context.PlayerInput.Player.Dash.started += OnDashPressed;
             
             // When entering this state, transition the animation state to Run by setting the bool "IsMoving" to true
             Context.Animator.SetBool(_isMovingHash, true);
@@ -29,6 +31,7 @@ namespace Snatcher
         {
             // IMPORTANT!!! Make sure you unsubscribe from the event when exiting this state
             Context.PlayerInput.Player.Movement.canceled -= OnMovementCanceled;
+            Context.PlayerInput.Player.Dash.started -= OnDashPressed;
             
             // When exiting this state, transition the animation state to Idle by setting the bool "IsMoving" to false
             Context.Animator.SetBool(_isMovingHash, false);
@@ -92,5 +95,7 @@ namespace Snatcher
             
             Context.Controller.Move(velocity * Time.deltaTime);
         }
+        
+        private void OnDashPressed(InputAction.CallbackContext _) => Context.SwitchState(Factory.BasicDash, true);
     }
 }
