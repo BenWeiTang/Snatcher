@@ -37,17 +37,18 @@ namespace Snatcher
         // UpdateState is called every frame from the Context (state machine)
         public override void UpdateState()
         {
-            base.UpdateState();
             UpdateDirection();
             UpdateRotation();
             UpdateMovement();
-            // CheckSwitchState();
+            CheckSwitchState();
         }
 
         // CheckSwitchState should ONLY be called in the UpdateState method
-        // For now the CheckSwitchState does absolutely NOTHING
-        // This is because Basic Move State only relies on one event callback to know when to switch states
-        protected override void CheckSwitchState(){ }
+        protected override void CheckSwitchState()
+        {
+            if (!Context.Controller.isGrounded)
+                Context.SwitchState(Factory.BasicFall, true);
+        }
 
         // When the movement ended, we want to transition to PlayerBasicIdleState
         // Since PlayerBasicIdleState and our current state, PlayerBasicMoveState, have the same Super State, APlayerBasicState,
@@ -80,9 +81,16 @@ namespace Snatcher
             Quaternion targetRotation = Quaternion.LookRotation(positionToLookAt);
             Context.transform.rotation = Quaternion.Slerp(currentRotation, targetRotation, StateConfig.TurnSpeed * Time.deltaTime);
         }
-
+        
         // The actual handling of the Character Controller movement using the Move method
         // Note that to avoid calculation errors, there should only be ONE call to the Move method per Update cycle
-        private void UpdateMovement() => Context.Controller.Move(_currentDirection * (StateConfig.MoveSpeed * Time.deltaTime));
+        private void UpdateMovement()
+        {
+            Vector3 velocity = _currentDirection;
+            velocity *= StateConfig.MoveSpeed;
+            velocity.y = StateConfig.GroundedGravity;
+            
+            Context.Controller.Move(velocity * Time.deltaTime);
+        }
     }
 }

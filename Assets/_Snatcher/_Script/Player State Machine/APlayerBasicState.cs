@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-namespace Snatcher
+﻿namespace Snatcher
 {
     public abstract class APlayerBasicState : APlayerState
     {
@@ -13,7 +11,7 @@ namespace Snatcher
                 return _stateConfig;
             }
         }
-
+        
         private PlayerStateConfig _stateConfig;
 
         protected APlayerBasicState(PlayerStateMachine currentContext, PlayerStateFactory currentFactory) : base(currentContext, currentFactory) { }
@@ -24,11 +22,6 @@ namespace Snatcher
             {
                 // Put initialization-related code here, if entering from a state whose super state isn't this state
             }
-        }
-
-        public override void UpdateState()
-        {
-            
         }
     }
 }

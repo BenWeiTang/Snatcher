@@ -7,12 +7,14 @@ namespace Snatcher
         // Instances of concrete states
         public PlayerBasicIdleState BasicIdle { get; }
         public PlayerBasicMoveState BasicMove { get; }
+        public PlayerBasicFallState BasicFall { get; }
 
         public PlayerStateFactory(PlayerStateMachine currentContext)
         {
             // Cache instances of concrete states
             BasicIdle = new PlayerBasicIdleState(currentContext, this);
             BasicMove = new PlayerBasicMoveState(currentContext, this);
+            BasicFall = new PlayerBasicFallState(currentContext, this);
         }
     }
 }

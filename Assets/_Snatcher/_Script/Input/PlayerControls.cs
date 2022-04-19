@@ -55,6 +55,15 @@ namespace Snatcher
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Interact"",
+                    ""type"": ""Button"",
+                    ""id"": ""6bb12a1b-7ac5-4d07-a7eb-a1e1db73a3d9"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -182,7 +191,7 @@ namespace Snatcher
                 {
                     ""name"": """",
                     ""id"": ""0bd22393-645b-4846-af7c-f5f762385c72"",
-                    ""path"": ""<Mouse>/leftButton"",
+                    ""path"": ""<Keyboard>/q"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Mouse & Keyboard"",
@@ -193,7 +202,7 @@ namespace Snatcher
                 {
                     ""name"": """",
                     ""id"": ""0a936fdd-7d3f-4a0c-b2f1-f3e8180dfee9"",
-                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
@@ -204,7 +213,7 @@ namespace Snatcher
                 {
                     ""name"": """",
                     ""id"": ""ebf31efa-d6fb-491a-b0dd-ca40bdcc7264"",
-                    ""path"": ""<Mouse>/rightButton"",
+                    ""path"": ""<Keyboard>/e"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Mouse & Keyboard"",
@@ -215,11 +224,33 @@ namespace Snatcher
                 {
                     ""name"": """",
                     ""id"": ""5a33b9b4-23c6-4301-828b-88605e92b8aa"",
-                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
                     ""action"": ""UseAbility"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7f517b86-be9a-470e-929f-f46078028ba2"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse & Keyboard"",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2b74a202-8cdb-47e4-98cb-283c23f58b43"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -369,6 +400,7 @@ namespace Snatcher
             m_Player_Movement = m_Player.FindAction("Movement", throwIfNotFound: true);
             m_Player_Snatch = m_Player.FindAction("Snatch", throwIfNotFound: true);
             m_Player_UseAbility = m_Player.FindAction("UseAbility", throwIfNotFound: true);
+            m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
             // Debug
             m_Debug = asset.FindActionMap("Debug", throwIfNotFound: true);
             m_Debug_Cheat1 = m_Debug.FindAction("Cheat 1", throwIfNotFound: true);
@@ -438,6 +470,7 @@ namespace Snatcher
         private readonly InputAction m_Player_Movement;
         private readonly InputAction m_Player_Snatch;
         private readonly InputAction m_Player_UseAbility;
+        private readonly InputAction m_Player_Interact;
         public struct PlayerActions
         {
             private @PlayerControls m_Wrapper;
@@ -445,6 +478,7 @@ namespace Snatcher
             public InputAction @Movement => m_Wrapper.m_Player_Movement;
             public InputAction @Snatch => m_Wrapper.m_Player_Snatch;
             public InputAction @UseAbility => m_Wrapper.m_Player_UseAbility;
+            public InputAction @Interact => m_Wrapper.m_Player_Interact;
             public InputActionMap Get() { return m_Wrapper.m_Player; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -463,6 +497,9 @@ namespace Snatcher
                     @UseAbility.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnUseAbility;
                     @UseAbility.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnUseAbility;
                     @UseAbility.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnUseAbility;
+                    @Interact.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
+                    @Interact.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
+                    @Interact.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
                 }
                 m_Wrapper.m_PlayerActionsCallbackInterface = instance;
                 if (instance != null)
@@ -476,6 +513,9 @@ namespace Snatcher
                     @UseAbility.started += instance.OnUseAbility;
                     @UseAbility.performed += instance.OnUseAbility;
                     @UseAbility.canceled += instance.OnUseAbility;
+                    @Interact.started += instance.OnInteract;
+                    @Interact.performed += instance.OnInteract;
+                    @Interact.canceled += instance.OnInteract;
                 }
             }
         }
@@ -568,6 +608,7 @@ namespace Snatcher
             void OnMovement(InputAction.CallbackContext context);
             void OnSnatch(InputAction.CallbackContext context);
             void OnUseAbility(InputAction.CallbackContext context);
+            void OnInteract(InputAction.CallbackContext context);
         }
         public interface IDebugActions
         {
