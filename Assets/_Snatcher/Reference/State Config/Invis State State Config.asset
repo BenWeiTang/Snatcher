@@ -20,6 +20,6 @@ MonoBehaviour:
   DashDuration: 0.5
   DashDistance: 5
   EaseMode: 6
-  StartupWindow: 0
-  ActiveWindow: 0.2
+  StartupWindow: 0.25
+  ActiveWindow: 0.25
   Limb: {fileID: 0}
