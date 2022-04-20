@@ -15,6 +15,8 @@ namespace Snatcher
             
             // Subscribe to the started event on Dash
             Context.PlayerInput.Player.Dash.started += OnDashPressed;
+            // Subscribe to the started event on Hook/Snatch
+            Context.PlayerInput.Player.Snatch.started += OnHookPressed;
         }
 
 
@@ -22,6 +24,7 @@ namespace Snatcher
         {
             // IMPORTANT!!! Make sure you unsubscribe from the event when exiting this state
             Context.PlayerInput.Player.Dash.started -= OnDashPressed;
+            Context.PlayerInput.Player.Snatch.started -= OnHookPressed;
         }
 
         public override void UpdateState()
@@ -43,5 +46,7 @@ namespace Snatcher
         private void UpdateMovement() => Context.Controller.Move(new Vector3(0f, StateConfig.GroundedGravity, 0f) * Time.deltaTime);
 
         private void OnDashPressed(InputAction.CallbackContext _) => Context.SwitchState(Factory.BasicDash, true);
+
+        private void OnHookPressed(InputAction.CallbackContext _) => Context.SwitchState(Factory.BasicHookOut, true);
     }
 }
