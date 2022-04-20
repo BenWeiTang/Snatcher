@@ -23,9 +23,9 @@ namespace Snatcher
 
         [Header("Hook")]
         [Range(0f, 1f), Tooltip("How long it takes from the Hook Button being pressed to the Hook Hit Box is activated. Measure in seconds.")]
-        public float StartupWindow = 0f;
+        public float StartupWindow = 0.25f;
         [Range(0f, 1f), Tooltip("How long the Hook Hit Box stays active. Measure in seconds.")]
-        public float ActiveWindow = 0.2f;
+        public float ActiveWindow = 0.25f;
 
         [Header("Visual")]
         public GameObject Limb;
@@ -46,8 +46,8 @@ namespace Snatcher
             DashDistance = 5f;
             
             // Hook
-            StartupWindow = 0f;
-            ActiveWindow = 0.2f;
+            StartupWindow = 0.25f;
+            ActiveWindow = 0.25f;
             
             Limb = null;
         }
