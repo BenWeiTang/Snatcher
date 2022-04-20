@@ -10,9 +10,11 @@ namespace Snatcher
         public CharacterController Controller => _controller;
         public Animator Animator => _animator;
         public HookController HookController => _hookController;
+        public Transform GroundCheck => _groundCheck;
         
         [SerializeField] private Animator _animator;
         [SerializeField] private HookController _hookController;
+        [SerializeField] private Transform _groundCheck;
 
         private APlayerState _currentState;
         private PlayerStateFactory _factory;

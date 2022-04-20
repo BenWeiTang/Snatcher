@@ -16,7 +16,7 @@ namespace Snatcher
         {
             base.EnterState(hasSameSuperState);
             Context.Animator.SetBool(_isFallingHash, true);
-            Context.Controller.Move(0.2f * Context.transform.forward);
+            // Context.Controller.Move(0.2f * Context.transform.forward);
         }
 
         public override void ExitState()

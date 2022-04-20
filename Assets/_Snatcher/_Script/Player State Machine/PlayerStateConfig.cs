@@ -11,7 +11,7 @@ namespace Snatcher
         public float TurnSpeed = 15f;
 
         [Header("Gravity")]
-        public float GroundedGravity = -0.5f;
+        public float GroundedGravity = -5f;
         public float AirborneGravity = -9.8f;
         [Min(0f), Tooltip("The maximum speed the character will reach when falling. Values grater than Max Fall Speed will be capped.")]
         public float MaxFallSpeed = 50f;
@@ -37,7 +37,7 @@ namespace Snatcher
             TurnSpeed = 15f;
             
             // Gravity
-            GroundedGravity = -0.5f;
+            GroundedGravity = -5f;
             AirborneGravity = -9.8f;
             MaxFallSpeed = 50f;
             

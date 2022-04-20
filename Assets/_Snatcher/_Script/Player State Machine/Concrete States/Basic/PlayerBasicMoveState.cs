@@ -55,7 +55,11 @@ namespace Snatcher
         protected override void CheckSwitchState()
         {
             if (!Context.Controller.isGrounded)
+            {
+                if (Physics.Raycast(Context.GroundCheck.position, Vector3.down, 0.5f)) 
+                    return;
                 Context.SwitchState(Factory.BasicFall, true);
+            }
         }
 
         // When the movement ended, we want to transition to PlayerBasicIdleState
