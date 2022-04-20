@@ -17,7 +17,6 @@ namespace Snatcher
         [SerializeField] private Animator _animator;
         [SerializeField] private HookController _hookController;
         [SerializeField] private Transform _groundCheck;
-
         private APlayerState _currentState;
         private PlayerStateFactory _factory;
         private PlayerControls _playerInput;
