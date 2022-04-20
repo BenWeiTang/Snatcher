@@ -15,7 +15,7 @@ namespace Snatcher
 
         public override void EnterState(bool hasSameSuperState)
         {
-            if (Context.Debug) Debug.Log("");
+            if (Context.Debug) this.Log("Enter");
             
             // Call Super state EnterState method to handle transitioning from a state whose super state isn't APlayerBasicState
             base.EnterState(hasSameSuperState);

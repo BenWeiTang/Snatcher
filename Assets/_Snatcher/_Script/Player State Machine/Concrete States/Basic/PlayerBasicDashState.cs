@@ -13,6 +13,8 @@ namespace Snatcher
 
         public override async void EnterState(bool hasSameSuperState)
         {
+            if (Context.Debug) this.Log("Enter");
+            
             base.EnterState(hasSameSuperState);
             _dashDirection = Context.transform.forward;
             CalculateDestination();

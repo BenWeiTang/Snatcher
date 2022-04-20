@@ -9,8 +9,8 @@ namespace Snatcher
 
         public override void EnterState(bool hasSameSuperState)
         {
-            if (Context.Debug) Debug.Log("");
-            
+            if (Context.Debug) this.Log("Enter");
+
             base.EnterState(hasSameSuperState);
             
             // Subscribe to the started event on Dash

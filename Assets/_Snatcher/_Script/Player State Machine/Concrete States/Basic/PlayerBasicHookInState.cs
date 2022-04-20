@@ -10,7 +10,8 @@ namespace Snatcher
 
         public override void EnterState(bool hasSameSuperState)
         {
-            Debug.Log("Hook in");
+            if (Context.Debug) this.Log("Enter");
+            
             base.EnterState(hasSameSuperState);
             Context.SwitchState(Factory.BasicIdle, true);
         }

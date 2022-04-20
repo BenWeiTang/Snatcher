@@ -11,7 +11,8 @@ namespace Snatcher
 
         public override async void EnterState(bool hasSameSuperState)
         {
-            Debug.Log("Hook out");
+            if (Context.Debug) this.Log("Enter");
+            
             base.EnterState(hasSameSuperState);
             Context.HookController.OnEnemyHit += OnHookHitEnemy;
             
