@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-
 namespace Snatcher
 {
     public class PlayerStateFactory
@@ -8,6 +6,9 @@ namespace Snatcher
         public PlayerBasicIdleState BasicIdle { get; }
         public PlayerBasicMoveState BasicMove { get; }
         public PlayerBasicFallState BasicFall { get; }
+        public PlayerBasicDashState BasicDash { get; }
+        public PlayerBasicHookOutState BasicHookOut { get; }
+        public PlayerBasicHookInState BasicHookIn { get; }
 
         public PlayerStateFactory(PlayerStateMachine currentContext)
         {
@@ -15,6 +16,9 @@ namespace Snatcher
             BasicIdle = new PlayerBasicIdleState(currentContext, this);
             BasicMove = new PlayerBasicMoveState(currentContext, this);
             BasicFall = new PlayerBasicFallState(currentContext, this);
+            BasicDash = new PlayerBasicDashState(currentContext, this);
+            BasicHookOut = new PlayerBasicHookOutState(currentContext, this);
+            BasicHookIn = new PlayerBasicHookInState(currentContext, this);
         }
     }
 }

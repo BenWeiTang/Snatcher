@@ -9,9 +9,11 @@ namespace Snatcher
         public PlayerControls PlayerInput => _playerInput;
         public CharacterController Controller => _controller;
         public Animator Animator => _animator;
+        public HookController HookController => _hookController;
         
         [SerializeField] private Animator _animator;
-        
+        [SerializeField] private HookController _hookController;
+
         private APlayerState _currentState;
         private PlayerStateFactory _factory;
         private PlayerControls _playerInput;
@@ -44,6 +46,7 @@ namespace Snatcher
         private void Start()
         {
             // By default, the player begins with zero ability mounted and is in idle state
+            // _currentState = _factory.BasicIdle;
             _currentState = _factory.BasicIdle;
             
             // There is no previous state in this case, so we enter this state fresh, thus false of the argument
