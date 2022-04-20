@@ -45,7 +45,7 @@ namespace Snatcher
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": true
+                    ""initialStateCheck"": false
                 },
                 {
                     ""name"": ""UseAbility"",
@@ -60,6 +60,15 @@ namespace Snatcher
                     ""name"": ""Interact"",
                     ""type"": ""Button"",
                     ""id"": ""6bb12a1b-7ac5-4d07-a7eb-a1e1db73a3d9"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Dash"",
+                    ""type"": ""Button"",
+                    ""id"": ""aaaa418c-314a-482c-ad7d-ac5bd6338592"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -253,6 +262,28 @@ namespace Snatcher
                     ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""95ae215a-77e7-417d-9d86-bf537cbd2a06"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse & Keyboard"",
+                    ""action"": ""Dash"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""274c20c8-ee93-421c-8aa4-478bb9786cf5"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Dash"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -401,6 +432,7 @@ namespace Snatcher
             m_Player_Snatch = m_Player.FindAction("Snatch", throwIfNotFound: true);
             m_Player_UseAbility = m_Player.FindAction("UseAbility", throwIfNotFound: true);
             m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
+            m_Player_Dash = m_Player.FindAction("Dash", throwIfNotFound: true);
             // Debug
             m_Debug = asset.FindActionMap("Debug", throwIfNotFound: true);
             m_Debug_Cheat1 = m_Debug.FindAction("Cheat 1", throwIfNotFound: true);
@@ -471,6 +503,7 @@ namespace Snatcher
         private readonly InputAction m_Player_Snatch;
         private readonly InputAction m_Player_UseAbility;
         private readonly InputAction m_Player_Interact;
+        private readonly InputAction m_Player_Dash;
         public struct PlayerActions
         {
             private @PlayerControls m_Wrapper;
@@ -479,6 +512,7 @@ namespace Snatcher
             public InputAction @Snatch => m_Wrapper.m_Player_Snatch;
             public InputAction @UseAbility => m_Wrapper.m_Player_UseAbility;
             public InputAction @Interact => m_Wrapper.m_Player_Interact;
+            public InputAction @Dash => m_Wrapper.m_Player_Dash;
             public InputActionMap Get() { return m_Wrapper.m_Player; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -500,6 +534,9 @@ namespace Snatcher
                     @Interact.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
                     @Interact.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
                     @Interact.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
+                    @Dash.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDash;
+                    @Dash.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDash;
+                    @Dash.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDash;
                 }
                 m_Wrapper.m_PlayerActionsCallbackInterface = instance;
                 if (instance != null)
@@ -516,6 +553,9 @@ namespace Snatcher
                     @Interact.started += instance.OnInteract;
                     @Interact.performed += instance.OnInteract;
                     @Interact.canceled += instance.OnInteract;
+                    @Dash.started += instance.OnDash;
+                    @Dash.performed += instance.OnDash;
+                    @Dash.canceled += instance.OnDash;
                 }
             }
         }
@@ -609,6 +649,7 @@ namespace Snatcher
             void OnSnatch(InputAction.CallbackContext context);
             void OnUseAbility(InputAction.CallbackContext context);
             void OnInteract(InputAction.CallbackContext context);
+            void OnDash(InputAction.CallbackContext context);
         }
         public interface IDebugActions
         {
