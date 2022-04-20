@@ -7,7 +7,12 @@ namespace Snatcher
     {
         // When an enemy is hit, this become true
         private bool _enemyHit;
-        public PlayerBasicHookOutState(PlayerStateMachine currentContext, PlayerStateFactory currentFactory) : base(currentContext, currentFactory) { }
+        private readonly int _isThrowingHash;
+
+        public PlayerBasicHookOutState(PlayerStateMachine currentContext, PlayerStateFactory currentFactory) : base(currentContext, currentFactory)
+        {
+            _isThrowingHash = Animator.StringToHash("IsThrowing");
+        }
 
         public override async void EnterState(bool hasSameSuperState)
         {
@@ -15,20 +20,10 @@ namespace Snatcher
             
             base.EnterState(hasSameSuperState);
             Context.HookController.OnEnemyHit += OnHookHitEnemy;
-            
-            await Task.Delay((int)StateConfig.StartupWindow * 1_000);
-            Context.HookController.ActivateCollider(true);
-            
-            // Reset parameters
-            float exitTime = Time.time + StateConfig.ActiveWindow;
-            _enemyHit = false;
-            
-            // If the enemy is not hit yet AND time is not exit time yet, keep looping
-            while (!_enemyHit && Time.time < exitTime)
-            {
-                await Task.Yield();
-            }
-            
+            Context.Animator.SetBool(_isThrowingHash, true);
+
+            await HandleHitBoxActivation();
+
             // Having exited the loop, it means time is up
             Context.SwitchState(Factory.BasicHookIn, true);
         }
@@ -48,6 +43,22 @@ namespace Snatcher
         {
             _enemyHit = true;
             Context.SwitchState(Factory.BasicHookIn, true);
+        }
+
+        private async Task HandleHitBoxActivation()
+        {
+            await Task.Delay((int)(StateConfig.StartupWindow * 1_000));
+            Context.HookController.ActivateCollider(true);
+            
+            // Reset parameters
+            float exitTime = Time.time + StateConfig.ActiveWindow;
+            _enemyHit = false;
+            
+            // If the enemy is not hit yet AND time is not exit time yet, keep looping
+            while (!_enemyHit && Time.time < exitTime)
+            {
+                await Task.Yield();
+            }
         }
     }
 }

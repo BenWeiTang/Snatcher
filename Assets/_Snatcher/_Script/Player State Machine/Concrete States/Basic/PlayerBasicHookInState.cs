@@ -4,7 +4,12 @@ namespace Snatcher
 {
     public class PlayerBasicHookInState : APlayerBasicState
     {
-        public PlayerBasicHookInState(PlayerStateMachine currentContext, PlayerStateFactory currentFactory) : base(currentContext, currentFactory) { }
+        private readonly int _isThrowingHash;
+
+        public PlayerBasicHookInState(PlayerStateMachine currentContext, PlayerStateFactory currentFactory) : base(currentContext, currentFactory)
+        {
+            _isThrowingHash = Animator.StringToHash("IsThrowing");
+        }
 
         public override void EnterState(bool hasSameSuperState)
         {
@@ -14,7 +19,10 @@ namespace Snatcher
             Context.SwitchState(Factory.BasicIdle, true);
         }
 
-        public override void ExitState() { }
+        public override void ExitState()
+        {
+            Context.Animator.SetBool(_isThrowingHash, false);
+        }
 
         public override void UpdateState() { }
 
