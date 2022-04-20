@@ -20,11 +20,11 @@ namespace Snatcher
             Context.HookController.ActivateCollider(true);
             
             // Reset parameters
-            float exitTime = Time.time + StateConfig.ActiveWindow * 1_000;
+            float exitTime = Time.time + StateConfig.ActiveWindow;
             _enemyHit = false;
             
-            // If the enemy is not hit yet or time is not exit time yet, keep looping
-            while (!_enemyHit || Time.time < exitTime)
+            // If the enemy is not hit yet AND time is not exit time yet, keep looping
+            while (!_enemyHit && Time.time < exitTime)
             {
                 await Task.Yield();
             }
