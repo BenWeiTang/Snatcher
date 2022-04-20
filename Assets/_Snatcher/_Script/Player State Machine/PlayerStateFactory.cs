@@ -4,20 +4,17 @@ namespace Snatcher
 {
     public class PlayerStateFactory
     {
-        private readonly PlayerStateMachine _context;
-        
         // Instances of concrete states
-        private readonly PlayerGroundedState _grounded;
+        public PlayerBasicIdleState BasicIdle { get; }
+        public PlayerBasicMoveState BasicMove { get; }
+        public PlayerBasicFallState BasicFall { get; }
 
         public PlayerStateFactory(PlayerStateMachine currentContext)
         {
-            _context = currentContext;
-            
             // Cache instances of concrete states
-            _grounded = new PlayerGroundedState(currentContext, this);
+            BasicIdle = new PlayerBasicIdleState(currentContext, this);
+            BasicMove = new PlayerBasicMoveState(currentContext, this);
+            BasicFall = new PlayerBasicFallState(currentContext, this);
         }
-        
-        // Declare methods where the return type is the concrete states
-        public PlayerGroundedState Grounded() => _grounded;
     }
 }
