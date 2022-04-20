@@ -14,6 +14,8 @@ namespace Snatcher
 
         public override void EnterState(bool hasSameSuperState)
         {
+            if (Context.Debug) Debug.Log("");
+            
             base.EnterState(hasSameSuperState);
             Context.Animator.SetBool(_isFallingHash, true);
             // Context.Controller.Move(0.2f * Context.transform.forward);

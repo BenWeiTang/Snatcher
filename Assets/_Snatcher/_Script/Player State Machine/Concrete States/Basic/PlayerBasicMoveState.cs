@@ -15,6 +15,8 @@ namespace Snatcher
 
         public override void EnterState(bool hasSameSuperState)
         {
+            if (Context.Debug) Debug.Log("");
+            
             // Call Super state EnterState method to handle transitioning from a state whose super state isn't APlayerBasicState
             base.EnterState(hasSameSuperState);
             
@@ -56,7 +58,7 @@ namespace Snatcher
         {
             if (!Context.Controller.isGrounded)
             {
-                if (Physics.Raycast(Context.GroundCheck.position, Vector3.down, 0.5f)) 
+                if (FrontGroundCheck()) 
                     return;
                 Context.SwitchState(Factory.BasicFall, true);
             }
@@ -84,7 +86,6 @@ namespace Snatcher
         private void UpdateRotation()
         {
             Vector3 positionToLookAt = _currentDirection;
-            positionToLookAt.y = 0f;
             
             if (positionToLookAt.sqrMagnitude == 0)
                 return;

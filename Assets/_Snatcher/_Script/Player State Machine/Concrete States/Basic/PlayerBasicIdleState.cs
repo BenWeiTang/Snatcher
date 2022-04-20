@@ -1,6 +1,4 @@
-﻿using System.Threading;
-using Cinemachine.Utility;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace Snatcher
@@ -11,6 +9,8 @@ namespace Snatcher
 
         public override void EnterState(bool hasSameSuperState)
         {
+            if (Context.Debug) Debug.Log("");
+            
             base.EnterState(hasSameSuperState);
             
             // Subscribe to the started event on Dash
@@ -38,7 +38,7 @@ namespace Snatcher
         {
             if (!Context.Controller.isGrounded)
             {
-                if (Physics.Raycast(Context.GroundCheck.position, Vector3.down, 0.2f)) 
+                if (FrontGroundCheck()) 
                     return;
                 Context.SwitchState(Factory.BasicFall, true);
             }

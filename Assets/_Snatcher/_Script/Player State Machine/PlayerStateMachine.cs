@@ -6,12 +6,14 @@ namespace Snatcher
     public class PlayerStateMachine : MonoBehaviour
     {
         // Public getter(s) for the states to check conditions
+        public bool Debug => _debug;
         public PlayerControls PlayerInput => _playerInput;
         public CharacterController Controller => _controller;
         public Animator Animator => _animator;
         public HookController HookController => _hookController;
         public Transform GroundCheck => _groundCheck;
         
+        [SerializeField] private bool _debug;
         [SerializeField] private Animator _animator;
         [SerializeField] private HookController _hookController;
         [SerializeField] private Transform _groundCheck;
