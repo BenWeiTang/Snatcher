@@ -5,6 +5,7 @@ namespace Snatcher
 {
     public class PlayerBasicMoveState : APlayerBasicState
     {
+        // Use hash value for setting animation parameters in Animator to boost performance
         private readonly int _isMovingHash;
         private Vector3 _currentDirection;
 
