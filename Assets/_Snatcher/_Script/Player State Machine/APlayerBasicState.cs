@@ -14,8 +14,7 @@
             if (!hasSameSuperState)
             {
                 // Put initialization-related code here, if entering from a state whose super state isn't this state
-                // An example of things to do here, is that if we are entering from a different state family,
-                // we want to swap the limb for our character
+                // For example,if we are entering from a different state family, we want to swap the limb for our character
             }
         }
     }
