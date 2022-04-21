@@ -2,26 +2,83 @@ using UnityEngine;
 
 namespace Snatcher
 {
+    [RequireComponent(typeof(CharacterController))]
     public class PlayerStateMachine : MonoBehaviour
     {
-        public APlayerState CurrentState
-        {
-            get { return _currentState; }
-            set { _currentState = value; }
-        }
+        // Public getter(s) for the states to check conditions
+        public bool Debug => _debug;
+        public PlayerControls PlayerInput => _playerInput;
+        public CharacterController Controller => _controller;
+        public Animator Animator => _animator;
+        public HookController HookController => _hookController;
+        public Transform GroundCheck => _groundCheck;
+        
+        [Header("Debug")]
+        [SerializeField] private bool _debug;
+#if UNITY_EDITOR
+        [SerializeField] private DebugInitialState _initialState;
+#endif
+        
+        [Header("Context Component")]
+        [SerializeField] private Animator _animator;
+        [SerializeField] private HookController _hookController;
+        [SerializeField] private Transform _groundCheck;
         private APlayerState _currentState;
-        private PlayerStateFactory _states;
+        private PlayerStateFactory _factory;
+        private PlayerControls _playerInput;
+        private CharacterController _controller;
 
-        private void Awake()
+        public void SwitchState(APlayerState nextState, bool hasSameSuperState)
         {
-            _states = new PlayerStateFactory(this);
-            _currentState = _states.Grounded();
-            _currentState.EnterState();
+            _currentState.ExitState();
+            _currentState = nextState;
+            _currentState.EnterState(hasSameSuperState);
+        }
+        
+        private void Awake()
+        { 
+            _factory = new PlayerStateFactory(this);
+            _playerInput = new PlayerControls();
+            _controller = GetComponent<CharacterController>();
+        }
+
+        private void OnEnable()
+        {
+            _playerInput.Player.Enable();
+        }
+
+        private void OnDisable()
+        {
+            _playerInput.Player.Disable();
+        }
+
+        private void Start()
+        {
+            // By default, the player begins with zero ability mounted and is in idle state
+#if UNITY_EDITOR
+            _currentState = _initialState switch
+            {
+                DebugInitialState.Basic => _factory.BasicIdle,
+                DebugInitialState.Invis => _factory.InvisIdle,
+                _ => _factory.BasicIdle
+            };
+#else
+            _currentState = _factory.BasicIdle;
+#endif
+            
+            // There is no previous state in this case, so we enter this state fresh, thus false for the argument
+            _currentState.EnterState(false);
         }
 
         private void Update()
         {
-            _currentState.UpdateStates();
+            _currentState.UpdateState();
         }
+    }
+    
+    public enum DebugInitialState
+    {
+        Basic,
+        Invis,
     }
 }

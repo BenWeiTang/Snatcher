@@ -1,23 +1,46 @@
-using System.Collections.Generic;
-
 namespace Snatcher
 {
     public class PlayerStateFactory
     {
-        private readonly PlayerStateMachine _context;
-        
         // Instances of concrete states
-        private readonly PlayerGroundedState _grounded;
+        // Basic states
+        public PlayerBasicIdleState BasicIdle { get; }
+        public PlayerBasicMoveState BasicMove { get; }
+        public PlayerBasicFallState BasicFall { get; }
+        public PlayerBasicDashState BasicDash { get; }
+        public PlayerBasicHookOutState BasicHookOut { get; }
+        public PlayerBasicHookInState BasicHookIn { get; }
+        
+        // Invisibility states
+        public PlayerInvisIdleState InvisIdle { get; }
+        public PlayerInvisMoveState InvisMove { get; }
+        public PlayerInvisFallState InvisFall { get; }
+        public PlayerInvisDashState InvisDash { get; }
+        public PlayerInvisHookOutState InvisHookOut { get; }
+        public PlayerInvisHookInState InvisHookIn { get; }
+        public PlayerInvisActiveIdleState InvisActiveIdle { get; }
+        public PlayerInvisActiveMoveState InvisActiveMove { get; }
 
         public PlayerStateFactory(PlayerStateMachine currentContext)
         {
-            _context = currentContext;
-            
             // Cache instances of concrete states
-            _grounded = new PlayerGroundedState(currentContext, this);
+            // Basic states
+            BasicIdle = new PlayerBasicIdleState(currentContext, this);
+            BasicMove = new PlayerBasicMoveState(currentContext, this);
+            BasicFall = new PlayerBasicFallState(currentContext, this);
+            BasicDash = new PlayerBasicDashState(currentContext, this);
+            BasicHookOut = new PlayerBasicHookOutState(currentContext, this);
+            BasicHookIn = new PlayerBasicHookInState(currentContext, this);
+            
+            // Invisibility states
+            InvisIdle = new PlayerInvisIdleState(currentContext, this);
+            InvisMove = new PlayerInvisMoveState(currentContext, this);
+            InvisFall = new PlayerInvisFallState(currentContext, this);
+            InvisDash = new PlayerInvisDashState(currentContext, this);
+            InvisHookOut = new PlayerInvisHookOutState(currentContext, this);
+            InvisHookIn = new PlayerInvisHookInState(currentContext, this);
+            InvisActiveIdle = new PlayerInvisActiveIdleState(currentContext, this);
+            InvisActiveMove = new PlayerInvisActiveMoveState(currentContext, this);
         }
-        
-        // Declare methods where the return type is the concrete states
-        public PlayerGroundedState Grounded() => _grounded;
     }
 }
