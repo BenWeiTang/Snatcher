@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: StateConfigManager
   m_EditorClassIdentifier: 
   BasicStateConfig: {fileID: 11400000, guid: 95cb6c7e0c721514789abf7edd10747e, type: 2}
+  InvisStateConfig: {fileID: 11400000, guid: 6839c39ba8901ee419889c0ed5df6c93, type: 2}
