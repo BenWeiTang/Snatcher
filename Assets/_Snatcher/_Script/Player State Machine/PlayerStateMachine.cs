@@ -13,7 +13,13 @@ namespace Snatcher
         public HookController HookController => _hookController;
         public Transform GroundCheck => _groundCheck;
         
+        [Header("Debug")]
         [SerializeField] private bool _debug;
+#if UNITY_EDITOR
+        [SerializeField] private DebugInitialState _initialState;
+#endif
+        
+        [Header("Context Component")]
         [SerializeField] private Animator _animator;
         [SerializeField] private HookController _hookController;
         [SerializeField] private Transform _groundCheck;
@@ -49,10 +55,18 @@ namespace Snatcher
         private void Start()
         {
             // By default, the player begins with zero ability mounted and is in idle state
-            // _currentState = _factory.BasicIdle;
+#if UNITY_EDITOR
+            _currentState = _initialState switch
+            {
+                DebugInitialState.Basic => _factory.BasicIdle,
+                DebugInitialState.Invis => _factory.InvisIdle,
+                _ => _factory.BasicIdle
+            };
+#else
             _currentState = _factory.BasicIdle;
+#endif
             
-            // There is no previous state in this case, so we enter this state fresh, thus false of the argument
+            // There is no previous state in this case, so we enter this state fresh, thus false for the argument
             _currentState.EnterState(false);
         }
 
@@ -60,5 +74,11 @@ namespace Snatcher
         {
             _currentState.UpdateState();
         }
+    }
+    
+    public enum DebugInitialState
+    {
+        Basic,
+        Invis,
     }
 }
