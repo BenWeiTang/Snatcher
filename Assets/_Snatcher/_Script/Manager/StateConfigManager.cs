@@ -6,5 +6,6 @@ namespace Snatcher
     public class StateConfigManager : ASingletonScriptableObject<StateConfigManager>
     {
         public PlayerStateConfig BasicStateConfig;
+        public PlayerStateConfig InvisStateConfig;
     }
 }
