@@ -8,6 +8,7 @@ namespace Snatcher
     {
         public AEnemyState CurrentState { get; private set; }
         public NavMeshAgent NavMeshAgent => _agent;
+        public Transform ChaseTarget { get; set; }
 
         [Tooltip("Boilerplate state to conceptualize the idea that transitioning into Remain State is the same as not transitioning into any other state at all.")]
         [SerializeField] private AEnemyState _remainState;
