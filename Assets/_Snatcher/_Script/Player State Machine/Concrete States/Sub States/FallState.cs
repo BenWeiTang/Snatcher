@@ -2,28 +2,23 @@
 
 namespace Snatcher
 {
-    public class PlayerBasicFallState : APlayerBasicState
+    public class FallState : ASubState
     {
-        private readonly int _isFallingHash;
         private Vector3 _currentDirection;
+        
+        public FallState(PlayerStateMachine currentContext, PlayerStateFactory currentFactory) : base(currentContext, currentFactory) { }
 
-        public PlayerBasicFallState(PlayerStateMachine currentContext, PlayerStateFactory currentFactory) : base(currentContext, currentFactory)
-        {
-            _isFallingHash = Animator.StringToHash("IsFalling");
-        }
-
-        public override void EnterState(bool hasSameSuperState)
+        public override void EnterState()
         {
             if (Context.Debug) this.Log("Enter");
             
-            base.EnterState(hasSameSuperState);
-            Context.Animator.SetBool(_isFallingHash, true);
+            Context.Animator.SetBool(SuperState.IsFallingHash, true);
             // Context.Controller.Move(0.2f * Context.transform.forward);
         }
 
         public override void ExitState()
         {
-            Context.Animator.SetBool(_isFallingHash,false);
+            Context.Animator.SetBool(SuperState.IsFallingHash,false);
         }
 
         public override void UpdateState()
@@ -37,9 +32,9 @@ namespace Snatcher
         protected override void CheckSwitchState()
         {
             if (Context.Controller.isGrounded)
-                Context.SwitchState(Factory.BasicIdle, true);
+                Context.SwitchSubState(Factory.Idle);
         }
-
+        
         private void UpdateDirection()
         {
             Vector2 currentInput = Context.PlayerInput.Player.Movement.ReadValue<Vector2>();
@@ -60,15 +55,15 @@ namespace Snatcher
             
             Quaternion currentRotation = Context.transform.rotation;
             Quaternion targetRotation = Quaternion.LookRotation(positionToLookAt);
-            Context.transform.rotation = Quaternion.Slerp(currentRotation, targetRotation, StateConfig.TurnSpeed * Time.deltaTime);
+            Context.transform.rotation = Quaternion.Slerp(currentRotation, targetRotation, SuperState.StateConfig.TurnSpeed * Time.deltaTime);
         }
         
         private void UpdateMovement()
         {
             Vector3 velocity = _currentDirection;
-            velocity *= StateConfig.MoveSpeed;
-            velocity.y += Context.Controller.velocity.y + StateConfig.AirborneGravity;
-            velocity.y = Mathf.Max(velocity.y, -StateConfig.MaxFallSpeed);
+            velocity *= SuperState.StateConfig.MoveSpeed;
+            velocity.y += Context.Controller.velocity.y + SuperState.StateConfig.AirborneGravity;
+            velocity.y = Mathf.Max(velocity.y, -SuperState.StateConfig.MaxFallSpeed);
             
             Context.Controller.Move(velocity * Time.deltaTime);
         }
