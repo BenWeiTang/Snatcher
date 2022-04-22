@@ -3,10 +3,10 @@ using UnityEngine;
 
 namespace Snatcher
 {
-    public class HookOut : ASubState
+    public class HookOutState : ASubState
     {
         private bool _enemyHit;
-        public HookOut(PlayerStateMachine currentContext, PlayerStateFactory currentFactory) : base(currentContext, currentFactory) { }
+        public HookOutState(PlayerStateMachine currentContext, PlayerStateFactory currentFactory) : base(currentContext, currentFactory) { }
 
         public override async void EnterState()
         {

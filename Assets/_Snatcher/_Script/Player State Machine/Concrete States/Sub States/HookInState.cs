@@ -1,8 +1,8 @@
 ﻿namespace Snatcher
 {
-    public class HookIn : ASubState
+    public class HookInState : ASubState
     {
-        public HookIn(PlayerStateMachine currentContext, PlayerStateFactory currentFactory) : base(currentContext, currentFactory) { }
+        public HookInState(PlayerStateMachine currentContext, PlayerStateFactory currentFactory) : base(currentContext, currentFactory) { }
 
         public override void EnterState()
         {
