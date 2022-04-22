@@ -6,7 +6,6 @@ namespace Snatcher
     {
         protected PlayerStateMachine Context => _context;
         protected PlayerStateFactory Factory => _factory;
-        protected abstract PlayerStateConfig StateConfig { get; }
 
         private readonly PlayerStateMachine _context;
         private readonly PlayerStateFactory _factory;
@@ -17,7 +16,7 @@ namespace Snatcher
             _factory = currentFactory;
         }
 
-        public abstract void EnterState(bool hasSameSuperState);
+        public abstract void EnterState();
         public abstract void ExitState();
         public abstract void UpdateState();
         protected abstract void CheckSwitchState();

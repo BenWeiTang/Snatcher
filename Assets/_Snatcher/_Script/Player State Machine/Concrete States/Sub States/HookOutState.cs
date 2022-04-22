@@ -3,29 +3,22 @@ using UnityEngine;
 
 namespace Snatcher
 {
-    public class PlayerBasicHookOutState : APlayerBasicState
+    public class HookOutState : ASubState
     {
-        // When an enemy is hit, this become true
         private bool _enemyHit;
-        private readonly int _isThrowingHash;
+        public HookOutState(PlayerStateMachine currentContext, PlayerStateFactory currentFactory) : base(currentContext, currentFactory) { }
 
-        public PlayerBasicHookOutState(PlayerStateMachine currentContext, PlayerStateFactory currentFactory) : base(currentContext, currentFactory)
-        {
-            _isThrowingHash = Animator.StringToHash("IsThrowing");
-        }
-
-        public override async void EnterState(bool hasSameSuperState)
+        public override async void EnterState()
         {
             if (Context.Debug) this.Log("Enter");
             
-            base.EnterState(hasSameSuperState);
             Context.HookController.OnEnemyHit += OnHookHitEnemy;
-            Context.Animator.SetBool(_isThrowingHash, true);
+            Context.Animator.SetBool(SuperState.IsThrowingHash, true);
 
             await HandleHitBoxActivation();
 
             // Having exited the loop, it means time is up
-            Context.SwitchState(Factory.BasicHookIn, true);
+            Context.SwitchSubState(Factory.HookIn);
         }
 
         public override void ExitState()
@@ -37,21 +30,22 @@ namespace Snatcher
         public override void UpdateState() { }
 
         protected override void CheckSwitchState() { }
-
+        
         //TODO: depending on what enemy is hit, transition to a different state
         private void OnHookHitEnemy()
         {
             _enemyHit = true;
-            Context.SwitchState(Factory.BasicHookIn, true);
+            // Context.SwitchSuperState(Factory.BasicState);
+            Context.SwitchSubState(Factory.Idle);
         }
-
+        
         private async Task HandleHitBoxActivation()
         {
-            await Task.Delay((int)(StateConfig.StartupWindow * 1_000));
+            await Task.Delay((int)(SuperState.StateConfig.StartupWindow * 1_000));
             Context.HookController.ActivateCollider(true);
             
             // Reset parameters
-            float exitTime = Time.time + StateConfig.ActiveWindow;
+            float exitTime = Time.time + SuperState.StateConfig.ActiveWindow;
             _enemyHit = false;
             
             // If the enemy is not hit yet AND time is not exit time yet, keep looping
