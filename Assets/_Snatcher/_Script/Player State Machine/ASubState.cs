@@ -1,5 +1,3 @@
-using UnityEngine;
-
 namespace Snatcher
 {
     public abstract class ASubState : APlayerState
