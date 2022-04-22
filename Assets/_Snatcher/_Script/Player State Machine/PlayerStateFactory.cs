@@ -12,14 +12,21 @@ namespace Snatcher
         public PlayerBasicHookInState BasicHookIn { get; }
         
         // Invisibility states
-        public PlayerInvisIdleState InvisIdle { get; }
-        public PlayerInvisMoveState InvisMove { get; }
-        public PlayerInvisFallState InvisFall { get; }
-        public PlayerInvisDashState InvisDash { get; }
-        public PlayerInvisHookOutState InvisHookOut { get; }
-        public PlayerInvisHookInState InvisHookIn { get; }
         public PlayerInvisActiveIdleState InvisActiveIdle { get; }
         public PlayerInvisActiveMoveState InvisActiveMove { get; }
+        
+        // Super states
+        public BasicState BasicState { get; }
+        public InvisState InvisState { get; }
+        
+        // Sub states
+        public IdleState Idle { get; }
+        public MoveState Move { get; }
+        public FallState Fall { get; }
+        public DashState Dash { get; }
+        public HookOut HookOut { get; }
+        public HookIn HookIn { get; }
+        public InvisIdleState InvisIdle { get; }
 
         public PlayerStateFactory(PlayerStateMachine currentContext)
         {
@@ -33,14 +40,23 @@ namespace Snatcher
             BasicHookIn = new PlayerBasicHookInState(currentContext, this);
             
             // Invisibility states
-            InvisIdle = new PlayerInvisIdleState(currentContext, this);
-            InvisMove = new PlayerInvisMoveState(currentContext, this);
-            InvisFall = new PlayerInvisFallState(currentContext, this);
-            InvisDash = new PlayerInvisDashState(currentContext, this);
-            InvisHookOut = new PlayerInvisHookOutState(currentContext, this);
-            InvisHookIn = new PlayerInvisHookInState(currentContext, this);
             InvisActiveIdle = new PlayerInvisActiveIdleState(currentContext, this);
             InvisActiveMove = new PlayerInvisActiveMoveState(currentContext, this);
+            
+            // Super states
+            BasicState = new BasicState(currentContext, this);
+            InvisState = new InvisState(currentContext, this);
+            
+            // Sub state
+            Idle = new IdleState(currentContext, this);
+            Move = new MoveState(currentContext, this);
+            Fall = new FallState(currentContext, this);
+            Dash = new DashState(currentContext, this);
+            HookOut = new HookOut(currentContext, this);
+            HookIn = new HookIn(currentContext, this);
+            
+            // Limb-specific ability states
+            InvisIdle = new InvisIdleState(currentContext, this);
         }
     }
 }

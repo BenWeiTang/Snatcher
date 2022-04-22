@@ -24,6 +24,8 @@ namespace Snatcher
         [SerializeField] private HookController _hookController;
         [SerializeField] private Transform _groundCheck;
         private APlayerState _currentState;
+        private ASuperState _currentSuperState;
+        private ASubState _currentSubState;
         private PlayerStateFactory _factory;
         private PlayerControls _playerInput;
         private CharacterController _controller;
@@ -32,9 +34,23 @@ namespace Snatcher
         {
             _currentState.ExitState();
             _currentState = nextState;
-            _currentState.EnterState(hasSameSuperState);
+            _currentState.EnterState();
+        }
+
+        public void SwitchSuperState(ASuperState nextSuperState)
+        {
+            _currentSuperState.ExitState();
+            _currentSuperState = nextSuperState;
+            _currentSuperState.EnterState();
         }
         
+        public void SwitchSubState(ASubState nextSubState)
+        {
+            _currentSubState.ExitState();
+            _currentSubState = nextSubState;
+            _currentSubState.EnterState();
+        }
+
         private void Awake()
         { 
             _factory = new PlayerStateFactory(this);
@@ -59,7 +75,6 @@ namespace Snatcher
             _currentState = _initialState switch
             {
                 DebugInitialState.Basic => _factory.BasicIdle,
-                DebugInitialState.Invis => _factory.InvisIdle,
                 _ => _factory.BasicIdle
             };
 #else
@@ -67,7 +82,7 @@ namespace Snatcher
 #endif
             
             // There is no previous state in this case, so we enter this state fresh, thus false for the argument
-            _currentState.EnterState(false);
+            _currentState.EnterState();
         }
 
         private void Update()
