@@ -4,7 +4,7 @@ namespace Snatcher
 {
     public class BasicState : ASuperState
     {
-        public override PlayerStateConfig StateConfig { get; set; }
+        public override PlayerStateConfig StateConfig { get; set; } = StateConfigManager.Instance.BasicStateConfig;
         public sealed override ASubState AbilityEntryState { get; protected set; }
         public sealed override int IsMovingHash { get; protected set; }
         public sealed override int IsFallingHash { get; protected set; }
@@ -12,7 +12,6 @@ namespace Snatcher
 
         public BasicState(PlayerStateMachine currentContext, PlayerStateFactory currentFactory) : base(currentContext, currentFactory)
         {
-            StateConfig = StateConfigManager.Instance.BasicStateConfig;
             AbilityEntryState = Factory.Idle;
             IsMovingHash = Animator.StringToHash("IsMoving");
             IsFallingHash = Animator.StringToHash("IsFalling");

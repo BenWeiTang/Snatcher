@@ -4,7 +4,7 @@ namespace Snatcher
 {
     public class InvisState : ASuperState
     {
-        public override PlayerStateConfig StateConfig { get; set; }
+        public override PlayerStateConfig StateConfig { get; set; } = StateConfigManager.Instance.InvisStateConfig;
         public sealed override ASubState AbilityEntryState { get; protected set; }
         public sealed override int IsMovingHash { get; protected set; }
         public sealed override int IsFallingHash { get; protected set; }
@@ -12,7 +12,6 @@ namespace Snatcher
 
         public InvisState(PlayerStateMachine currentContext, PlayerStateFactory currentFactory) : base(currentContext, currentFactory)
         {
-            StateConfig = StateConfigManager.Instance.InvisStateConfig;
             AbilityEntryState = Factory.InvisIdle;
             IsMovingHash = Animator.StringToHash("IsMoving");
             IsFallingHash = Animator.StringToHash("IsFalling");
@@ -34,6 +33,5 @@ namespace Snatcher
         protected override void CheckSwitchState()
         {
         }
-
     }
 }
