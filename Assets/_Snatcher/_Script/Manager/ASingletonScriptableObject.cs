@@ -36,6 +36,6 @@ namespace Snatcher
         /// <summary>
         /// Optional overridable method for initializing the instance
         /// </summary>
-        protected void OnInitialized() { }
+        protected virtual void OnInitialized() { }
     }
 }
