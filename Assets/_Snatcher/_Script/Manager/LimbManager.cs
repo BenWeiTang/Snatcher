@@ -6,14 +6,28 @@ namespace Snatcher
     [CreateAssetMenu(menuName = "Snatcher/Manager/Limb Manager", fileName = "LimbManager")]
     public class LimbManager : ASingletonScriptableObject<LimbManager>
     {
-        public LimbType CurrentEquippedLimb { get; private set; } = LimbType.Basic;
+        public LimbType CurrentType { get; private set; } = LimbType.Basic;
+        public ALimb CurrentLimb { get; private set; }
+
+        [SerializeField] private VoidEvent _onLimbSwitched;
 
         private List<ALimb> _inventory;
+        private int _index;
+
+        public void SwitchLimb()
+        {
+            _index++;
+            _index %= _inventory.Count;
+            CurrentLimb = _inventory[_index];
+            CurrentType = CurrentLimb.Type;
+            _onLimbSwitched.Raise();
+        }
 
         protected override void OnInitialized()
         {
+            _index = 0;
             _inventory = new List<ALimb>();
-            //_inventory[LimbType.Basic] = 
+            // _inventory.Add();
         }
     }
 }
