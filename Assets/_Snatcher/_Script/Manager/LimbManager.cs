@@ -27,7 +27,7 @@ namespace Snatcher
         {
             _index = 0;
             _inventory = new List<ALimb>();
-            // _inventory.Add();
+            _inventory.Add(new BasicLimb());
         }
     }
 }
