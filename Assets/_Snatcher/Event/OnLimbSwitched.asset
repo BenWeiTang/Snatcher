@@ -10,5 +10,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c6ea807ab1a74e7a8bc78b85532b71c0, type: 3}
-  m_Name: New Void Event
+  m_Name: OnLimbSwitched
   m_EditorClassIdentifier: 
