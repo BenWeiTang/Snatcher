@@ -73,6 +73,15 @@ namespace Snatcher
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SwitchLimb"",
+                    ""type"": ""Value"",
+                    ""id"": ""ef3430b6-abbc-44e6-bc45-44698f6fc7be"",
+                    ""expectedControlType"": ""Integer"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -284,6 +293,17 @@ namespace Snatcher
                     ""action"": ""Dash"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4dcd1718-f821-470e-93d8-849edcfe1734"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SwitchLimb"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -433,6 +453,7 @@ namespace Snatcher
             m_Player_UseAbility = m_Player.FindAction("UseAbility", throwIfNotFound: true);
             m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
             m_Player_Dash = m_Player.FindAction("Dash", throwIfNotFound: true);
+            m_Player_SwitchLimb = m_Player.FindAction("SwitchLimb", throwIfNotFound: true);
             // Debug
             m_Debug = asset.FindActionMap("Debug", throwIfNotFound: true);
             m_Debug_Cheat1 = m_Debug.FindAction("Cheat 1", throwIfNotFound: true);
@@ -504,6 +525,7 @@ namespace Snatcher
         private readonly InputAction m_Player_UseAbility;
         private readonly InputAction m_Player_Interact;
         private readonly InputAction m_Player_Dash;
+        private readonly InputAction m_Player_SwitchLimb;
         public struct PlayerActions
         {
             private @PlayerControls m_Wrapper;
@@ -513,6 +535,7 @@ namespace Snatcher
             public InputAction @UseAbility => m_Wrapper.m_Player_UseAbility;
             public InputAction @Interact => m_Wrapper.m_Player_Interact;
             public InputAction @Dash => m_Wrapper.m_Player_Dash;
+            public InputAction @SwitchLimb => m_Wrapper.m_Player_SwitchLimb;
             public InputActionMap Get() { return m_Wrapper.m_Player; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -537,6 +560,9 @@ namespace Snatcher
                     @Dash.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDash;
                     @Dash.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDash;
                     @Dash.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDash;
+                    @SwitchLimb.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwitchLimb;
+                    @SwitchLimb.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwitchLimb;
+                    @SwitchLimb.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwitchLimb;
                 }
                 m_Wrapper.m_PlayerActionsCallbackInterface = instance;
                 if (instance != null)
@@ -556,6 +582,9 @@ namespace Snatcher
                     @Dash.started += instance.OnDash;
                     @Dash.performed += instance.OnDash;
                     @Dash.canceled += instance.OnDash;
+                    @SwitchLimb.started += instance.OnSwitchLimb;
+                    @SwitchLimb.performed += instance.OnSwitchLimb;
+                    @SwitchLimb.canceled += instance.OnSwitchLimb;
                 }
             }
         }
@@ -650,6 +679,7 @@ namespace Snatcher
             void OnUseAbility(InputAction.CallbackContext context);
             void OnInteract(InputAction.CallbackContext context);
             void OnDash(InputAction.CallbackContext context);
+            void OnSwitchLimb(InputAction.CallbackContext context);
         }
         public interface IDebugActions
         {
