@@ -12,6 +12,7 @@ namespace Snatcher
         public Animator Animator => _animator;
         public HookController HookController => _hookController;
         public Transform GroundCheck => _groundCheck;
+        public Transform LimbSlot => _limbSlot;
         public ASuperState CurrentSuperState => _currentSuperState;
         public ASubState CurrentSubState => _currentSubState;
         
@@ -25,6 +26,7 @@ namespace Snatcher
         [SerializeField] private Animator _animator;
         [SerializeField] private HookController _hookController;
         [SerializeField] private Transform _groundCheck;
+        [SerializeField] private Transform _limbSlot;
         // private APlayerState _currentState;
         private ASuperState _currentSuperState;
         private ASubState _currentSubState;
