@@ -6,11 +6,35 @@ namespace Snatcher
     [CreateAssetMenu(menuName = "Snatcher/Manager/Limb Manager", fileName = "LimbManager")]
     public class LimbManager : ASingletonScriptableObject<LimbManager>
     {
-        public LimbType CurrentType { get; private set; } = LimbType.Basic;
         public ALimb CurrentLimb { get; private set; }
+        
+        /// <summary>
+        /// The next limb in the current limb selection rotation. Is is what should appear in the right slot of the UI. Returns null if there are less than two available limbs.
+        /// </summary>
+        public ALimb NextLimb
+        {
+            get
+            {
+                int nextIndex = GetNextIndex(_index, _inventory.Count);
+                return nextIndex == -1 ? null : _inventory[nextIndex];
+            }
+        }
+
+        /// <summary>
+        /// The prior limb in the current limb selection rotation. It is what should appear in the left slot of the UI. Returns null if there are less than three available limbs.
+        /// </summary>
+        public ALimb PriorLimb
+        {
+            get
+            {
+                int priorIndex = GetPriorIndex(_index, _inventory.Count);
+                return priorIndex == -1 ? null : _inventory[priorIndex];
+            }
+        }
+
+        public LimbType CurrentType => CurrentLimb.Type;
 
         [SerializeField] private VoidEvent _onLimbSwitched;
-
         private List<ALimb> _inventory;
         private int _index;
 
@@ -19,7 +43,6 @@ namespace Snatcher
             _index++;
             _index %= _inventory.Count;
             CurrentLimb = _inventory[_index];
-            CurrentType = CurrentLimb.Type;
             _onLimbSwitched.Raise();
         }
 
@@ -27,7 +50,38 @@ namespace Snatcher
         {
             _index = 0;
             _inventory = new List<ALimb>();
-            _inventory.Add(new BasicLimb());
+            CurrentLimb = new BasicLimb();
+            
+            _inventory.Add(CurrentLimb);
+            _inventory.Add(new InvisLimb());
+            
+            _onLimbSwitched.Raise();
+        }
+
+        /// <summary>
+        /// Returns the next index given the current index and the total count of elements in the collection. Returns -1 if total is less than 2.
+        /// </summary>
+        private static int GetNextIndex(int currentIndex, int total)
+        {
+            if (total < 2)
+                return -1;
+            
+            int previousIndex = currentIndex - 1 + total;
+            previousIndex %= total;
+            return previousIndex;
+        }
+        
+        /// <summary>
+        /// Returns the previous index given the current index and the total count of elements in the collection. Returns -1 if total is less than 3.
+        /// </summary>
+        private static int GetPriorIndex(int currentIndex, int total)
+        {
+            if (total < 3)
+                return -1;
+            
+            int previousIndex = currentIndex - 1;
+            previousIndex %= total;
+            return previousIndex;
         }
     }
 }
