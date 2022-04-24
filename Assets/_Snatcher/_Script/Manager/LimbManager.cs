@@ -10,7 +10,7 @@ namespace Snatcher
         public ALimb CurrentLimb { get; private set; }
 
         [SerializeField] private VoidEvent _onLimbSwitched;
-
+        
         private List<ALimb> _inventory;
         private int _index;
 
@@ -28,6 +28,24 @@ namespace Snatcher
             _index = 0;
             _inventory = new List<ALimb>();
             _inventory.Add(new BasicLimb());
+        }
+
+        public ALimb PriorLimb()
+        {
+            if (_index != 0)
+            {
+                return _inventory[_index - 1];
+            }
+            else return null;
+        }
+
+        public ALimb NextLimb()
+        {
+            if (_index != _inventory.Count-1)
+            {
+                return _inventory[_index + 1];
+            }
+            else return null;
         }
     }
 }

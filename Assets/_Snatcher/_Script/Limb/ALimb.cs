@@ -15,5 +15,10 @@ namespace Snatcher
         {
         }
 
+        public string getName()
+        {
+            return name;
+        }
+
     }
 }
