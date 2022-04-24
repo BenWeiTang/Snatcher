@@ -6,7 +6,7 @@ namespace Snatcher
     public class HookOutState : ASubState
     {
         private bool _enemyHit;
-        public HookOutState(PlayerStateMachine currentContext, PlayerStateFactory currentFactory) : base(currentContext, currentFactory) { }
+        public HookOutState(PlayerStateMachine currentContext) : base(currentContext) { }
 
         public override async void EnterState()
         {

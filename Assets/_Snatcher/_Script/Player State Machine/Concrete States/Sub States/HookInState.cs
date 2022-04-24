@@ -2,7 +2,7 @@
 {
     public class HookInState : ASubState
     {
-        public HookInState(PlayerStateMachine currentContext, PlayerStateFactory currentFactory) : base(currentContext, currentFactory) { }
+        public HookInState(PlayerStateMachine currentContext) : base(currentContext) { }
 
         public override void EnterState()
         {

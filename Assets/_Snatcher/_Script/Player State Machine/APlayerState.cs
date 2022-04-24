@@ -5,15 +5,15 @@ namespace Snatcher
     public abstract class APlayerState
     {
         protected PlayerStateMachine Context => _context;
-        protected PlayerStateFactory Factory => _factory;
+        protected PlayerStateFactoryManager Factory => _factory;
 
         private readonly PlayerStateMachine _context;
-        private readonly PlayerStateFactory _factory;
+        private readonly PlayerStateFactoryManager _factory;
 
-        protected APlayerState(PlayerStateMachine currentContext, PlayerStateFactory currentFactory)
+        protected APlayerState(PlayerStateMachine currentContext)
         {
             _context = currentContext;
-            _factory = currentFactory;
+            _factory = PlayerStateFactoryManager.Instance;
         }
 
         public abstract void EnterState();

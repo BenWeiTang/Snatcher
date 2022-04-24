@@ -21,6 +21,11 @@ namespace Snatcher
         public abstract string Name { get; }
         
         /// <summary>
+        /// The Super State that is associated with this Limb Ability
+        /// </summary>
+        public abstract ASuperState SuperState { get; }
+        
+        /// <summary>
         /// A list of Upgrades that have been applied to this Limb Ability.
         /// </summary>
         public abstract List<AUpgrade> Upgrades { get; protected set; }
@@ -39,8 +44,6 @@ namespace Snatcher
         /// The amount of decrement every time the Durability decreases.
         /// </summary>
         protected abstract float DecrementDelta { get; set; }
-        
-        protected abstract ASuperState SuperState { get; }
         
         protected ALimb() { }
 

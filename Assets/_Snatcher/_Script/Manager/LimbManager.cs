@@ -7,7 +7,7 @@ namespace Snatcher
     public class LimbManager : ASingletonScriptableObject<LimbManager>
     {
         public ALimb CurrentLimb { get; private set; }
-        
+
         /// <summary>
         /// The next limb in the current limb selection rotation. Is is what should appear in the right slot of the UI. Returns null if there are less than two available limbs.
         /// </summary>
@@ -38,10 +38,19 @@ namespace Snatcher
         private List<ALimb> _inventory;
         private int _index;
 
-        public void SwitchLimb()
+        public void SwitchLimb(bool forward)
         {
-            _index++;
-            _index %= _inventory.Count;
+            if (forward)
+            {
+                _index++;
+                _index = Mathf.Min(_index, _inventory.Count - 1);
+            }
+            else
+            {
+                _index--;
+                _index = Mathf.Max(_index, 0);
+            }
+            
             CurrentLimb = _inventory[_index];
             _onLimbSwitched.Raise();
         }
@@ -51,10 +60,9 @@ namespace Snatcher
             _index = 0;
             _inventory = new List<ALimb>();
             CurrentLimb = new BasicLimb();
-            
+
             _inventory.Add(CurrentLimb);
             _inventory.Add(new InvisLimb());
-            
             _onLimbSwitched.Raise();
         }
 
@@ -63,25 +71,21 @@ namespace Snatcher
         /// </summary>
         private static int GetNextIndex(int currentIndex, int total)
         {
-            if (total < 2)
+            if (currentIndex == total - 1)
                 return -1;
             
-            int previousIndex = currentIndex - 1 + total;
-            previousIndex %= total;
-            return previousIndex;
+            return currentIndex + 1;
         }
-        
+
         /// <summary>
         /// Returns the previous index given the current index and the total count of elements in the collection. Returns -1 if total is less than 3.
         /// </summary>
         private static int GetPriorIndex(int currentIndex, int total)
         {
-            if (total < 3)
+            if (currentIndex == 0)
                 return -1;
-            
-            int previousIndex = currentIndex - 1;
-            previousIndex %= total;
-            return previousIndex;
+
+            return currentIndex - 1;
         }
     }
 }

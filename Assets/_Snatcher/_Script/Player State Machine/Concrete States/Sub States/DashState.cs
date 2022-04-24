@@ -9,7 +9,7 @@ namespace Snatcher
         private Vector3 _dashDirection;
         private Vector3 _destination;
         
-        public DashState(PlayerStateMachine currentContext, PlayerStateFactory currentFactory) : base(currentContext, currentFactory) { }
+        public DashState(PlayerStateMachine currentContext) : base(currentContext) { }
 
         public override async void EnterState()
         {

@@ -2,7 +2,7 @@
 {
     public class InvisIdleState : ASubState
     {
-        public InvisIdleState(PlayerStateMachine currentContext, PlayerStateFactory currentFactory) : base(currentContext, currentFactory)
+        public InvisIdleState(PlayerStateMachine currentContext) : base(currentContext)
         {
         }
 

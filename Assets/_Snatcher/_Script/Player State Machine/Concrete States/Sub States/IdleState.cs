@@ -5,7 +5,7 @@ namespace Snatcher
 {
     public class IdleState : ASubState
     {
-        public IdleState(PlayerStateMachine currentContext, PlayerStateFactory currentFactory) : base(currentContext, currentFactory) { }
+        public IdleState(PlayerStateMachine currentContext) : base(currentContext) { }
 
 
         public override void EnterState()

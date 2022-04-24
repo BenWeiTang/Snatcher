@@ -6,7 +6,7 @@ namespace Snatcher
     {
         private Vector3 _currentDirection;
         
-        public FallState(PlayerStateMachine currentContext, PlayerStateFactory currentFactory) : base(currentContext, currentFactory) { }
+        public FallState(PlayerStateMachine currentContext) : base(currentContext) { }
 
         public override void EnterState()
         {

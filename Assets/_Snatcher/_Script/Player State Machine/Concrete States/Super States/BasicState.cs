@@ -11,9 +11,8 @@ namespace Snatcher
         public sealed override int IsFallingHash { get; protected set; }
         public sealed override int IsThrowingHash { get; protected set; }
 
-        public BasicState(PlayerStateMachine currentContext, PlayerStateFactory currentFactory) : base(currentContext, currentFactory)
+        public BasicState(PlayerStateMachine currentContext) : base(currentContext)
         {
-            AbilityEntryState = Factory.Idle;
             IsMovingHash = Animator.StringToHash("IsMoving");
             IsFallingHash = Animator.StringToHash("IsFalling");
             IsThrowingHash = Animator.StringToHash("IsThrowing");
@@ -21,33 +20,21 @@ namespace Snatcher
 
         public override void EnterState()
         {
-            Context.PlayerInput.Player.SwitchLimb.started += OnSwitchLimbPressed;
+            base.EnterState();
+            AbilityEntryState = Factory.Idle;
         }
 
         public override void ExitState()
         {
-            Context.PlayerInput.Player.SwitchLimb.started -= OnSwitchLimbPressed;
+            base.ExitState();
         }
 
-        public override void UpdateState() { }
-
-        protected override void CheckSwitchState() { }
-
-        private void OnSwitchLimbPressed(InputAction.CallbackContext callbackContext)
+        public override void UpdateState()
         {
-            var nextLimbType = LimbManager.Instance.NextLimb.Type;
-            switch (nextLimbType)
-            {
-                case LimbType.Basic:
-                    Context.SwitchSuperState(Factory.BasicState);
-                    break;
-                case LimbType.Invis:
-                    Context.SwitchSuperState(Factory.InvisState);
-                    break;
-                default:
-                    Context.SwitchSuperState(Factory.BasicState);
-                    break;
-            }
+        }
+
+        protected override void CheckSwitchState()
+        {
         }
     }
 }

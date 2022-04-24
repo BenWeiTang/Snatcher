@@ -30,7 +30,6 @@ namespace Snatcher
         // private APlayerState _currentState;
         private ASuperState _currentSuperState;
         private ASubState _currentSubState;
-        private PlayerStateFactory _factory;
         private PlayerControls _playerInput;
         private CharacterController _controller;
 
@@ -50,9 +49,9 @@ namespace Snatcher
 
         private void Awake()
         { 
-            _factory = new PlayerStateFactory(this);
             _playerInput = new PlayerControls();
             _controller = GetComponent<CharacterController>();
+            PlayerStateFactoryManager.Instance.InitContext(this);
         }
 
         private void OnEnable()
@@ -71,14 +70,14 @@ namespace Snatcher
 #if UNITY_EDITOR
             _currentSuperState = _initialState switch
             {
-                DebugInitialState.Basic => _factory.BasicState,
-                DebugInitialState.Invis => _factory.InvisState,
-                _ => _factory.BasicState
+                DebugInitialState.Basic => PlayerStateFactoryManager.Instance.BasicState,
+                DebugInitialState.Invis => PlayerStateFactoryManager.Instance.InvisState,
+                _ => PlayerStateFactoryManager.Instance.BasicState
             };
-            _currentSubState = _factory.Idle;
+            _currentSubState = PlayerStateFactoryManager.Instance.Idle;
 #else
-            _currentState = _factory.Idle;
-            _currentSubState = _factory.Idle;
+            _currentSuperState = PlayerStateFactoryManager.Instance.BasicState;
+            _currentSubState = PlayerStateFactoryManager.Instance.Idle;
 #endif
             
             // There is no previous state in this case, so we enter this state fresh, thus false for the argument

@@ -10,9 +10,8 @@ namespace Snatcher
         public sealed override int IsFallingHash { get; protected set; }
         public sealed override int IsThrowingHash { get; protected set; }
 
-        public InvisState(PlayerStateMachine currentContext, PlayerStateFactory currentFactory) : base(currentContext, currentFactory)
+        public InvisState(PlayerStateMachine currentContext) : base(currentContext)
         {
-            AbilityEntryState = Factory.InvisIdle;
             IsMovingHash = Animator.StringToHash("IsMoving");
             IsFallingHash = Animator.StringToHash("IsFalling");
             IsThrowingHash = Animator.StringToHash("IsThrowing");
@@ -20,10 +19,13 @@ namespace Snatcher
 
         public override void EnterState()
         {
+            base.EnterState();
+            AbilityEntryState = Factory.InvisIdle;
         }
 
         public override void ExitState()
         {
+            base.ExitState();
         }
 
         public override void UpdateState()

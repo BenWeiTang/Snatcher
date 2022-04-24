@@ -185,7 +185,7 @@
                 {
                     "name": "",
                     "id": "0bd22393-645b-4846-af7c-f5f762385c72",
-                    "path": "<Keyboard>/q",
+                    "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "Mouse & Keyboard",
@@ -207,7 +207,7 @@
                 {
                     "name": "",
                     "id": "ebf31efa-d6fb-491a-b0dd-ca40bdcc7264",
-                    "path": "<Keyboard>/e",
+                    "path": "<Keyboard>/leftShift",
                     "interactions": "",
                     "processors": "",
                     "groups": "Mouse & Keyboard",
@@ -273,7 +273,7 @@
                 {
                     "name": "",
                     "id": "302c2231-0f24-4063-b1f4-a67debc93504",
-                    "path": "<Mouse>/scroll",
+                    "path": "<Mouse>/scroll/Y",
                     "interactions": "",
                     "processors": "",
                     "groups": "Mouse & Keyboard",
@@ -310,6 +310,39 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
+                    "action": "SwitchLimb",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Keyboard",
+                    "id": "e5d3a537-135d-4f37-a769-13a7a9ceb262",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SwitchLimb",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "5e0b580d-6ab3-4c09-86ab-66d5c82945d6",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mouse & Keyboard",
+                    "action": "SwitchLimb",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "b6003492-2467-4fe5-844e-b888dc89cb3a",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mouse & Keyboard",
                     "action": "SwitchLimb",
                     "isComposite": false,
                     "isPartOfComposite": true

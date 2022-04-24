@@ -6,7 +6,7 @@ namespace Snatcher
     public class MoveState : ASubState
     {
         private Vector3 _currentDirection;
-        public MoveState(PlayerStateMachine currentContext, PlayerStateFactory currentFactory) : base(currentContext, currentFactory) { }
+        public MoveState(PlayerStateMachine currentContext) : base(currentContext) { }
 
         public override void EnterState()
         {
