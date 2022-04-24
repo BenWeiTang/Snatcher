@@ -78,7 +78,7 @@ namespace Snatcher
                     ""name"": ""SwitchLimb"",
                     ""type"": ""Value"",
                     ""id"": ""ef3430b6-abbc-44e6-bc45-44698f6fc7be"",
-                    ""expectedControlType"": ""Integer"",
+                    ""expectedControlType"": ""Axis"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
@@ -296,14 +296,47 @@ namespace Snatcher
                 },
                 {
                     ""name"": """",
-                    ""id"": ""4dcd1718-f821-470e-93d8-849edcfe1734"",
-                    ""path"": """",
+                    ""id"": ""302c2231-0f24-4063-b1f4-a67debc93504"",
+                    ""path"": ""<Mouse>/scroll"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse & Keyboard"",
+                    ""action"": ""SwitchLimb"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""Gamepad Shoulders"",
+                    ""id"": ""25d38dbb-233a-46ac-ac38-9403469b3980"",
+                    ""path"": ""1DAxis"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""SwitchLimb"",
-                    ""isComposite"": false,
+                    ""isComposite"": true,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""08d143ef-7636-4cd6-aeea-924f389ad359"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""SwitchLimb"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""758dff32-a82b-4eb8-84bd-b4c823b3ef4d"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""SwitchLimb"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         },
