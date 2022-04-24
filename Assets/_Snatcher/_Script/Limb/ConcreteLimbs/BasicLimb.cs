@@ -5,8 +5,6 @@ namespace Snatcher
 {
     public class BasicLimb : ALimb
     {
-        // string path = "Manager/" + typeof(T).ToString().Substring(9);
-
         public sealed override GameObject Model => Resources.Load<GameObject>($"Limb/{GetType().ToString().Substring(9)}");
         public override LimbType Type => LimbType.Basic;
         public override string Name => "Basic";
