@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 394d1025eb35f094aa201baa2117935c, type: 3}
   m_Name: LimbManager
   m_EditorClassIdentifier: 
+  _onLimbSwitched: {fileID: 11400000, guid: b1c09df237308ab4d94b96eeef467076, type: 2}

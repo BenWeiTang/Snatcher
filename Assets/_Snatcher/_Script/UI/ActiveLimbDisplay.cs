@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,51 +5,47 @@ namespace Snatcher
 {
     public class ActiveLimbDisplay : MonoBehaviour
     {
-        [SerializeField] public GameObject currentLimbDisplay;
-        [SerializeField] public GameObject priorLimbDisplay;
-        [SerializeField] public GameObject nextLimbDisplay;
+        [Header("Debug")]
+        [SerializeField] private bool _debug;
+        
+        [Header("Text Display")]
+        [SerializeField] private GameObject _currentLimbDisplay;
+        [SerializeField] private GameObject _priorLimbDisplay;
+        [SerializeField] private GameObject _nextLimbDisplay;
 
-        private Text currentLimbDisplayText;
-        private Text priorLimbDisplayText;
-        private Text nextLimbDisplayText;
-        // Start is called before the first frame update
-        void Start()
+        [Header("Event")]
+        [SerializeField] private VoidEvent _onLimbSwitched;
+
+        private Text _currentLimbDisplayText;
+        private Text _priorLimbDisplayText;
+        private Text _nextLimbDisplayText;
+        
+        private void Awake()
         {
-            currentLimbDisplayText = currentLimbDisplay.GetComponent<Text>();
-            priorLimbDisplayText = priorLimbDisplay.GetComponent<Text>();
-            nextLimbDisplayText = nextLimbDisplay.GetComponent<Text>();
+            _currentLimbDisplayText = _currentLimbDisplay.GetComponent<Text>();
+            _priorLimbDisplayText = _priorLimbDisplay.GetComponent<Text>();
+            _nextLimbDisplayText = _nextLimbDisplay.GetComponent<Text>();
         }
 
-        // Update is called once per frame
-        void Update()
+        private void Start()
         {
-            //can uncomment once limb manager is correctly switching and equipping limbs or once limbs are attached to player
-            Debug.Log(LimbManager.Instance.CurrentLimb);
-            if(LimbManager.Instance.CurrentLimb != null)
+            UpdateUIDisplay(new Void()); // Weird syntax I know -Ben 4/23/2022
+        }
+
+        private void OnEnable() => _onLimbSwitched.RegisterListener(UpdateUIDisplay);
+        private void OnDisable() => _onLimbSwitched.UnregisterListener(UpdateUIDisplay);
+
+        private void UpdateUIDisplay(Void _)
+        {
+            if (_debug)
             {
-                currentLimbDisplayText.text = LimbManager.Instance.CurrentLimb.Name;
-            }
-            else
-            {
-                currentLimbDisplayText.text = "";
-            }
-            if (LimbManager.Instance.PriorLimb() != null)
-            {
-                priorLimbDisplayText.text = LimbManager.Instance.PriorLimb().Name;
-            } 
-            else
-            {
-                priorLimbDisplayText.text = "";
-            }
-            if(LimbManager.Instance.NextLimb() != null)
-            {
-                nextLimbDisplayText.text = LimbManager.Instance.NextLimb().Name;
-            }
-            else
-            {
-                nextLimbDisplayText.text = "";
+                this.Log($"Current Limb: {LimbManager.Instance.CurrentLimb.Name}.");
             }
             
+            // Current limb name
+            _currentLimbDisplayText.text = LimbManager.Instance.CurrentLimb != null ? LimbManager.Instance.CurrentLimb.Name : "";
+            _priorLimbDisplayText.text = LimbManager.Instance.PriorLimb != null ? LimbManager.Instance.PriorLimb.Name : "";
+            _nextLimbDisplayText.text = LimbManager.Instance.NextLimb != null ? LimbManager.Instance.NextLimb.Name : "";
         }
     }
 }

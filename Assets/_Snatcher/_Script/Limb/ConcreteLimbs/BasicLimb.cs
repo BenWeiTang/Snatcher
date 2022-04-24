@@ -1,17 +1,23 @@
+using System.Collections.Generic;
 using UnityEngine;
+
 namespace Snatcher
 {
     public class BasicLimb : ALimb
     {
-        //talk to ben about the best way to do this
-        public GameObject model = (GameObject)Resources.Load("Assets/_Snatcher/Prefab/Player", typeof(GameObject));
+        // string path = "Manager/" + typeof(T).ToString().Substring(9);
+
+        public sealed override GameObject Model => Resources.Load<GameObject>($"Limb/{GetType().ToString().Substring(9)}");
         public override LimbType Type => LimbType.Basic;
         public override string Name => "Basic";
+        public sealed override List<AUpgrade> Upgrades { get; protected set; }
+        public override float Durability { get; protected set; } = float.PositiveInfinity;
+        public override float MaxDurability { get; protected set; } = float.PositiveInfinity;
+        protected override float DecrementDelta { get; set; } = 0f;
 
-        private float durability = float.PositiveInfinity;
         public BasicLimb() : base()
         {
+            Upgrades = new List<AUpgrade>();
         }
-
     }
 }
