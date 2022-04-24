@@ -40,6 +40,8 @@ namespace Snatcher
         /// </summary>
         protected abstract float DecrementDelta { get; set; }
         
+        protected abstract ASuperState SuperState { get; }
+        
         protected ALimb() { }
 
         /// <summary>

@@ -34,13 +34,6 @@ namespace Snatcher
         private PlayerControls _playerInput;
         private CharacterController _controller;
 
-        // public void SwitchState(APlayerState nextState, bool hasSameSuperState)
-        // {
-        //     _currentState.ExitState();
-        //     _currentState = nextState;
-        //     _currentState.EnterState();
-        // }
-
         public void SwitchSuperState(ASuperState nextSuperState)
         {
             _currentSuperState.ExitState();

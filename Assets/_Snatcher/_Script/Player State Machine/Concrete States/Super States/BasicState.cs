@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace Snatcher
 {
@@ -20,18 +21,33 @@ namespace Snatcher
 
         public override void EnterState()
         {
+            Context.PlayerInput.Player.SwitchLimb.started += OnSwitchLimbPressed;
         }
 
         public override void ExitState()
         {
+            Context.PlayerInput.Player.SwitchLimb.started -= OnSwitchLimbPressed;
         }
 
-        public override void UpdateState()
-        {
-        }
+        public override void UpdateState() { }
 
-        protected override void CheckSwitchState()
+        protected override void CheckSwitchState() { }
+
+        private void OnSwitchLimbPressed(InputAction.CallbackContext callbackContext)
         {
+            var nextLimbType = LimbManager.Instance.NextLimb.Type;
+            switch (nextLimbType)
+            {
+                case LimbType.Basic:
+                    Context.SwitchSuperState(Factory.BasicState);
+                    break;
+                case LimbType.Invis:
+                    Context.SwitchSuperState(Factory.InvisState);
+                    break;
+                default:
+                    Context.SwitchSuperState(Factory.BasicState);
+                    break;
+            }
         }
     }
 }

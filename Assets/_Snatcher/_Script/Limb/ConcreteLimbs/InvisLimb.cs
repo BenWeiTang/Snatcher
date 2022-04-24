@@ -12,6 +12,7 @@ namespace Snatcher
         public override float Durability { get; protected set; }
         public override float MaxDurability { get; protected set; }
         protected override float DecrementDelta { get; set; } = 5f;
+        protected override ASuperState SuperState { get; }
 
         public InvisLimb() : base()
         {

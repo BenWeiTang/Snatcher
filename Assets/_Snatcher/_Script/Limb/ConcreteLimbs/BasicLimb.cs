@@ -12,6 +12,7 @@ namespace Snatcher
         public override float Durability { get; protected set; } = float.PositiveInfinity;
         public override float MaxDurability { get; protected set; } = float.PositiveInfinity;
         protected override float DecrementDelta { get; set; } = 0f;
+        protected override ASuperState SuperState { get; }
 
         public BasicLimb() : base()
         {
