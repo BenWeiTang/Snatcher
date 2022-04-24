@@ -26,9 +26,10 @@ namespace Snatcher
         void Update()
         {
             //can uncomment once limb manager is correctly switching and equipping limbs or once limbs are attached to player
+            Debug.Log(LimbManager.Instance.CurrentLimb);
             if(LimbManager.Instance.CurrentLimb != null)
             {
-                currentLimbDisplayText.text = LimbManager.Instance.CurrentLimb.getName();
+                currentLimbDisplayText.text = LimbManager.Instance.CurrentLimb.Name;
             }
             else
             {
@@ -36,7 +37,7 @@ namespace Snatcher
             }
             if (LimbManager.Instance.PriorLimb() != null)
             {
-                priorLimbDisplayText.text = LimbManager.Instance.PriorLimb().getName();
+                priorLimbDisplayText.text = LimbManager.Instance.PriorLimb().Name;
             } 
             else
             {
@@ -44,7 +45,7 @@ namespace Snatcher
             }
             if(LimbManager.Instance.NextLimb() != null)
             {
-                nextLimbDisplayText.text = LimbManager.Instance.NextLimb().getName();
+                nextLimbDisplayText.text = LimbManager.Instance.NextLimb().Name;
             }
             else
             {

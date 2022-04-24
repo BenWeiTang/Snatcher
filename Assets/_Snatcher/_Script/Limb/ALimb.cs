@@ -7,7 +7,7 @@ namespace Snatcher
         //talk to ben about the best way to do this
         public GameObject model { get; }
         public abstract LimbType Type { get; }
-        private string name { get; }
+        public abstract string Name { get; }
         private AUpgrade upgrade { get; set; }
         private float durability { get; set; }
         
@@ -15,10 +15,6 @@ namespace Snatcher
         {
         }
 
-        public string getName()
-        {
-            return name;
-        }
 
     }
 }
