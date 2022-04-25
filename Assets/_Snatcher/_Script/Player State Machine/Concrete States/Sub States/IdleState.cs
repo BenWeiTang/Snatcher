@@ -13,13 +13,13 @@ namespace Snatcher
             if (Context.Debug) this.Log("Enter");
             
             Context.PlayerInput.Player.Dash.started += OnDashPressed;
-            Context.PlayerInput.Player.Snatch.started += OnHookPressed;
+            Context.PlayerInput.Player.UseAbility.started += OnHookPressed;
         }
 
         public override void ExitState()
         {
             Context.PlayerInput.Player.Dash.started -= OnDashPressed;
-            Context.PlayerInput.Player.Snatch.started -= OnHookPressed;
+            Context.PlayerInput.Player.UseAbility.started -= OnHookPressed;
         }
 
         public override void UpdateState()

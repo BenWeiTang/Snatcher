@@ -15,18 +15,9 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Snatch",
-                    "type": "Button",
-                    "id": "5b901fc4-6c41-492a-8361-2847fd45bba1",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "UseAbility",
                     "type": "Button",
-                    "id": "149eac73-0e66-465d-9d0d-d504cca628f0",
+                    "id": "5b901fc4-6c41-492a-8361-2847fd45bba1",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -189,7 +180,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Mouse & Keyboard",
-                    "action": "Snatch",
+                    "action": "UseAbility",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -197,28 +188,6 @@
                     "name": "",
                     "id": "0a936fdd-7d3f-4a0c-b2f1-f3e8180dfee9",
                     "path": "<Gamepad>/leftTrigger",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Gamepad",
-                    "action": "Snatch",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "ebf31efa-d6fb-491a-b0dd-ca40bdcc7264",
-                    "path": "<Keyboard>/leftShift",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Mouse & Keyboard",
-                    "action": "UseAbility",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "5a33b9b4-23c6-4301-828b-88605e92b8aa",
-                    "path": "<Gamepad>/rightTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",

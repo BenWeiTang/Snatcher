@@ -14,7 +14,7 @@ namespace Snatcher
             
             Context.PlayerInput.Player.Movement.canceled += OnMovementCanceled;
             Context.PlayerInput.Player.Dash.started += OnDashPressed;
-            Context.PlayerInput.Player.Snatch.started += OnHookPressed;
+            Context.PlayerInput.Player.UseAbility.started += OnHookPressed;
             Context.Animator.SetBool(SuperState.IsMovingHash, true);
         }
 
@@ -22,7 +22,7 @@ namespace Snatcher
         {
             Context.PlayerInput.Player.Movement.canceled -= OnMovementCanceled;
             Context.PlayerInput.Player.Dash.started -= OnDashPressed;
-            Context.PlayerInput.Player.Snatch.started -= OnHookPressed;
+            Context.PlayerInput.Player.UseAbility.started -= OnHookPressed;
             Context.Animator.SetBool(SuperState.IsMovingHash, false);
         }
 
