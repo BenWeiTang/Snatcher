@@ -17,30 +17,27 @@ namespace Snatcher
         public DashState Dash { get; private set; }
         public HookOutState HookOut { get; private set; }
         public HookInState HookIn { get; private set; }
+        public GrappleTowardState GrappleToward { get; private set; }
         public InvisIdleState InvisIdle { get; private set; }
-
-        // Context instance
-        public PlayerStateMachine Context { get; set; }
         
         public void InitContext(PlayerStateMachine context)
         {
-            Context = context;
-            
             // Cache instances of concrete states
             // Super states
-            BasicState = new BasicState(Context);
-            InvisState = new InvisState(Context);
+            BasicState = new BasicState(context);
+            InvisState = new InvisState(context);
 
             // Sub state
-            Idle = new IdleState(Context);
-            Move = new MoveState(Context);
-            Fall = new FallState(Context);
-            Dash = new DashState(Context);
-            HookOut = new HookOutState(Context);
-            HookIn = new HookInState(Context);
+            Idle = new IdleState(context);
+            Move = new MoveState(context);
+            Fall = new FallState(context);
+            Dash = new DashState(context);
+            HookOut = new HookOutState(context);
+            HookIn = new HookInState(context);
+            GrappleToward = new GrappleTowardState(context);
             
             // Limb-specific ability states
-            InvisIdle = new InvisIdleState(Context);
+            InvisIdle = new InvisIdleState(context);
         }
     }
 }

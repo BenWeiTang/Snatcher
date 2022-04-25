@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5919510233669318162}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -72,6 +72,7 @@ MonoBehaviour:
   _hookController: {fileID: 5919510233847362698}
   _groundCheck: {fileID: 7775988662949949368}
   _limbSlot: {fileID: 7962829005810540800}
+  _canGrapple: {fileID: 11400000, guid: 24083f218e1b49948b33c190cbcc4910, type: 2}
 --- !u!1 &5919510233847362692
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,11 +8,13 @@ namespace Snatcher
         //TODO: we want to read what type of enemy we hit
         //TODO: we want to determine if the timing is right and we can snatch the ability
         public event Action OnEnemyHit;
-        [SerializeField] private BoxCollider _collider;
+        public event Action<Vector3> OnGrappleHit;
         
+        [SerializeField] private BoxCollider _collider;
+
         // Remove later; for debug use only
         private MeshRenderer _meshRenderer;
-        
+
         public void ActivateCollider(bool toActivate)
         {
             _meshRenderer.enabled = toActivate;
@@ -27,7 +29,14 @@ namespace Snatcher
 
         private void OnTriggerEnter(Collider other)
         {
-            OnEnemyHit?.Invoke();
+            if (other.CompareTag("Enemy"))
+            {
+                OnEnemyHit?.Invoke();
+            }
+            else if (other.CompareTag("Grapple"))
+            {
+                OnGrappleHit?.Invoke(other.transform.position);
+            }
         }
     }
 }

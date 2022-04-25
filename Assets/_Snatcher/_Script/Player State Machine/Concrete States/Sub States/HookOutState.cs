@@ -5,7 +5,7 @@ namespace Snatcher
 {
     public class HookOutState : ASubState
     {
-        private bool _enemyHit;
+        private bool _hit;
         public HookOutState(PlayerStateMachine currentContext) : base(currentContext) { }
 
         public override async void EnterState()
@@ -13,17 +13,19 @@ namespace Snatcher
             if (Context.Debug) this.Log("Enter");
             
             Context.HookController.OnEnemyHit += OnHookHitEnemy;
+            Context.HookController.OnGrappleHit += OnHootHitGrapple;
             Context.Animator.SetBool(SuperState.IsThrowingHash, true);
 
             await HandleHitBoxActivation();
 
-            // Having exited the loop, it means time is up
+            // Having exited the loop means time is up
             Context.SwitchSubState(Factory.HookIn);
         }
 
         public override void ExitState()
         {
             Context.HookController.OnEnemyHit -= OnHookHitEnemy;
+            Context.HookController.OnGrappleHit -= OnHootHitGrapple;
             Context.HookController.ActivateCollider(false);
         }
 
@@ -34,9 +36,18 @@ namespace Snatcher
         //TODO: depending on what enemy is hit, transition to a different state
         private void OnHookHitEnemy()
         {
-            _enemyHit = true;
-            // Context.SwitchSuperState(Factory.BasicState);
+            _hit = true;
             Context.SwitchSubState(Factory.Idle);
+        }
+
+        private void OnHootHitGrapple(Vector3 grappleDestination)
+        {
+            _hit = true;
+            if (Context.CanGrapple)
+            {
+                Context.GrappleDestination = grappleDestination;
+                Context.SwitchSubState(Factory.GrappleToward);
+            }
         }
         
         private async Task HandleHitBoxActivation()
@@ -44,12 +55,11 @@ namespace Snatcher
             await Task.Delay((int)(SuperState.StateConfig.StartupWindow * 1_000));
             Context.HookController.ActivateCollider(true);
             
-            // Reset parameters
             float exitTime = Time.time + SuperState.StateConfig.ActiveWindow;
-            _enemyHit = false;
+            _hit = false;
             
-            // If the enemy is not hit yet AND time is not exit time yet, keep looping
-            while (!_enemyHit && Time.time < exitTime)
+            // If nothing is hit yet AND time is not exit time yet, keep looping
+            while (!_hit && Time.time < exitTime)
             {
                 await Task.Yield();
             }
