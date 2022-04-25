@@ -21,7 +21,7 @@ namespace Snatcher
         public override void EnterState()
         {
             base.EnterState();
-            AbilityEntryState = Factory.Idle;
+            AbilityEntryState = Factory.HookOut;
         }
 
         public override void ExitState()
