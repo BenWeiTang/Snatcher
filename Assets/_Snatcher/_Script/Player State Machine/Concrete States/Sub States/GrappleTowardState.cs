@@ -23,11 +23,15 @@ namespace Snatcher
 
         private async Task DoGrappleToward()
         {
-            //TODO: add duration and ease mode to config
             // Stop before the grapple post
-            Vector3 destination = (Context.transform.position - Context.GrappleDestination).normalized * 0.5f + Context.GrappleDestination;
-            destination.y = Context.transform.position.y;
-            await Context.transform.DOMove(destination, 1f).SetEase(Ease.OutQuad).AsyncWaitForCompletion();
+            Transform ct = Context.transform;
+            Vector3 playerPos = ct.position;
+            Vector3 grapplePosition = Context.GrappleDestination;
+            grapplePosition.y = playerPos.y;
+            
+            Vector3 forward = (grapplePosition - playerPos).normalized;
+            Vector3 destination = -1f * forward + grapplePosition;
+            await ct.DOMove(destination, 0.5f).SetEase(Ease.OutQuint).AsyncWaitForCompletion();
             Context.SwitchSubState(Factory.Idle);
         }
     }

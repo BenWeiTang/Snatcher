@@ -17,9 +17,6 @@ namespace Snatcher
             Context.Animator.SetBool(SuperState.IsThrowingHash, true);
 
             await HandleHitBoxActivation();
-
-            // Having exited the loop means time is up and nothing is hit
-            Context.SwitchSubState(Factory.Idle);
         }
 
         public override void ExitState()
@@ -63,6 +60,13 @@ namespace Snatcher
             while (!_hit && Time.time < exitTime)
             {
                 await Task.Yield();
+            }
+
+            // If we reach this point because time is up not because we hit something
+            // We want to transition back to idle
+            if (!_hit)
+            {
+                Context.SwitchSubState(Factory.Idle);
             }
         }
     }

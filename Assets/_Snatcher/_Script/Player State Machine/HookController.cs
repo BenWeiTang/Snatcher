@@ -11,20 +11,24 @@ namespace Snatcher
         public event Action<Vector3> OnGrappleHit;
         
         [SerializeField] private BoxCollider _collider;
+        [SerializeField] private FloatReference _hookLength;
 
         // Remove later; for debug use only
-        private MeshRenderer _meshRenderer;
+        [SerializeField] private MeshRenderer _meshRenderer;
+        
 
         public void ActivateCollider(bool toActivate)
         {
             _meshRenderer.enabled = toActivate;
             _collider.enabled = toActivate;
         }
-
-        private void Awake()
+        
+        private void Update()
         {
-            // Remove later; for debug use only
-            _meshRenderer = GetComponent<MeshRenderer>();
+            Transform t = transform;
+            Vector3 localScale = t.localScale;
+            localScale.z = _hookLength.Value;
+            t.localScale = localScale;
         }
 
         private void OnTriggerEnter(Collider other)
