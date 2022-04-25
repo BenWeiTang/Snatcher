@@ -18,8 +18,8 @@ namespace Snatcher
 
             await HandleHitBoxActivation();
 
-            // Having exited the loop means time is up
-            Context.SwitchSubState(Factory.HookIn);
+            // Having exited the loop means time is up and nothing is hit
+            Context.SwitchSubState(Factory.Idle);
         }
 
         public override void ExitState()
@@ -27,6 +27,7 @@ namespace Snatcher
             Context.HookController.OnEnemyHit -= OnHookHitEnemy;
             Context.HookController.OnGrappleHit -= OnHootHitGrapple;
             Context.HookController.ActivateCollider(false);
+            Context.Animator.SetBool(SuperState.IsThrowingHash, false);
         }
 
         public override void UpdateState() { }

@@ -16,7 +16,6 @@ namespace Snatcher
         public FallState Fall { get; private set; }
         public DashState Dash { get; private set; }
         public HookOutState HookOut { get; private set; }
-        public HookInState HookIn { get; private set; }
         public GrappleTowardState GrappleToward { get; private set; }
         public InvisIdleState InvisIdle { get; private set; }
         
@@ -33,7 +32,6 @@ namespace Snatcher
             Fall = new FallState(context);
             Dash = new DashState(context);
             HookOut = new HookOutState(context);
-            HookIn = new HookInState(context);
             GrappleToward = new GrappleTowardState(context);
             
             // Limb-specific ability states

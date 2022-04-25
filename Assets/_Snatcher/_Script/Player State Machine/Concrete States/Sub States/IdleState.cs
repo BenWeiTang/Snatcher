@@ -13,13 +13,13 @@ namespace Snatcher
             if (Context.Debug) this.Log("Enter");
             
             Context.PlayerInput.Player.Dash.started += OnDashPressed;
-            Context.PlayerInput.Player.UseAbility.started += OnHookPressed;
+            Context.PlayerInput.Player.UseAbility.started += OnAbilityPressed;
         }
 
         public override void ExitState()
         {
             Context.PlayerInput.Player.Dash.started -= OnDashPressed;
-            Context.PlayerInput.Player.UseAbility.started -= OnHookPressed;
+            Context.PlayerInput.Player.UseAbility.started -= OnAbilityPressed;
         }
 
         public override void UpdateState()
@@ -43,6 +43,6 @@ namespace Snatcher
         
         private void UpdateMovement() => Context.Controller.Move(new Vector3(0f, SuperState.StateConfig.GroundedGravity, 0f) * Time.deltaTime);
         private void OnDashPressed(InputAction.CallbackContext _) => Context.SwitchSubState(Factory.Dash);
-        private void OnHookPressed(InputAction.CallbackContext _) => Context.SwitchSubState(Factory.HookOut);
+        private void OnAbilityPressed(InputAction.CallbackContext _) => Context.SwitchSubState(SuperState.AbilityEntryState);
     }
 }
