@@ -20,7 +20,8 @@ namespace Snatcher
         public override void EnterState()
         {
             base.EnterState();
-            AbilityEntryState = Factory.InvisIdle;
+            //TODO: change to InvisIdle when implementation is done
+            AbilityEntryState = Factory.Idle;
         }
 
         public override void ExitState()

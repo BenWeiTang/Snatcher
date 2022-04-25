@@ -34,7 +34,7 @@ namespace Snatcher
             var upcomingState = LimbManager.Instance.CurrentLimb.SuperState;
             if (upcomingState != null)
             {
-                Context.SwitchSuperState(LimbManager.Instance.CurrentLimb.SuperState);
+                Context.SwitchSuperState(upcomingState);
             }
         }
     }
