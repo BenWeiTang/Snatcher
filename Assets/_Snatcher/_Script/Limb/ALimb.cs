@@ -50,7 +50,7 @@ namespace Snatcher
         /// <summary>
         /// Decrease the Durability by DecrementDelta.
         /// </summary>
-        public void DecrementDurability() => Mathf.Max(0f, Durability - DecrementDelta);
+        public void DecrementDurability() => Durability = Mathf.Max(0f, Durability - DecrementDelta);
 
         /// <summary>
         /// Repair Durability to its maximum.
