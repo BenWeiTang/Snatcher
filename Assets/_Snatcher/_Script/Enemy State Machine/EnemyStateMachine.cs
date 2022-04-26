@@ -16,6 +16,9 @@ namespace Snatcher
         [Tooltip("The first state the enemy will start with. For example, in the beginning of a level, the enemy may be in idle or on patrol.")]
         [SerializeField] private AEnemyState _defaultState;
         [SerializeField] private Animator _animator;
+        
+        
+        public float EnemyLookDistance;
 
         private NavMeshAgent _agent;
 
