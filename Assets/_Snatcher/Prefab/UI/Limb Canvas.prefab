@@ -201,7 +201,9 @@ MonoBehaviour:
   _currentLimbDisplay: {fileID: 5766277811640035478}
   _priorLimbDisplay: {fileID: 5766277812021146233}
   _nextLimbDisplay: {fileID: 5766277810602415782}
+  _activeDurabilityDisplay: {fileID: 3282019173236308755}
   _onLimbSwitched: {fileID: 11400000, guid: b1c09df237308ab4d94b96eeef467076, type: 2}
+  _onAbilityUsed: {fileID: 11400000, guid: 54f4dabd2782e6249bf93c783afbc95b, type: 2}
 --- !u!1 &5766277810602415782
 GameObject:
   m_ObjectHideFlags: 0
