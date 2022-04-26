@@ -26,7 +26,7 @@ namespace Snatcher
                    context.EnemyLookDistance) && hitInfo.collider.CompareTag("Player"))
            {
                context.ChaseTarget = hitInfo.transform;
-               Debug.Log("I can see you");
+               //Debug.Log("I can see you");
                return true;
            }
            else
