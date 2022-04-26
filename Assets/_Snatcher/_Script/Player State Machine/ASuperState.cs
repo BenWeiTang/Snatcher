@@ -5,15 +5,19 @@ namespace Snatcher
 {
     public abstract class ASuperState : APlayerState
     {
-        protected ASuperState(PlayerStateMachine currentContext) : base(currentContext)
-        {
-        }
-
         public abstract PlayerStateConfig StateConfig { get; set; }
         public abstract ASubState AbilityEntryState { get; protected set; }
-        public abstract int IsMovingHash { get; protected set; }
-        public abstract int IsFallingHash { get; protected set; }
+        public int IsMovingHash { get; }
+        public int IsFallingHash { get; }
+        public int IsDashingHash { get; }
         public abstract int IsEnteringAbilityHash { get; protected set; }
+
+        protected ASuperState(PlayerStateMachine currentContext) : base(currentContext)
+        {
+            IsMovingHash = Animator.StringToHash("IsMoving");
+            IsFallingHash = Animator.StringToHash("IsFalling");
+            IsDashingHash = Animator.StringToHash("IsDashing");
+        }
 
         public override void EnterState()
         {

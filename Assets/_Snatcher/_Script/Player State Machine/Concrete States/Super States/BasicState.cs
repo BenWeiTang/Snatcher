@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.InputSystem;
 
 namespace Snatcher
 {
@@ -7,16 +6,10 @@ namespace Snatcher
     {
         public override PlayerStateConfig StateConfig { get; set; } = StateConfigManager.Instance.BasicStateConfig;
         public sealed override ASubState AbilityEntryState { get; protected set; }
-        public sealed override int IsMovingHash { get; protected set; }
-        public sealed override int IsFallingHash { get; protected set; }
-        
-        //TODO: change isthrowinghash to use this
         public sealed override int IsEnteringAbilityHash { get; protected set; }
 
         public BasicState(PlayerStateMachine currentContext) : base(currentContext)
         {
-            IsMovingHash = Animator.StringToHash("IsMoving");
-            IsFallingHash = Animator.StringToHash("IsFalling");
             IsEnteringAbilityHash = Animator.StringToHash("IsHooking");
         }
 
@@ -31,12 +24,8 @@ namespace Snatcher
             base.ExitState();
         }
 
-        public override void UpdateState()
-        {
-        }
+        public override void UpdateState() { }
 
-        protected override void CheckSwitchState()
-        {
-        }
+        protected override void CheckSwitchState() { }
     }
 }
