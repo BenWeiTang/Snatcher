@@ -13,7 +13,7 @@ namespace Snatcher
             if (Context.Debug) this.Log("Enter");
 
             Context.PlayerInput.Player.Movement.canceled += OnMovementCanceled;
-            Context.PlayerInput.Player.UseAbility.started += OnAbilityPressed;
+            Context.PlayerInput.Player.UseAbility.performed+= OnAbilityPressed;
             Context.Animator.SetBool(SuperState.IsMovingHash, true);
         }
 
@@ -21,7 +21,7 @@ namespace Snatcher
         public override void ExitState()
         {
             Context.PlayerInput.Player.Movement.canceled -= OnMovementCanceled;
-            Context.PlayerInput.Player.UseAbility.started -= OnAbilityPressed;
+            Context.PlayerInput.Player.UseAbility.performed -= OnAbilityPressed;
             Context.Animator.SetBool(SuperState.IsMovingHash, false);
         }
 

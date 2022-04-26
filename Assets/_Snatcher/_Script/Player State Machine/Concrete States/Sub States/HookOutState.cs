@@ -21,7 +21,7 @@ namespace Snatcher
             //TODO: remove later
             // If we can be in hook out, we must be in basic super state
             // When we enter this state, we used the ability once
-            LimbManager.Instance.CurrentLimb.DecrementDurability();
+            LimbManager.Instance.DecrementLimbDurability();
 
             await HandleHitBoxActivation();
         }

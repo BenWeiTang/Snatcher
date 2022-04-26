@@ -17,6 +17,7 @@ namespace Snatcher
 
         [Header("Event")]
         [SerializeField] private VoidEvent _onLimbSwitched;
+        [SerializeField] private VoidEvent _onAbilityUsed;
 
         private Text _currentLimbDisplayText;
         private Text _priorLimbDisplayText;
@@ -35,15 +36,18 @@ namespace Snatcher
         {
             UpdateUIDisplay(new Void()); // Weird syntax I know -Ben 4/23/2022
         }
-
-        private void Update()
+        
+        private void OnEnable()
         {
-            // expensive
-            _activeDurabilityText.text = LimbManager.Instance.CurrentLimb.Durability + "/" + LimbManager.Instance.CurrentLimb.MaxDurability;
+            _onLimbSwitched.RegisterListener(UpdateUIDisplay);
+            _onAbilityUsed.RegisterListener(UpdateUIDisplay);
         }
 
-        private void OnEnable() => _onLimbSwitched.RegisterListener(UpdateUIDisplay);
-        private void OnDisable() => _onLimbSwitched.UnregisterListener(UpdateUIDisplay);
+        private void OnDisable()
+        {
+            _onLimbSwitched.UnregisterListener(UpdateUIDisplay);
+            _onAbilityUsed.UnregisterListener(UpdateUIDisplay);
+        }
 
         private void UpdateUIDisplay(Void _)
         {
@@ -56,7 +60,7 @@ namespace Snatcher
             _currentLimbDisplayText.text = LimbManager.Instance.CurrentLimb != null ? LimbManager.Instance.CurrentLimb.Name : "";
             _priorLimbDisplayText.text = LimbManager.Instance.PriorLimb != null ? LimbManager.Instance.PriorLimb.Name : "";
             _nextLimbDisplayText.text = LimbManager.Instance.NextLimb != null ? LimbManager.Instance.NextLimb.Name : "";
-            // _activeDurabilityText.text = LimbManager.Instance.CurrentLimb.Durability + "/" + LimbManager.Instance.CurrentLimb.MaxDurability;
+            _activeDurabilityText.text = LimbManager.Instance.CurrentLimb.Durability + "/" + LimbManager.Instance.CurrentLimb.MaxDurability;
         }
     }
 }
