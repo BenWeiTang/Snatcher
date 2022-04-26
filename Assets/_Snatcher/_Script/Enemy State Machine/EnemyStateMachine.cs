@@ -17,7 +17,7 @@ namespace Snatcher
         [SerializeField] private AEnemyState _defaultState;
         [SerializeField] private Animator _animator;
         
-        
+        //Need to connect this to the reference, not sure how to do that - Sandalu
         public float EnemyLookDistance;
 
         private NavMeshAgent _agent;
