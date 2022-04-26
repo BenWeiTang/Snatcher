@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -35,6 +36,12 @@ namespace Snatcher
             UpdateUIDisplay(new Void()); // Weird syntax I know -Ben 4/23/2022
         }
 
+        private void Update()
+        {
+            // expensive
+            _activeDurabilityText.text = LimbManager.Instance.CurrentLimb.Durability + "/" + LimbManager.Instance.CurrentLimb.MaxDurability;
+        }
+
         private void OnEnable() => _onLimbSwitched.RegisterListener(UpdateUIDisplay);
         private void OnDisable() => _onLimbSwitched.UnregisterListener(UpdateUIDisplay);
 
@@ -49,7 +56,7 @@ namespace Snatcher
             _currentLimbDisplayText.text = LimbManager.Instance.CurrentLimb != null ? LimbManager.Instance.CurrentLimb.Name : "";
             _priorLimbDisplayText.text = LimbManager.Instance.PriorLimb != null ? LimbManager.Instance.PriorLimb.Name : "";
             _nextLimbDisplayText.text = LimbManager.Instance.NextLimb != null ? LimbManager.Instance.NextLimb.Name : "";
-            _activeDurabilityText.text = LimbManager.Instance.CurrentLimb.Durability + "/" + LimbManager.Instance.CurrentLimb.MaxDurability;
+            // _activeDurabilityText.text = LimbManager.Instance.CurrentLimb.Durability + "/" + LimbManager.Instance.CurrentLimb.MaxDurability;
         }
     }
 }

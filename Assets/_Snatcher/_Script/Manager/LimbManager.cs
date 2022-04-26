@@ -67,7 +67,6 @@ namespace Snatcher
 
             _inventory.Add(CurrentLimb);
             _inventory.Add(new InvisLimb());
-            //_onLimbSwitched.Raise();
         }
 
         /// <summary>

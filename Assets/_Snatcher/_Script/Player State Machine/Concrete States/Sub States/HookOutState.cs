@@ -18,6 +18,11 @@ namespace Snatcher
             // This state is the entry state of basic, so we always set animation bool to true here
             Context.Animator.SetBool(SuperState.IsEnteringAbilityHash, true);
             
+            //TODO: remove later
+            // If we can be in hook out, we must be in basic super state
+            // When we enter this state, we used the ability once
+            LimbManager.Instance.CurrentLimb.DecrementDurability();
+
             await HandleHitBoxActivation();
         }
 
