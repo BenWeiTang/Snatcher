@@ -17,7 +17,9 @@ namespace Snatcher
             
             _dashDirection = Context.transform.forward;
             CalculateDestination();
+            Context.Animator.SetBool(SuperState.IsDashingHash, true);
             await DoDash();
+            Context.Animator.SetBool(SuperState.IsDashingHash, false);
         }
 
         public override void ExitState() { }
