@@ -12,6 +12,7 @@ namespace Snatcher
         [SerializeField] private GameObject _currentLimbDisplay;
         [SerializeField] private GameObject _priorLimbDisplay;
         [SerializeField] private GameObject _nextLimbDisplay;
+        [SerializeField] private GameObject _activeDurabilityDisplay;
 
         [Header("Event")]
         [SerializeField] private VoidEvent _onLimbSwitched;
@@ -19,12 +20,14 @@ namespace Snatcher
         private Text _currentLimbDisplayText;
         private Text _priorLimbDisplayText;
         private Text _nextLimbDisplayText;
+        private Text _activeDurabilityText;
         
         private void Awake()
         {
             _currentLimbDisplayText = _currentLimbDisplay.GetComponent<Text>();
             _priorLimbDisplayText = _priorLimbDisplay.GetComponent<Text>();
             _nextLimbDisplayText = _nextLimbDisplay.GetComponent<Text>();
+            _activeDurabilityText = _activeDurabilityDisplay.GetComponent<Text>();
         }
 
         private void Start()
@@ -46,6 +49,7 @@ namespace Snatcher
             _currentLimbDisplayText.text = LimbManager.Instance.CurrentLimb != null ? LimbManager.Instance.CurrentLimb.Name : "";
             _priorLimbDisplayText.text = LimbManager.Instance.PriorLimb != null ? LimbManager.Instance.PriorLimb.Name : "";
             _nextLimbDisplayText.text = LimbManager.Instance.NextLimb != null ? LimbManager.Instance.NextLimb.Name : "";
+            _activeDurabilityText.text = LimbManager.Instance.CurrentLimb.Durability + "/" + LimbManager.Instance.CurrentLimb.MaxDurability;
         }
     }
 }
