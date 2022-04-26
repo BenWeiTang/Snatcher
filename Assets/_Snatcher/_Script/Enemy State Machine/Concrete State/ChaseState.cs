@@ -9,12 +9,12 @@ namespace Snatcher
     {
         public override void OnEnterState(EnemyStateMachine context)
         {
-            throw new System.NotImplementedException();
+            UpdateState(context);
         }
 
         public override void OnExitState(EnemyStateMachine context)
         {
-            throw new System.NotImplementedException();
+            UpdateState(context);
         }
     }
 }
