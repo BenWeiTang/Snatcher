@@ -13,7 +13,7 @@ namespace Snatcher
         public abstract ASubState AbilityEntryState { get; protected set; }
         public abstract int IsMovingHash { get; protected set; }
         public abstract int IsFallingHash { get; protected set; }
-        public abstract int IsThrowingHash { get; protected set; }
+        public abstract int IsEnteringAbilityHash { get; protected set; }
 
         public override void EnterState()
         {

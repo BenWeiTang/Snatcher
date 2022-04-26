@@ -18,6 +18,7 @@ namespace Snatcher
         public HookOutState HookOut { get; private set; }
         public GrappleTowardState GrappleToward { get; private set; }
         public InvisIdleState InvisIdle { get; private set; }
+        public InvisMoveState InvisMove { get; private set; }
         
         public void InitContext(PlayerStateMachine context)
         {
@@ -31,11 +32,14 @@ namespace Snatcher
             Move = new MoveState(context);
             Fall = new FallState(context);
             Dash = new DashState(context);
-            HookOut = new HookOutState(context);
-            GrappleToward = new GrappleTowardState(context);
             
             // Limb-specific ability states
+            // Basic
+            HookOut = new HookOutState(context);
+            GrappleToward = new GrappleTowardState(context);
+            // Invis
             InvisIdle = new InvisIdleState(context);
+            InvisMove = new InvisMoveState(context);
         }
     }
 }

@@ -13,13 +13,16 @@ namespace Snatcher
             if (Context.Debug) this.Log("Enter");
             
             Context.PlayerInput.Player.Dash.started += OnDashPressed;
-            Context.PlayerInput.Player.UseAbility.started += OnAbilityPressed;
+            Context.PlayerInput.Player.UseAbility.performed += OnAbilityPressed;
+            
+            // If we enter this state, that means the current ability is not used
+            Context.Animator.SetBool(SuperState.IsEnteringAbilityHash, false);
         }
 
         public override void ExitState()
         {
             Context.PlayerInput.Player.Dash.started -= OnDashPressed;
-            Context.PlayerInput.Player.UseAbility.started -= OnAbilityPressed;
+            Context.PlayerInput.Player.UseAbility.performed -= OnAbilityPressed;
         }
 
         public override void UpdateState()

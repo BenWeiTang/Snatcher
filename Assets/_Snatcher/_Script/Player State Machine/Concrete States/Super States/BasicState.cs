@@ -9,13 +9,15 @@ namespace Snatcher
         public sealed override ASubState AbilityEntryState { get; protected set; }
         public sealed override int IsMovingHash { get; protected set; }
         public sealed override int IsFallingHash { get; protected set; }
-        public sealed override int IsThrowingHash { get; protected set; }
+        
+        //TODO: change isthrowinghash to use this
+        public sealed override int IsEnteringAbilityHash { get; protected set; }
 
         public BasicState(PlayerStateMachine currentContext) : base(currentContext)
         {
             IsMovingHash = Animator.StringToHash("IsMoving");
             IsFallingHash = Animator.StringToHash("IsFalling");
-            IsThrowingHash = Animator.StringToHash("IsThrowing");
+            IsEnteringAbilityHash = Animator.StringToHash("IsHooking");
         }
 
         public override void EnterState()
