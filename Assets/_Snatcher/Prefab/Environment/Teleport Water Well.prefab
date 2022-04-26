@@ -67,6 +67,10 @@ PrefabInstance:
       propertyPath: m_Size.z
       value: 2.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7053344071887398580, guid: 926781944856c4a42ac904f8ed66a97c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1.6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 926781944856c4a42ac904f8ed66a97c, type: 3}
 --- !u!1 &5326960614511776926 stripped
@@ -87,7 +91,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _debug: 0
-  _targetSceneIndex: 0
+  _targetSceneIndex: 1
 --- !u!1001 &6918924879045930117
 PrefabInstance:
   m_ObjectHideFlags: 0
