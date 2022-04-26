@@ -5,7 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/_Snatcher/Scene/Demo_UpperWorld_2.0.unity
+    guid: 8f022cd34c0507d4eb7c38443f708377
+  - enabled: 1
+    path: Assets/_Snatcher/Scene/Demo_Dungeon_2.0.unity
+    guid: e45cdddc102b61d4788ff3e3067fcc39
   m_configObjects: {}
