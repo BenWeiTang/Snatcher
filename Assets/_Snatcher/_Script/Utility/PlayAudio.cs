@@ -13,7 +13,7 @@ namespace Snatcher
             audioObject.GetComponent<AudioSource>().Play();
         }
 
-        private void play()
+        public void play()
         {
             audioObject.GetComponent<AudioSource>().Play();
         }

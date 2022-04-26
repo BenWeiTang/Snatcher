@@ -144,18 +144,23 @@ MonoBehaviour:
   _unityEventResponse:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: 45f8ad82c6fe1a149a16b9d285a114ec, type: 3}
-        m_TargetAssemblyTypeName: UnityEngine.Object, UnityEngine
-        m_MethodName: set_name
-        m_Mode: 5
+      - m_Target: {fileID: 5056715}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: play()
+          m_StringArgument: play
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!82 &5056715 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6611571859440140780, guid: 94299ea49deb9bb42b8de49b4efc68dd, type: 3}
+  m_PrefabInstance: {fileID: 1001079361}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &9050033
 GameObject:
   m_ObjectHideFlags: 0
@@ -691,6 +696,14 @@ PrefabInstance:
     - target: {fileID: 5242210724368583660, guid: 94299ea49deb9bb42b8de49b4efc68dd, type: 3}
       propertyPath: m_Name
       value: PlayerSounds
+      objectReference: {fileID: 0}
+    - target: {fileID: 6611571859440140780, guid: 94299ea49deb9bb42b8de49b4efc68dd, type: 3}
+      propertyPath: m_Pitch
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6611571859440140780, guid: 94299ea49deb9bb42b8de49b4efc68dd, type: 3}
+      propertyPath: m_Volume
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8295635042984417795, guid: 94299ea49deb9bb42b8de49b4efc68dd, type: 3}
       propertyPath: m_RootOrder
