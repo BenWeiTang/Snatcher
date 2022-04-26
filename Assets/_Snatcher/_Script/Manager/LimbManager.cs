@@ -50,8 +50,12 @@ namespace Snatcher
                 _index--;
                 _index = Mathf.Max(_index, 0);
             }
-            
+            ALimb priorLimb = CurrentLimb;
             CurrentLimb = _inventory[_index];
+            if (CurrentLimb.Equals(priorLimb))
+            {
+                return;
+            }
             _onLimbSwitched.Raise();
         }
 
@@ -63,7 +67,7 @@ namespace Snatcher
 
             _inventory.Add(CurrentLimb);
             _inventory.Add(new InvisLimb());
-            _onLimbSwitched.Raise();
+            //_onLimbSwitched.Raise();
         }
 
         /// <summary>
