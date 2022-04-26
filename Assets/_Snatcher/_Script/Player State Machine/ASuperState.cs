@@ -28,13 +28,17 @@ namespace Snatcher
         private void OnSwitchLimbPressed(InputAction.CallbackContext callbackContext)
         {
             bool goNext = callbackContext.ReadValue<float>() > 0;
-            
+
             // Update the current index inside LimbManager
             LimbManager.Instance.SwitchLimb(goNext);
             var upcomingState = LimbManager.Instance.CurrentLimb.SuperState;
-            if (upcomingState != null)
+            if (upcomingState != Context.CurrentSuperState)
             {
                 Context.SwitchSuperState(upcomingState);
+
+                // If we enter this clause, it means we want to switch Super States
+                // Therefore, we want to exit out whatever Ability State we were previously in, if applicable
+                Context.Animator.SetBool(IsEnteringAbilityHash, false);
             }
         }
     }
