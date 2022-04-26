@@ -11,7 +11,7 @@ namespace Snatcher
         {
             if (Context.Debug) this.Log("Enter");
 
-            Context.PlayerInput.Player.UseAbility.started += OnAbilityPressed;
+            Context.PlayerInput.Player.UseAbility.performed += OnAbilityPressed;
             
             // This state is the entry state of invis, so we always set animation bool to true here
             Context.Animator.SetBool(SuperState.IsEnteringAbilityHash, true);
@@ -19,7 +19,7 @@ namespace Snatcher
 
         public override void ExitState()
         {
-            Context.PlayerInput.Player.UseAbility.started -= OnAbilityPressed;
+            Context.PlayerInput.Player.UseAbility.performed -= OnAbilityPressed;
         }
 
         public override void UpdateState()
