@@ -1341,7 +1341,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4056378291810482346, guid: d8db2601ef8243d40a633e1ae10557d7, type: 3}
       propertyPath: m_Name
-      value: PlayerListeners
+      value: Player Listeners
       objectReference: {fileID: 0}
     - target: {fileID: 8109633216163066857, guid: d8db2601ef8243d40a633e1ae10557d7, type: 3}
       propertyPath: m_Name
