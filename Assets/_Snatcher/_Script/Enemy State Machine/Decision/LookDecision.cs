@@ -22,11 +22,11 @@ namespace Snatcher
            
            Debug.DrawRay(context.transform.position, context.transform.forward.normalized * context.EnemyLookDistance, Color.green );
            
-           if (Physics.SphereCast(context.transform.position, 5.0f, context.transform.forward.normalized, out hitInfo,
+           if (Physics.SphereCast(context.transform.position + 0.5f * Vector3.up, 5.0f, context.transform.forward.normalized, out hitInfo,
                    context.EnemyLookDistance) && hitInfo.collider.CompareTag("Player"))
            {
                context.ChaseTarget = hitInfo.transform;
-               //Debug.Log("I can see you");
+               this.Log("I can see you");
                return true;
            }
            else

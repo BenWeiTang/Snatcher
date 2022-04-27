@@ -10,16 +10,14 @@ namespace Snatcher
         public NavMeshAgent NavMeshAgent => _agent;
         public Animator Animator => _animator;
         public Transform ChaseTarget { get; set; }
+        public float EnemyLookDistance => _enemyLookDistance.Value;
 
         [Tooltip("Boilerplate state to conceptualize the idea that transitioning into Remain State is the same as not transitioning into any other state at all.")]
         [SerializeField] private AEnemyState _remainState;
         [Tooltip("The first state the enemy will start with. For example, in the beginning of a level, the enemy may be in idle or on patrol.")]
         [SerializeField] private AEnemyState _defaultState;
         [SerializeField] private Animator _animator;
-        
-        //Need to connect this to the reference, not sure how to do that - Sandalu
-        public float EnemyLookDistance;
-
+        [SerializeField] private FloatReference _enemyLookDistance;
         private NavMeshAgent _agent;
 
         public void TransitionToState(AEnemyState nextState)

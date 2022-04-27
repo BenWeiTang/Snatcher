@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55a042c84efe4600bd0ee38b6d35fc74, type: 3}
   m_Name: EnemyLookDistance
   m_EditorClassIdentifier: 
-  Value: 0
+  Value: 10
