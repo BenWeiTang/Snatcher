@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,6 +17,7 @@ namespace Snatcher
 
         [Header("Event")]
         [SerializeField] private VoidEvent _onLimbSwitched;
+        [SerializeField] private VoidEvent _onAbilityUsed;
 
         private Text _currentLimbDisplayText;
         private Text _priorLimbDisplayText;
@@ -34,9 +36,18 @@ namespace Snatcher
         {
             UpdateUIDisplay(new Void()); // Weird syntax I know -Ben 4/23/2022
         }
+        
+        private void OnEnable()
+        {
+            _onLimbSwitched.RegisterListener(UpdateUIDisplay);
+            _onAbilityUsed.RegisterListener(UpdateUIDisplay);
+        }
 
-        private void OnEnable() => _onLimbSwitched.RegisterListener(UpdateUIDisplay);
-        private void OnDisable() => _onLimbSwitched.UnregisterListener(UpdateUIDisplay);
+        private void OnDisable()
+        {
+            _onLimbSwitched.UnregisterListener(UpdateUIDisplay);
+            _onAbilityUsed.UnregisterListener(UpdateUIDisplay);
+        }
 
         private void UpdateUIDisplay(Void _)
         {

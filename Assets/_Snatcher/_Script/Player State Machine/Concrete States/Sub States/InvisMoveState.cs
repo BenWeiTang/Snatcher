@@ -13,7 +13,7 @@ namespace Snatcher
             if (Context.Debug) this.Log("Enter");
 
             Context.PlayerInput.Player.Movement.canceled += OnMovementCanceled;
-            Context.PlayerInput.Player.UseAbility.performed += OnAbilityPressed;
+            Context.PlayerInput.Player.UseAbility.performed+= OnAbilityPressed;
             Context.Animator.SetBool(SuperState.IsMovingHash, true);
         }
 
