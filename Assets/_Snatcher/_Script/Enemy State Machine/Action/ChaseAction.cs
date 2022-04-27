@@ -16,7 +16,7 @@ namespace Snatcher
         private void Chase(EnemyStateMachine context)
         {
             context.NavMeshAgent.destination = context.ChaseTarget.position;
-            context.NavMeshAgent.Resume();
+            context.NavMeshAgent.isStopped = false;
         }
     }
 }

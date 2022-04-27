@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 namespace Snatcher
@@ -9,12 +10,10 @@ namespace Snatcher
     {
         public override void OnEnterState(EnemyStateMachine context)
         {
-            UpdateState(context);
         }
 
         public override void OnExitState(EnemyStateMachine context)
         {
-            UpdateState(context);
         }
     }
 }

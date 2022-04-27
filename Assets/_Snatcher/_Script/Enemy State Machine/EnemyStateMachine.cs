@@ -22,7 +22,7 @@ namespace Snatcher
 
         public void TransitionToState(AEnemyState nextState)
         {
-            if (!nextState == _remainState)
+            if (nextState != _remainState)
             {
                 CurrentState.OnExitState(this);
                 CurrentState = nextState;

@@ -10,13 +10,10 @@ namespace Snatcher
     {
         public override void OnEnterState(EnemyStateMachine context)
         {
-            context.NavMeshAgent.Stop();
-            UpdateState(context);
         }
 
        public override void OnExitState(EnemyStateMachine context)
         {
-            UpdateState(context);
         }
     }
 }
