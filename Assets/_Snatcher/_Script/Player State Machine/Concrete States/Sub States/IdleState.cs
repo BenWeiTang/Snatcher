@@ -16,7 +16,7 @@ namespace Snatcher
             Context.PlayerInput.Player.UseAbility.performed += OnAbilityPressed;
             
             // If we enter this state, that means the current ability is not used
-            Context.Animator.SetBool(SuperState.IsEnteringAbilityHash, false);
+            Context.Animator.SetBool(SuperState.IsAbilityActiveHash, false);
         }
 
         public override void ExitState()
