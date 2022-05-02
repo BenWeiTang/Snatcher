@@ -16,7 +16,7 @@ namespace Snatcher
             Context.HookController.OnGrappleHit += OnHootHitGrapple;
             
             // This state is the entry state of basic, so we always set animation bool to true here
-            Context.Animator.SetBool(SuperState.IsEnteringAbilityHash, true);
+            Context.Animator.SetBool(SuperState.IsAbilityActiveHash, true);
             
             //TODO: remove later
             // If we can be in hook out, we must be in basic super state
@@ -31,7 +31,7 @@ namespace Snatcher
             Context.HookController.OnEnemyHit -= OnHookHitEnemy;
             Context.HookController.OnGrappleHit -= OnHootHitGrapple;
             Context.HookController.ActivateCollider(false);
-            Context.Animator.SetBool(SuperState.IsEnteringAbilityHash, false);
+            Context.Animator.SetBool(SuperState.IsAbilityActiveHash, false);
         }
 
         public override void UpdateState() { }

@@ -6,15 +6,17 @@ namespace Snatcher
     {
         public override PlayerStateConfig StateConfig { get; set; } = StateConfigManager.Instance.InvisStateConfig;
         public sealed override ASubState AbilityEntryState { get; protected set; }
-        public sealed override int IsEnteringAbilityHash { get; protected set; }
+        public sealed override int IsInSuperStateHash { get; protected set; }
 
         public InvisState(PlayerStateMachine currentContext) : base(currentContext)
         {
-            IsEnteringAbilityHash = Animator.StringToHash("IsCrouching");
+            IsInSuperStateHash = Animator.StringToHash("IsInvis");
         }
 
         public override void EnterState()
         {
+            if (Context.Debug) this.Log("Enter");
+            
             base.EnterState();
             AbilityEntryState = Factory.InvisIdle;
         }

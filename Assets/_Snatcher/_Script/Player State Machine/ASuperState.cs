@@ -10,23 +10,27 @@ namespace Snatcher
         public int IsMovingHash { get; }
         public int IsFallingHash { get; }
         public int IsDashingHash { get; }
-        public abstract int IsEnteringAbilityHash { get; protected set; }
+        public int IsAbilityActiveHash { get; protected set; }
+        public abstract int IsInSuperStateHash { get; protected set; }
 
         protected ASuperState(PlayerStateMachine currentContext) : base(currentContext)
         {
             IsMovingHash = Animator.StringToHash("IsMoving");
             IsFallingHash = Animator.StringToHash("IsFalling");
             IsDashingHash = Animator.StringToHash("IsDashing");
+            IsAbilityActiveHash = Animator.StringToHash("IsAbilityActive");
         }
 
         public override void EnterState()
         {
             Context.PlayerInput.Player.SwitchLimb.started += OnSwitchLimbPressed;
+            Context.Animator.SetBool(IsInSuperStateHash, true);
         }
 
         public override void ExitState()
         {
             Context.PlayerInput.Player.SwitchLimb.started -= OnSwitchLimbPressed;
+            Context.Animator.SetBool(IsInSuperStateHash, false);
         }
 
         private void OnSwitchLimbPressed(InputAction.CallbackContext callbackContext)
@@ -42,7 +46,7 @@ namespace Snatcher
 
                 // If we enter this clause, it means we want to switch Super States
                 // Therefore, we want to exit out whatever Ability State we were previously in, if applicable
-                Context.Animator.SetBool(IsEnteringAbilityHash, false);
+                Context.Animator.SetBool(IsAbilityActiveHash, false);
             }
         }
     }

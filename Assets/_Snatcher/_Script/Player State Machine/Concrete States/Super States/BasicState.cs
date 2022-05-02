@@ -6,15 +6,17 @@ namespace Snatcher
     {
         public override PlayerStateConfig StateConfig { get; set; } = StateConfigManager.Instance.BasicStateConfig;
         public sealed override ASubState AbilityEntryState { get; protected set; }
-        public sealed override int IsEnteringAbilityHash { get; protected set; }
+        public sealed override int IsInSuperStateHash { get; protected set; }
 
         public BasicState(PlayerStateMachine currentContext) : base(currentContext)
         {
-            IsEnteringAbilityHash = Animator.StringToHash("IsHooking");
+            IsInSuperStateHash = Animator.StringToHash("IsBasic");
         }
 
         public override void EnterState()
         {
+            if (Context.Debug) this.Log("Enter");
+            
             base.EnterState();
             AbilityEntryState = Factory.HookOut;
         }
