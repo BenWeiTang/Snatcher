@@ -14,10 +14,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Snatcher/Scene/Win_Screen.unity
     guid: 6a18fb52c8337e54a8fe28c99893271c
-  - enabled: 1
-    path: Assets/_Snatcher/Scene/Demo_Well_Tutorial.unity
-    guid: e71d84bd8939977478daee2dfc917d8e
-  - enabled: 1
-    path: Assets/_Snatcher/Scene/Demo_Dungeon_Tutorial.unity
-    guid: a960c7d47d262b4448d47d0d7ba1e2b6
   m_configObjects: {}
