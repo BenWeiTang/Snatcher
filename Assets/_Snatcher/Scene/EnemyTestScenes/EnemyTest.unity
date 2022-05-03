@@ -250,12 +250,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 304268454}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.66, y: 0.12, z: 6.34}
+  m_LocalPosition: {x: 16.6404, y: 0.11999952, z: 18.973297}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 874892192}
-  m_RootOrder: 1
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &500732611
 PrefabInstance:
@@ -277,6 +277,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 519383103ffd75347a1ab40db23b32b8, type: 2}
     - target: {fileID: 2599411738143849622, guid: b1684ffb35c2dad49b1449ca02f7d99e, type: 3}
+      propertyPath: PatrolPointOne
+      value: 
+      objectReference: {fileID: 304268454}
+    - target: {fileID: 2599411738143849622, guid: b1684ffb35c2dad49b1449ca02f7d99e, type: 3}
+      propertyPath: PatrolPointTwo
+      value: 
+      objectReference: {fileID: 642895332}
+    - target: {fileID: 2599411738143849622, guid: b1684ffb35c2dad49b1449ca02f7d99e, type: 3}
       propertyPath: MaterialRenderer
       value: 
       objectReference: {fileID: 48029550}
@@ -288,9 +296,29 @@ PrefabInstance:
       propertyPath: EnemyDefaultMaterial
       value: 
       objectReference: {fileID: 2100000, guid: b414308fabc24b145a867665ca2b0a03, type: 2}
+    - target: {fileID: 2599411738143849622, guid: b1684ffb35c2dad49b1449ca02f7d99e, type: 3}
+      propertyPath: PatrolPoints.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2599411738143849622, guid: b1684ffb35c2dad49b1449ca02f7d99e, type: 3}
+      propertyPath: PatrolPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 304268455}
+    - target: {fileID: 2599411738143849622, guid: b1684ffb35c2dad49b1449ca02f7d99e, type: 3}
+      propertyPath: PatrolPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 642895333}
     - target: {fileID: 4120086862255468786, guid: b1684ffb35c2dad49b1449ca02f7d99e, type: 3}
       propertyPath: m_Name
       value: Invis Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4120086862255468786, guid: b1684ffb35c2dad49b1449ca02f7d99e, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 7457753416530206946, guid: b1684ffb35c2dad49b1449ca02f7d99e, type: 3}
+      propertyPath: m_AutoRepath
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8031475627189022106, guid: b1684ffb35c2dad49b1449ca02f7d99e, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -435,12 +463,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 642895332}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.51, y: 1.1805372, z: -6.9}
+  m_LocalPosition: {x: 5.7904, y: 1.1805367, z: -8.236704}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 874892192}
-  m_RootOrder: 2
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &834347606
 GameObject:
@@ -595,11 +623,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 30.03, y: 45, z: 0}
---- !u!4 &874892192 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8911606214208892057, guid: b1684ffb35c2dad49b1449ca02f7d99e, type: 3}
-  m_PrefabInstance: {fileID: 500732611}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1033905386
 GameObject:
   m_ObjectHideFlags: 0

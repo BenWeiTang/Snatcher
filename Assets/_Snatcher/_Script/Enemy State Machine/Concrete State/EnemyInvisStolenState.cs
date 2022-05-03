@@ -1,17 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq.Expressions;
 using UnityEngine;
 
 namespace Snatcher
 {
-    
-    [CreateAssetMenu(menuName = "Snatcher/Enemy State Machine/State/Invis Guard State", fileName = "Invis Guard State")]
-    public class EnemyInvisGuardState : AEnemyState
+    [CreateAssetMenu(menuName = "Snatcher/Enemy State Machine/State/Invis Stolen State", fileName = "Invis Stolen State")]
+    public class EnemyInvisStolenState : AEnemyState
     {
         public override void OnEnterState(EnemyStateMachine context)
         {
-            context.MaterialRenderer.material = context.EnemyInvisMaterial;
+            context.MaterialRenderer.material = context.EnemyDefaultMaterial;
         }
 
         public override void OnExitState(EnemyStateMachine context)

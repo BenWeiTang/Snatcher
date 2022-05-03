@@ -7,6 +7,7 @@ namespace Snatcher
     {
         public override void OnEnterState(EnemyStateMachine context)
         {
+            
         }
 
        public override void OnExitState(EnemyStateMachine context)

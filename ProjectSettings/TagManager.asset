@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Grapple
   - Enemy
+  - Invis Enemy
   layers:
   - Default
   - TransparentFX
