@@ -623,14 +623,6 @@ PrefabInstance:
       propertyPath: _hookingObject
       value: 
       objectReference: {fileID: 117869358}
-    - target: {fileID: 3681592159268552333, guid: 051ac4b4b0cf31c4e9f4d71b96bb2c38, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3681592159268552333, guid: 051ac4b4b0cf31c4e9f4d71b96bb2c38, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 3681592159798169848, guid: 051ac4b4b0cf31c4e9f4d71b96bb2c38, type: 3}
       propertyPath: m_Enabled
       value: 0
