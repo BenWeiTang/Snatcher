@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -269,6 +269,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &117869358 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3681592159268552322, guid: 051ac4b4b0cf31c4e9f4d71b96bb2c38, type: 3}
+  m_PrefabInstance: {fileID: 291227897}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &179925436
 GameObject:
   m_ObjectHideFlags: 0
@@ -610,6 +615,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3681592159268552332, guid: 051ac4b4b0cf31c4e9f4d71b96bb2c38, type: 3}
+      propertyPath: _hookPivot
+      value: 
+      objectReference: {fileID: 864710081}
+    - target: {fileID: 3681592159268552332, guid: 051ac4b4b0cf31c4e9f4d71b96bb2c38, type: 3}
+      propertyPath: _hookingObject
+      value: 
+      objectReference: {fileID: 117869358}
     - target: {fileID: 3681592159798169848, guid: 051ac4b4b0cf31c4e9f4d71b96bb2c38, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -716,6 +729,11 @@ Transform:
 --- !u!4 &733597854 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3681592159115705365, guid: 051ac4b4b0cf31c4e9f4d71b96bb2c38, type: 3}
+  m_PrefabInstance: {fileID: 291227897}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &864710081 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8365117788993502207, guid: 051ac4b4b0cf31c4e9f4d71b96bb2c38, type: 3}
   m_PrefabInstance: {fileID: 291227897}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1004234121

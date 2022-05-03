@@ -31,6 +31,7 @@ namespace Snatcher
             Context.HookController.OnEnemyHit -= OnHookHitEnemy;
             Context.HookController.OnGrappleHit -= OnHootHitGrapple;
             Context.HookController.ActivateCollider(false);
+            Context.HookController.ResetRotation();
             Context.Animator.SetBool(SuperState.IsAbilityActiveHash, false);
         }
 
