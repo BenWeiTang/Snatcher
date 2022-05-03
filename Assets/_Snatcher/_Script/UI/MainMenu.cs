@@ -10,13 +10,13 @@ namespace Snatcher
     {
         public void PlayGame()
         {
-            SceneManager.LoadScene("Demo_UpperWorld_2.0");
+            SceneManager.LoadScene("Alpha_UpperWorld");
         }
 
         public void PlayTutorial()
         {
             // Uncomment this when tutorial is added. This is the name Erica has in her branch.
-            // SceneManager.LoadScene("Demo_Overworld_Tutorial");
+            SceneManager.LoadScene("Demo_Overworld_Tutorial");
         }
 
         public void QuitGame()
