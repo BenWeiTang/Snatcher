@@ -63,6 +63,7 @@ namespace Snatcher
             CurrentState.UpdateState(this);
         }
         
+        //Call this when the Snatcher steals this particular enemies ability
         public void AbilityStolen()
         {
             if (hasAbility)
