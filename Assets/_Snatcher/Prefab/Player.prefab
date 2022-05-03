@@ -145,7 +145,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3681592159268552322}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0.25}
+  m_LocalPosition: {x: -0.076, y: 1.278, z: 0.25}
   m_LocalScale: {x: 1, y: 1, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -197,7 +197,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _collider: {fileID: 3681592159268552335}
   _hookLength: {fileID: 11400000, guid: efcdb1ebcc1513a4c89f82b761114a4e, type: 2}
-  _hookPivot: {fileID: 0}
+  _hookPivot: {fileID: 8365117788993502207}
   _meshRenderer: {fileID: 6007343622202037277}
 --- !u!1 &4220877222586094537
 GameObject:

@@ -943,6 +943,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 733597854}
     - target: {fileID: 587026133166843523, guid: 0c377ac55a642c94fa1dbb735aa6bf82, type: 3}
+      propertyPath: m_Lens.m_SensorSize.x
+      value: 1.8019608
+      objectReference: {fileID: 0}
+    - target: {fileID: 587026133166843523, guid: 0c377ac55a642c94fa1dbb735aa6bf82, type: 3}
       propertyPath: m_Lens.OrthographicSize
       value: 10
       objectReference: {fileID: 0}
