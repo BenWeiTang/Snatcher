@@ -15,7 +15,6 @@ namespace Snatcher
 
         public void PlayTutorial()
         {
-            // Uncomment this when tutorial is added. This is the name Erica has in her branch.
             SceneManager.LoadScene("Demo_Overworld_Tutorial");
         }
 
