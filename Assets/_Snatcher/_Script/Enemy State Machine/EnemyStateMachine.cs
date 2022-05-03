@@ -12,6 +12,10 @@ namespace Snatcher
         public Transform ChaseTarget { get; set; }
         public float EnemyLookDistance => _enemyLookDistance.Value;
 
+        public SkinnedMeshRenderer MaterialRenderer;
+        public Material EnemyInvisMaterial;
+        public Material EnemyDefaultMaterial;
+
         [Tooltip("Boilerplate state to conceptualize the idea that transitioning into Remain State is the same as not transitioning into any other state at all.")]
         [SerializeField] private AEnemyState _remainState;
         [Tooltip("The first state the enemy will start with. For example, in the beginning of a level, the enemy may be in idle or on patrol.")]

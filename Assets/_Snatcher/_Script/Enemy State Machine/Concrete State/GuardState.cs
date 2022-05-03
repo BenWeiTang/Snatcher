@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Snatcher
 {
-    [CreateAssetMenu(menuName = "Snatcher/Enemy State Machine/Guard State", fileName = "Guard State")]
+    [CreateAssetMenu(menuName = "Snatcher/Enemy State Machine/State/Guard State", fileName = "Guard State")]
     public class GuardState : AEnemyState
     {
         public override void OnEnterState(EnemyStateMachine context)
