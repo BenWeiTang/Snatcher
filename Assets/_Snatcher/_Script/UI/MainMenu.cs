@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 using UnityEngine.SceneManagement;
 
 namespace Snatcher
@@ -10,12 +7,12 @@ namespace Snatcher
     {
         public void PlayGame()
         {
-            SceneManager.LoadScene("Alpha_UpperWorld");
+            SceneManager.LoadScene((int)SceneIndex.UpperWorld);
         }
 
         public void PlayTutorial()
         {
-            SceneManager.LoadScene("Demo_Overworld_Tutorial");
+            SceneManager.LoadScene((int)SceneIndex.TutorialUpperWorld);
         }
 
         public void QuitGame()

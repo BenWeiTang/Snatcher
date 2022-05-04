@@ -2004,6 +2004,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7944716721892097706, guid: bc000b405bee41848bbcab66f48ed106, type: 3}
+      propertyPath: _targetScene
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7944716721892097706, guid: bc000b405bee41848bbcab66f48ed106, type: 3}
       propertyPath: _targetSceneIndex
       value: 3
       objectReference: {fileID: 0}
