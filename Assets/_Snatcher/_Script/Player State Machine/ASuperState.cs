@@ -5,12 +5,12 @@ namespace Snatcher
 {
     public abstract class ASuperState : APlayerState
     {
-        public abstract PlayerStateConfig StateConfig { get; set; }
+        public abstract PlayerStateConfig StateConfig { get; protected set; }
         public abstract ASubState AbilityEntryState { get; protected set; }
         public int IsMovingHash { get; }
         public int IsFallingHash { get; }
         public int IsDashingHash { get; }
-        public int IsAbilityActiveHash { get; protected set; }
+        public int IsAbilityActiveHash { get; }
         public abstract int IsInSuperStateHash { get; protected set; }
 
         protected ASuperState(PlayerStateMachine currentContext) : base(currentContext)
