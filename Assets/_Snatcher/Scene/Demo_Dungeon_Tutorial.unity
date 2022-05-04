@@ -1891,6 +1891,30 @@ PrefabInstance:
       propertyPath: m_IsKinematic
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4800338220989073412, guid: bc000b405bee41848bbcab66f48ed106, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.62
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800338220989073412, guid: bc000b405bee41848bbcab66f48ed106, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7038754
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800338220989073412, guid: bc000b405bee41848bbcab66f48ed106, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.06752389
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800338220989073412, guid: bc000b405bee41848bbcab66f48ed106, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.06752389
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800338220989073412, guid: bc000b405bee41848bbcab66f48ed106, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.7038754
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800338220989073412, guid: bc000b405bee41848bbcab66f48ed106, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 10.959
+      objectReference: {fileID: 0}
     - target: {fileID: 7176149126335439104, guid: bc000b405bee41848bbcab66f48ed106, type: 3}
       propertyPath: m_LocalPosition.z
       value: -2
@@ -1984,8 +2008,16 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8014101916052033589, guid: bc000b405bee41848bbcab66f48ed106, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
+      propertyPath: m_Size.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8014101916052033589, guid: bc000b405bee41848bbcab66f48ed106, type: 3}
+      propertyPath: m_Size.z
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8014101916052033589, guid: bc000b405bee41848bbcab66f48ed106, type: 3}
+      propertyPath: m_Center.y
+      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc000b405bee41848bbcab66f48ed106, type: 3}
@@ -3053,7 +3085,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1883576325
 PrefabInstance:
