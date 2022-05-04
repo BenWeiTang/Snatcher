@@ -1,27 +1,24 @@
 ﻿using UnityEngine;
-using UnityEngine.InputSystem;
 
 namespace Snatcher
 {
     public class BasicState : ASuperState
     {
-        public override PlayerStateConfig StateConfig { get; set; } = StateConfigManager.Instance.BasicStateConfig;
+        public sealed override PlayerStateConfig StateConfig { get; protected set; } = StateConfigManager.Instance.BasicStateConfig;
         public sealed override ASubState AbilityEntryState { get; protected set; }
-        public sealed override int IsMovingHash { get; protected set; }
-        public sealed override int IsFallingHash { get; protected set; }
-        public sealed override int IsThrowingHash { get; protected set; }
+        public sealed override int IsInSuperStateHash { get; protected set; }
 
         public BasicState(PlayerStateMachine currentContext) : base(currentContext)
         {
-            IsMovingHash = Animator.StringToHash("IsMoving");
-            IsFallingHash = Animator.StringToHash("IsFalling");
-            IsThrowingHash = Animator.StringToHash("IsThrowing");
+            IsInSuperStateHash = Animator.StringToHash("IsBasic");
         }
 
         public override void EnterState()
         {
+            if (Context.Debug) this.Log("Enter");
+            
             base.EnterState();
-            AbilityEntryState = Factory.Idle;
+            AbilityEntryState = Factory.HookOut;
         }
 
         public override void ExitState()
@@ -29,12 +26,8 @@ namespace Snatcher
             base.ExitState();
         }
 
-        public override void UpdateState()
-        {
-        }
+        public override void UpdateState() { }
 
-        protected override void CheckSwitchState()
-        {
-        }
+        protected override void CheckSwitchState() { }
     }
 }

@@ -7,6 +7,8 @@ namespace Snatcher
     public class LimbManager : ASingletonScriptableObject<LimbManager>
     {
         public ALimb CurrentLimb { get; private set; }
+        
+        [SerializeField] private VoidEvent _onAbilityUsed;
 
         /// <summary>
         /// The next limb in the current limb selection rotation. Is is what should appear in the right slot of the UI. Returns null if there are less than two available limbs.
@@ -50,9 +52,19 @@ namespace Snatcher
                 _index--;
                 _index = Mathf.Max(_index, 0);
             }
-            
+            ALimb priorLimb = CurrentLimb;
             CurrentLimb = _inventory[_index];
+            if (CurrentLimb.Equals(priorLimb))
+            {
+                return;
+            }
             _onLimbSwitched.Raise();
+        }
+
+        public void DecrementLimbDurability()
+        {
+            CurrentLimb.DecrementDurability();
+            _onAbilityUsed.Raise();
         }
 
         protected override void OnInitialized()
@@ -63,7 +75,6 @@ namespace Snatcher
 
             _inventory.Add(CurrentLimb);
             _inventory.Add(new InvisLimb());
-            _onLimbSwitched.Raise();
         }
 
         /// <summary>

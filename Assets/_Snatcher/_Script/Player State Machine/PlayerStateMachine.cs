@@ -15,6 +15,8 @@ namespace Snatcher
         public Transform LimbSlot => _limbSlot;
         public ASuperState CurrentSuperState => _currentSuperState;
         public ASubState CurrentSubState => _currentSubState;
+        public bool CanGrapple => _canGrapple.Value;
+        public Vector3 GrappleDestination { get; set; }
         
         [Header("Debug")]
         [SerializeField] private bool _debug;
@@ -27,7 +29,7 @@ namespace Snatcher
         [SerializeField] private HookController _hookController;
         [SerializeField] private Transform _groundCheck;
         [SerializeField] private Transform _limbSlot;
-        // private APlayerState _currentState;
+        [SerializeField] private BoolReference _canGrapple;
         private ASuperState _currentSuperState;
         private ASubState _currentSubState;
         private PlayerControls _playerInput;
