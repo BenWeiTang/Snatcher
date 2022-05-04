@@ -5,11 +5,9 @@ namespace Snatcher
 {
     public class WinScreenController : MonoBehaviour
     {
-        [SerializeField] private int _targetSceneIndex;
-        
         public void Exit()
         {
-            SceneManager.LoadSceneAsync(_targetSceneIndex);
+            SceneManager.LoadSceneAsync((int)SceneIndex.MainMenu);
         }
     }
 }

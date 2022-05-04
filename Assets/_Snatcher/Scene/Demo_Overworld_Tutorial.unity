@@ -1564,6 +1564,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7944716721892097706, guid: 1fa12254d2ac6324a8476e5563a8989f, type: 3}
+      propertyPath: _targetScene
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7944716721892097706, guid: 1fa12254d2ac6324a8476e5563a8989f, type: 3}
       propertyPath: _targetSceneIndex
       value: 4
       objectReference: {fileID: 0}
@@ -2536,8 +2540,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 1988007575}
     m_Modifications:
     - target: {fileID: 1203904584056314427, guid: a2075153e59b4934590817dc4e8d0f9f, type: 3}
-      propertyPath: m_IsTrigger
+      propertyPath: m_Size.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1203904584056314427, guid: a2075153e59b4934590817dc4e8d0f9f, type: 3}
+      propertyPath: m_Size.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1203904584056314427, guid: a2075153e59b4934590817dc4e8d0f9f, type: 3}
+      propertyPath: m_Size.z
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1203904584056314427, guid: a2075153e59b4934590817dc4e8d0f9f, type: 3}
+      propertyPath: m_Center.z
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1280045013284222116, guid: a2075153e59b4934590817dc4e8d0f9f, type: 3}
+      propertyPath: _targetScene
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1280045013284222116, guid: a2075153e59b4934590817dc4e8d0f9f, type: 3}
       propertyPath: _targetSceneIndex

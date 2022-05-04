@@ -7139,6 +7139,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7944716721892097706, guid: 1fa12254d2ac6324a8476e5563a8989f, type: 3}
+      propertyPath: _targetScene
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7944716721892097706, guid: 1fa12254d2ac6324a8476e5563a8989f, type: 3}
       propertyPath: _targetSceneIndex
       value: 1
       objectReference: {fileID: 0}
@@ -11768,6 +11772,10 @@ PrefabInstance:
     - target: {fileID: 7789026523133045731, guid: 1fa12254d2ac6324a8476e5563a8989f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7944716721892097706, guid: 1fa12254d2ac6324a8476e5563a8989f, type: 3}
+      propertyPath: _targetScene
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7944716721892097706, guid: 1fa12254d2ac6324a8476e5563a8989f, type: 3}
       propertyPath: _targetSceneIndex
@@ -42076,6 +42084,10 @@ PrefabInstance:
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1280045013284222116, guid: a2075153e59b4934590817dc4e8d0f9f, type: 3}
+      propertyPath: _targetScene
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1280045013284222116, guid: a2075153e59b4934590817dc4e8d0f9f, type: 3}
       propertyPath: _targetSceneIndex
       value: 2
       objectReference: {fileID: 0}
@@ -58140,6 +58152,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7944716721892097706, guid: 1fa12254d2ac6324a8476e5563a8989f, type: 3}
+      propertyPath: _targetScene
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7944716721892097706, guid: 1fa12254d2ac6324a8476e5563a8989f, type: 3}
       propertyPath: _targetSceneIndex
       value: 1
       objectReference: {fileID: 0}
@@ -61267,6 +61283,10 @@ PrefabInstance:
     - target: {fileID: 7789026523133045731, guid: 1fa12254d2ac6324a8476e5563a8989f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7944716721892097706, guid: 1fa12254d2ac6324a8476e5563a8989f, type: 3}
+      propertyPath: _targetScene
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7944716721892097706, guid: 1fa12254d2ac6324a8476e5563a8989f, type: 3}
       propertyPath: _targetSceneIndex

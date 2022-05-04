@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -55,7 +53,7 @@ namespace Snatcher
         public void ReturnToMainMenu()
         {
             Time.timeScale = 1;
-            SceneManager.LoadScene("MainMenu");
+            SceneManager.LoadScene((int)SceneIndex.MainMenu);
         }
 
         public void Restart()

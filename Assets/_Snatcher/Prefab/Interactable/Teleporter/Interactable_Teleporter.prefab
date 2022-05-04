@@ -79,5 +79,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _debug: 0
-  _targetSceneIndex: 0
+  _targetScene: 1
   _requirements: []
