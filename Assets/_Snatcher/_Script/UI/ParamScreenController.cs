@@ -24,21 +24,22 @@ namespace Snatcher
         [SerializeField] private PlayerStateConfig _basicConfig;
         [SerializeField] private PlayerStateConfig _invisConfig;
         
-        private bool _isOn;
+        //private bool _isOn;
 
         private void Start()
         {
-            _isOn = false;
-            SetCanvasGroupActivate(_isOn);
+            //_isOn = false;
+            //SetCanvasGroupActivate(_isOn);
         }
 
         private void Update()
         {
+            /*
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 _isOn = !_isOn;
                 SetCanvasGroupActivate(_isOn);
-            }
+            }*/
 
             _playerDashDistance.Value = _playerDashDistanceOrSpeedSlider.value;
             _playerDashDistanceText.text = Math.Round(_playerDashDistanceOrSpeedSlider.value) + "";
