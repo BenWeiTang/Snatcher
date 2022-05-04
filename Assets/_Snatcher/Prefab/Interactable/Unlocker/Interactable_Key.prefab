@@ -11,10 +11,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Interactable_Key
       objectReference: {fileID: 0}
-    - target: {fileID: 4570903740208810054, guid: 3bf3b2c29b7e66847ab3c346b0c2fff2, type: 3}
-      propertyPath: m_UseGravity
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4882481832316925787, guid: 3bf3b2c29b7e66847ab3c346b0c2fff2, type: 3}
       propertyPath: _textToShow
       value: Press F to Pick Up
