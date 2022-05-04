@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Snatcher/Scene/Alpha_Dungeon_2.unity
     guid: 4e14a69683015384984f632e1862810a
+  - enabled: 1
+    path: Assets/_Snatcher/Scene/Lose_Screen.unity
+    guid: dc5ebf5cef4bdf540a81f9bca2f4875e
   m_configObjects: {}
