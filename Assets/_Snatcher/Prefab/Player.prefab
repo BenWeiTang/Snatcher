@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 3681592159115705354}
   - component: {fileID: 3681592159115705364}
   - component: {fileID: 1136104968581629001}
+  - component: {fileID: 5354913756358246086}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -118,6 +119,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c8efa5ce4165da418227411fe706ef0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5354913756358246086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3681592159115705355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b2dfb30d2571b844b52a7bf0f1b0368, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skinnedMeshRenderer: {fileID: 5495928581308634086}
+  _onLimbSwitched: {fileID: 11400000, guid: b1c09df237308ab4d94b96eeef467076, type: 2}
+  _oneArmMesh: {fileID: -856059019632272089, guid: 0446a7d9baf43dd4da94c0e2ebd63d98, type: 3}
+  _twoArmMesh: {fileID: -4545423930167495100, guid: d0413c2bdd9f20d4089455e5d0e514c1, type: 3}
 --- !u!1 &3681592159268552322
 GameObject:
   m_ObjectHideFlags: 0
@@ -395,6 +412,11 @@ PrefabInstance:
 --- !u!4 &205057696387114686 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d0413c2bdd9f20d4089455e5d0e514c1, type: 3}
+  m_PrefabInstance: {fileID: 383434468358111573}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &5495928581308634086 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 5266764545580405427, guid: d0413c2bdd9f20d4089455e5d0e514c1, type: 3}
   m_PrefabInstance: {fileID: 383434468358111573}
   m_PrefabAsset: {fileID: 0}
 --- !u!95 &6068792053068790980 stripped
