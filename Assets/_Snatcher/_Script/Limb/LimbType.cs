@@ -3,6 +3,7 @@ namespace Snatcher
     public enum LimbType
     {
         Basic,
-        Invis
+        Invis,
+        Leg
     }
 }
