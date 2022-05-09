@@ -15,6 +15,8 @@ namespace Snatcher
 
         private void OnEnable()
         {
+            _propellerLimb.SetActive(false);
+            _legLimb.SetActive(false);
             _onLimbSwitched.RegisterListener(OnLimbSwitched);
         }
         
@@ -23,24 +25,26 @@ namespace Snatcher
             _onLimbSwitched.UnregisterListener(OnLimbSwitched);
         }
         
-        //TODO: delete later
         private void OnLimbSwitched(Void _)
         {
+            _propellerLimb.SetActive(false);
+            _legLimb.SetActive(false);
+
             if (LimbManager.Instance.CurrentLimb.Type == LimbType.Basic)
             {
                 //_skinnedMeshRenderer.sharedMesh = _oneArmMesh;
-                _propellerLimb.active = false;
-                _legLimb.active = false;
+                _propellerLimb.SetActive(false);
+                _legLimb.SetActive(false);
             }
             else if (LimbManager.Instance.CurrentLimb.Type == LimbType.Leg)
             {
                 //_skinnedMeshRenderer.sharedMesh = _twoArmMesh;
-                _legLimb.active = true;
+                _legLimb.SetActive(true);
             }
-            else if (LimbManager.Instance.CurrentLimb.Type == LimbType.Propeller)
+            else if (LimbManager.Instance.CurrentLimb.Type == LimbType.Invis)
             {
                 //_skinnedMeshRenderer.sharedMesh = _twoArmMesh;
-                _propellerLimb.active = true;
+                _propellerLimb.SetActive(true);
             }
         }
     }
