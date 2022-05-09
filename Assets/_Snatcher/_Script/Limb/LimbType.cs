@@ -4,6 +4,7 @@ namespace Snatcher
     {
         Basic,
         Invis,
-        Leg
+        Leg,
+        Propeller
     }
 }
