@@ -15,3 +15,4 @@ MonoBehaviour:
   BasicStateConfig: {fileID: 11400000, guid: 95cb6c7e0c721514789abf7edd10747e, type: 2}
   InvisStateConfig: {fileID: 11400000, guid: 6839c39ba8901ee419889c0ed5df6c93, type: 2}
   LegStateConfig: {fileID: 11400000, guid: bac18d9d6d5ecaf45b64fafc6e9a5f93, type: 2}
+  PropellerStateConfig: {fileID: 11400000, guid: a6402570567b32646bd660708def0f04, type: 2}
