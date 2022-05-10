@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 646641124008151181, guid: ac6647d99386985478128c1fc8ca148a, type: 3}
       propertyPath: m_Name
-      value: Interactable Ladder
+      value: Interactable_Ladder
       objectReference: {fileID: 0}
     - target: {fileID: 7642335649848681344, guid: ac6647d99386985478128c1fc8ca148a, type: 3}
       propertyPath: m_RootOrder

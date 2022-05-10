@@ -6,9 +6,7 @@ namespace Snatcher
     [CreateAssetMenu(menuName = "Snatcher/Manager/Limb Manager", fileName = "LimbManager")]
     public class LimbManager : ASingletonScriptableObject<LimbManager>
     {
-        public ALimb CurrentLimb { get; private set; }
-        
-        [SerializeField] private VoidEvent _onAbilityUsed;
+        public ALimb CurrentLimb => _inventory[_index];
 
         /// <summary>
         /// The next limb in the current limb selection rotation. Is is what should appear in the right slot of the UI. Returns null if there are less than two available limbs.
@@ -37,6 +35,7 @@ namespace Snatcher
         public LimbType CurrentType => CurrentLimb.Type;
 
         [SerializeField] private VoidEvent _onLimbSwitched;
+        [SerializeField] private VoidEvent _onAbilityUsed;
         private List<ALimb> _inventory;
         private int _index;
 
@@ -44,20 +43,19 @@ namespace Snatcher
         {
             if (forward)
             {
+                if (_index == _inventory.Count - 1)
+                    return;
+                
                 _index++;
-                _index = Mathf.Min(_index, _inventory.Count - 1);
             }
             else
             {
+                if (_index == 0)
+                    return;
+                
                 _index--;
-                _index = Mathf.Max(_index, 0);
             }
-            ALimb priorLimb = CurrentLimb;
-            CurrentLimb = _inventory[_index];
-            if (CurrentLimb.Equals(priorLimb))
-            {
-                return;
-            }
+
             _onLimbSwitched.Raise();
         }
 
@@ -71,10 +69,10 @@ namespace Snatcher
         {
             _index = 0;
             _inventory = new List<ALimb>();
-            CurrentLimb = new BasicLimb();
 
-            _inventory.Add(CurrentLimb);
+            _inventory.Add(new BasicLimb());
             _inventory.Add(new InvisLimb());
+            _inventory.Add(new LegLimb());
         }
 
         /// <summary>
@@ -84,7 +82,7 @@ namespace Snatcher
         {
             if (currentIndex == total - 1)
                 return -1;
-            
+
             return currentIndex + 1;
         }
 

@@ -7,7 +7,7 @@ namespace Snatcher
     public class TeleportController : MonoBehaviour, IInteractable
     {
         [SerializeField] private bool _debug;
-        [SerializeField] private int _targetSceneIndex;
+        [SerializeField] private SceneIndex _targetScene;
         [SerializeField] private TeleportRequirement[] _requirements;
         public void Interact()
         {
@@ -15,7 +15,7 @@ namespace Snatcher
 
             if (_requirements == null || _requirements.Length == 0 || _requirements.All(r => r.Reference.Value == r.Requirement))
             {
-                SceneManager.LoadScene(_targetSceneIndex);
+                SceneManager.LoadScene((int)_targetScene);
             }
         }
     }

@@ -4,7 +4,7 @@ namespace Snatcher
 {
     public class BasicState : ASuperState
     {
-        public override PlayerStateConfig StateConfig { get; set; } = StateConfigManager.Instance.BasicStateConfig;
+        public sealed override PlayerStateConfig StateConfig { get; protected set; } = StateConfigManager.Instance.BasicStateConfig;
         public sealed override ASubState AbilityEntryState { get; protected set; }
         public sealed override int IsInSuperStateHash { get; protected set; }
 

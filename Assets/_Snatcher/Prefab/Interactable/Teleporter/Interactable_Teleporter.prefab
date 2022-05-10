@@ -57,7 +57,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5507545126854614469, guid: b6b3d5d722ad9984c9f9ca7579e539e6, type: 3}
       propertyPath: m_Name
-      value: Interactable Teleporter
+      value: Interactable_Teleporter
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6b3d5d722ad9984c9f9ca7579e539e6, type: 3}
@@ -79,5 +79,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _debug: 0
-  _targetSceneIndex: 0
+  _targetScene: 1
   _requirements: []
