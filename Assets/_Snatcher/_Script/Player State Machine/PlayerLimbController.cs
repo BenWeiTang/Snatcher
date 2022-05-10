@@ -8,7 +8,7 @@ namespace Snatcher
         //[SerializeField] private SkinnedMeshRenderer _skinnedMeshRenderer;
         [SerializeField] private VoidEvent _onLimbSwitched;
         [SerializeField] private Mesh _oneArmMesh;
-        [SerializeField] private Mesh _twoArmMesh;
+        //[SerializeField] private Mesh _twoArmMesh;
 
         [SerializeField] private GameObject _propellerLimb;
         [SerializeField] private GameObject _legLimb;
@@ -32,19 +32,21 @@ namespace Snatcher
 
             if (LimbManager.Instance.CurrentLimb.Type == LimbType.Basic)
             {
-                //_skinnedMeshRenderer.sharedMesh = _oneArmMesh;
                 _propellerLimb.SetActive(false);
                 _legLimb.SetActive(false);
+                //_skinnedMeshRenderer.sharedMesh = _oneArmMesh;
             }
             else if (LimbManager.Instance.CurrentLimb.Type == LimbType.Leg)
             {
-                //_skinnedMeshRenderer.sharedMesh = _twoArmMesh;
                 _legLimb.SetActive(true);
+                //_skinnedMeshRenderer.sharedMesh = _propellerLimb;
+                //_skinnedMeshRenderer.BakeMesh(_propellerLimb);
             }
             else if (LimbManager.Instance.CurrentLimb.Type == LimbType.Invis)
             {
-                //_skinnedMeshRenderer.sharedMesh = _twoArmMesh;
                 _propellerLimb.SetActive(true);
+                //_skinnedMeshRenderer.sharedMesh = _legLimb;
+                //_skinnedMeshRenderer.BakeMesh(_legLimb);
             }
         }
     }
