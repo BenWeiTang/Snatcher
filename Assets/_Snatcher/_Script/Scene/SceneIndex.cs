@@ -15,5 +15,6 @@ namespace Snatcher
         Dungeon = 5,
         UpperWorldAfterLadder = 6,
         WinScene = 7,
+        LoseScene = 8
     }
 }
