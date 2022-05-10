@@ -24,12 +24,12 @@ EditorBuildSettings:
     path: Assets/_Snatcher/Scene/Alpha_Dungeon_1.unity
     guid: e45cdddc102b61d4788ff3e3067fcc39
   - enabled: 1
-    path: Assets/_Snatcher/Scene/Alpha_UpperWorld_After_Ladder.unity
-    guid: 2fbdba52c70d63e48bcd9b7048d1cfdb
+    path: Assets/_Snatcher/Scene/Alpha_Dungeon_2.unity
+    guid: 4e14a69683015384984f632e1862810a
   - enabled: 1
     path: Assets/_Snatcher/Scene/Win_Screen.unity
     guid: 6a18fb52c8337e54a8fe28c99893271c
   - enabled: 1
-    path: Assets/_Snatcher/Scene/Alpha_Dungeon_2.unity
-    guid: 4e14a69683015384984f632e1862810a
+    path: Assets/_Snatcher/Scene/Lose_Screen.unity
+    guid: dc5ebf5cef4bdf540a81f9bca2f4875e
   m_configObjects: {}
