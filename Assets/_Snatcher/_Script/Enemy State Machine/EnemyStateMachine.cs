@@ -76,9 +76,9 @@ namespace Snatcher
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.tag == "Player")
+            if (other.CompareTag("Player"))
             {
-                SceneManager.LoadScene("Lose_Screen");
+                SceneManager.LoadScene((int)SceneIndex.LoseScene);
             }
         }
     }
