@@ -1,8 +1,6 @@
-using System;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.SceneManagement;
 
 namespace Snatcher
 {
@@ -71,14 +69,6 @@ namespace Snatcher
             if (hasAbility)
             {
                 CurrentState = StolenState;
-            }
-        }
-
-        private void OnTriggerEnter(Collider other)
-        {
-            if (other.tag == "Player")
-            {
-                SceneManager.LoadScene("Lose_Screen");
             }
         }
     }
