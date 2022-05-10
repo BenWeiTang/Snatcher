@@ -73,6 +73,7 @@ namespace Snatcher
             _inventory.Add(new BasicLimb());
             _inventory.Add(new InvisLimb());
             _inventory.Add(new LegLimb());
+            _inventory.Add(new PropellerLimb());
         }
 
         /// <summary>
