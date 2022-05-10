@@ -17,18 +17,15 @@ namespace Snatcher
            RaycastHit hitInfo;
            
            Debug.DrawRay(context.transform.position, context.transform.forward.normalized * context.EnemyLookDistance, Color.green );
+           
+           if (Physics.SphereCast(context.transform.position + 0.5f * Vector3.up, 5.0f, context.transform.forward.normalized, out hitInfo,
+                   context.EnemyLookDistance) && hitInfo.collider.CompareTag("Player"))
+           {
+               context.ChaseTarget = hitInfo.transform;
+               return true;
+           }
 
-            Collider[] hitColliders = Physics.OverlapSphere(context.transform.position, context.EnemyLookDistance);
-            foreach (var hitCollider in hitColliders)
-            {
-                if(hitCollider.tag == "Player")
-                {
-                    context.ChaseTarget = hitCollider.transform;
-                    return true;
-                }
-            }
-
-            return false;
+           return false;
        }
     }
 }
