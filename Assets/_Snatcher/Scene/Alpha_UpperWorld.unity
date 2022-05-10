@@ -13033,6 +13033,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1278655263}
     - target: {fileID: 7272503191088132648, guid: 9a3f42ff309e68f4d8c1f5d83c1f3fa1, type: 3}
+      propertyPath: _destination
+      value: 
+      objectReference: {fileID: 1029626312}
+    - target: {fileID: 7272503191088132648, guid: 9a3f42ff309e68f4d8c1f5d83c1f3fa1, type: 3}
       propertyPath: _targetScene
       value: 4
       objectReference: {fileID: 0}
@@ -30615,6 +30619,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2075153e59b4934590817dc4e8d0f9f, type: 3}
+--- !u!4 &1029626312 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1412654422866780653, guid: a2075153e59b4934590817dc4e8d0f9f, type: 3}
+  m_PrefabInstance: {fileID: 1029626311}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1032404618
 PrefabInstance:
   m_ObjectHideFlags: 0
