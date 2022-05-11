@@ -15,6 +15,7 @@ namespace Snatcher
         Dungeon01 = 5,
         Dungeon02 = 6,
         WinScene = 7,
-        LoseScene = 8
+        LoseScene = 8,
+        Shop = 9
     }
 }

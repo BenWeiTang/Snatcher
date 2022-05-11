@@ -680,8 +680,9 @@ GameObject:
   - component: {fileID: 1578441235997430616}
   - component: {fileID: 6235809814258306860}
   - component: {fileID: 8750417502363127194}
+  - component: {fileID: 1558564182555327013}
   m_Layer: 0
-  m_Name: Vault Leg Enemy
+  m_Name: Geo
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -763,6 +764,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _type: 3
+--- !u!65 &1558564182555327013
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5455409343383208776}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.77, y: 3.36, z: 1.66}
+  m_Center: {x: 0, y: 1.22, z: 0}
 --- !u!1 &5578046862204062312
 GameObject:
   m_ObjectHideFlags: 0

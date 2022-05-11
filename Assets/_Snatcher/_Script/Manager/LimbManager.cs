@@ -99,6 +99,13 @@ namespace Snatcher
             _onLimbSwitched.Raise();
         }
 
+        public void ResetInventory()
+        {
+            _inventory.Clear();
+            _inventory.Add(new BasicLimb());
+            _index = 0;
+        }
+
         protected override void OnInitialized()
         {
             _index = 0;
@@ -128,5 +135,7 @@ namespace Snatcher
 
             return currentIndex - 1;
         }
+
+
     }
 }

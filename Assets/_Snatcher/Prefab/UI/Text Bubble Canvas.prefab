@@ -195,10 +195,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 150a53e87ce5f13479721c92c770884f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 0.025
-  entireText: 
-  target: {fileID: 3644173650744002594}
-  textBlip: {fileID: 3644173651538830094}
+  _delay: 0.05
+  _entireText: 
+  _target: {fileID: 3644173650744002594}
+  _textBlip: {fileID: 3644173651538830094}
+  _persistedDuration: 10
 --- !u!82 &3644173651538830094
 AudioSource:
   m_ObjectHideFlags: 0
