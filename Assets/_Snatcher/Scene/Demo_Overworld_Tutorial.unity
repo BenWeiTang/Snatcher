@@ -547,6 +547,138 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1686021177305034388, guid: ebee340de387f334f9ac44e044abd8fb, type: 3}
   m_PrefabInstance: {fileID: 243698996}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &325913546
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3644173651538830089, guid: 091832a7de8df1a46a5a9a5620640047, type: 3}
+      propertyPath: _delay
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 3644173651538830089, guid: 091832a7de8df1a46a5a9a5620640047, type: 3}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 337775106}
+    - target: {fileID: 3644173651538830089, guid: 091832a7de8df1a46a5a9a5620640047, type: 3}
+      propertyPath: _textBlip
+      value: 
+      objectReference: {fileID: 1000194711}
+    - target: {fileID: 3644173651538830089, guid: 091832a7de8df1a46a5a9a5620640047, type: 3}
+      propertyPath: _entireText
+      value: Welcome to the Snatcher tutorial.  Here you will learn to use the Snatcher's
+        hook, how to enter dungeons, and how to escape an overworld level.  Start
+        by searching for a well - torches along the ground mark a path there.  When
+        you find it you can climb down into the dungeon below.  In it you will find
+        a key allowing you to exit the tutorial level.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3644173651538830089, guid: 091832a7de8df1a46a5a9a5620640047, type: 3}
+      propertyPath: _persistedDuration
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3644173651538830095, guid: 091832a7de8df1a46a5a9a5620640047, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3644173651538830095, guid: 091832a7de8df1a46a5a9a5620640047, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3644173651538830095, guid: 091832a7de8df1a46a5a9a5620640047, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3644173651538830095, guid: 091832a7de8df1a46a5a9a5620640047, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3644173651538830095, guid: 091832a7de8df1a46a5a9a5620640047, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3644173651538830095, guid: 091832a7de8df1a46a5a9a5620640047, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3644173651538830095, guid: 091832a7de8df1a46a5a9a5620640047, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3644173651538830095, guid: 091832a7de8df1a46a5a9a5620640047, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3644173651538830095, guid: 091832a7de8df1a46a5a9a5620640047, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3644173651538830095, guid: 091832a7de8df1a46a5a9a5620640047, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3644173651538830095, guid: 091832a7de8df1a46a5a9a5620640047, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3644173651538830095, guid: 091832a7de8df1a46a5a9a5620640047, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3644173651538830095, guid: 091832a7de8df1a46a5a9a5620640047, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3644173651538830095, guid: 091832a7de8df1a46a5a9a5620640047, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3644173651538830095, guid: 091832a7de8df1a46a5a9a5620640047, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3644173651538830095, guid: 091832a7de8df1a46a5a9a5620640047, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3644173651538830095, guid: 091832a7de8df1a46a5a9a5620640047, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3644173651538830095, guid: 091832a7de8df1a46a5a9a5620640047, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3644173651538830095, guid: 091832a7de8df1a46a5a9a5620640047, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3644173651538830095, guid: 091832a7de8df1a46a5a9a5620640047, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3644173651538830095, guid: 091832a7de8df1a46a5a9a5620640047, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3644173651538830131, guid: 091832a7de8df1a46a5a9a5620640047, type: 3}
+      propertyPath: m_Name
+      value: Text Bubble Canvas
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 091832a7de8df1a46a5a9a5620640047, type: 3}
+--- !u!114 &337775106 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3644173650744002594, guid: 091832a7de8df1a46a5a9a5620640047, type: 3}
+  m_PrefabInstance: {fileID: 325913546}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &342899649
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1245,6 +1377,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 423888, guid: d537224908c5f444f86c9e57e0c7234c, type: 3}
   m_PrefabInstance: {fileID: 973827596}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1000194711 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3644173651538830094, guid: 091832a7de8df1a46a5a9a5620640047, type: 3}
+  m_PrefabInstance: {fileID: 325913546}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1059097277
 PrefabInstance:
@@ -2577,7 +2714,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 1afd523eae580024cae439a1447af936, type: 2}
     - target: {fileID: 1280045013284222116, guid: a2075153e59b4934590817dc4e8d0f9f, type: 3}
       propertyPath: _requirements.Array.data[0]._requirement
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1412654422866780653, guid: a2075153e59b4934590817dc4e8d0f9f, type: 3}
       propertyPath: m_RootOrder
