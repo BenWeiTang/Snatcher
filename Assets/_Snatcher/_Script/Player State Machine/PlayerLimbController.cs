@@ -42,7 +42,7 @@ namespace Snatcher
                 //_skinnedMeshRenderer.sharedMesh = _propellerLimb;
                 //_skinnedMeshRenderer.BakeMesh(_propellerLimb);
             }
-            else if (LimbManager.Instance.CurrentLimb.Type == LimbType.Invis)
+            else if (LimbManager.Instance.CurrentLimb.Type == LimbType.Propeller)
             {
                 _propellerLimb.SetActive(true);
                 //_skinnedMeshRenderer.sharedMesh = _legLimb;

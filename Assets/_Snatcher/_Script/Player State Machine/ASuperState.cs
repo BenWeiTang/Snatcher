@@ -47,6 +47,7 @@ namespace Snatcher
             if (upcomingState != Context.CurrentSuperState)
             {
                 Context.SwitchSuperState(upcomingState);
+                Context.SwitchSubState(Factory.Idle);
 
                 // If we enter this clause, it means we want to switch Super States
                 // Therefore, we want to exit out whatever Ability State we were previously in, if applicable
