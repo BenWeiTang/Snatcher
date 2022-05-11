@@ -25,12 +25,16 @@ namespace Snatcher
         {
             Context.PlayerInput.Player.SwitchLimb.started += OnSwitchLimbPressed;
             Context.Animator.SetBool(IsInSuperStateHash, true);
+
+            LimbManager.Instance.OnLimbForcedSwitched += ForceSwitchSuperState;
         }
 
         public override void ExitState()
         {
             Context.PlayerInput.Player.SwitchLimb.started -= OnSwitchLimbPressed;
             Context.Animator.SetBool(IsInSuperStateHash, false);
+            
+            LimbManager.Instance.OnLimbForcedSwitched -= ForceSwitchSuperState;
         }
 
         private void OnSwitchLimbPressed(InputAction.CallbackContext callbackContext)
@@ -48,6 +52,11 @@ namespace Snatcher
                 // Therefore, we want to exit out whatever Ability State we were previously in, if applicable
                 Context.Animator.SetBool(IsAbilityActiveHash, false);
             }
+        }
+
+        private void ForceSwitchSuperState(LimbType type)
+        {
+            Context.SwitchSuperState(LimbManager.Instance.CurrentLimb.SuperState);
         }
     }
 }

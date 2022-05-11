@@ -73,13 +73,5 @@ namespace Snatcher
                 CurrentState = StolenState;
             }
         }
-
-        private void OnTriggerEnter(Collider other)
-        {
-            if (other.CompareTag("Player"))
-            {
-                SceneManager.LoadScene((int)SceneIndex.LoseScene);
-            }
-        }
     }
 }

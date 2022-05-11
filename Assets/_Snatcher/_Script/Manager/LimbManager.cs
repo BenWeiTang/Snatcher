@@ -1,3 +1,5 @@
+using System;
+using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -33,6 +35,8 @@ namespace Snatcher
         }
 
         public LimbType CurrentType => CurrentLimb.Type;
+        
+        public event Action<LimbType> OnLimbForcedSwitched;
 
         [SerializeField] private VoidEvent _onLimbSwitched;
         [SerializeField] private VoidEvent _onAbilityUsed;
@@ -65,14 +69,41 @@ namespace Snatcher
             _onAbilityUsed.Raise();
         }
 
+        public void TryAddLimb(LimbType type)
+        {
+            if (_inventory.Any(item => item.Type == type))
+                return;
+
+            ALimb limbToAdd = type switch
+            {
+                LimbType.Invis => new InvisLimb(),
+                LimbType.Leg => new LegLimb(),
+                //TODO: add propeller limb
+                _ => null
+            };
+
+            if (limbToAdd == null)
+            {
+                this.LogError("Unable to identify appropriate Limb to add!");
+                return;
+            }
+            
+            // Insert Limb to front of inventory but after basic
+            _inventory.Insert(1, limbToAdd);
+            
+            // Automatically jump to the newly snatched Limb
+            _index = 1;
+            
+            OnLimbForcedSwitched?.Invoke(type);
+            _onLimbSwitched.Raise();
+        }
+
         protected override void OnInitialized()
         {
             _index = 0;
             _inventory = new List<ALimb>();
 
             _inventory.Add(new BasicLimb());
-            _inventory.Add(new InvisLimb());
-            _inventory.Add(new LegLimb());
         }
 
         /// <summary>

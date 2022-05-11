@@ -18,7 +18,6 @@ namespace Snatcher
             // This state is the entry state of basic, so we always set animation bool to true here
             Context.Animator.SetBool(SuperState.IsAbilityActiveHash, true);
             
-            //TODO: remove later
             // If we can be in hook out, we must be in basic super state
             // When we enter this state, we used the ability once
             LimbManager.Instance.DecrementLimbDurability();
@@ -39,10 +38,13 @@ namespace Snatcher
 
         protected override void CheckSwitchState() { }
         
-        //TODO: depending on what enemy is hit, transition to a different state
-        private void OnHookHitEnemy()
+        private void OnHookHitEnemy(LimbType type)
         {
             _hit = true;
+            
+            // Note: Adding a Limb to LimbManager's collection will also cause the FSM to switch SuperState if succeeded
+            LimbManager.Instance.TryAddLimb(type);
+            
             Context.SwitchSubState(Factory.Idle);
         }
 
