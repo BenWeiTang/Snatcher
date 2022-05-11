@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 1578441235997430616}
   - component: {fileID: 6235809814258306860}
   - component: {fileID: 5183469892017107069}
+  - component: {fileID: 8275062380326074570}
   m_Layer: 0
   m_Name: Geo
   m_TagString: Enemy
@@ -130,6 +131,19 @@ CapsuleCollider:
   m_Height: 3.07
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &8275062380326074570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5455409343383208776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dd3df1c69944839bcbca75ebb653ea8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _type: 1
 --- !u!1 &8257627856250856927
 GameObject:
   m_ObjectHideFlags: 0
