@@ -11,7 +11,7 @@ namespace Snatcher
     {
         public override void OnEnterState(EnemyStateMachine context)
         {
-            context.MaterialRenderer.material = context.EnemyInvisMaterial;
+            //context.MaterialRenderer.material = context.EnemyInvisMaterial;
         }
 
         public override void OnExitState(EnemyStateMachine context)

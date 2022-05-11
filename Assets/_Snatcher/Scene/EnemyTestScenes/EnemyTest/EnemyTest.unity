@@ -123,6 +123,19 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: 1e159942781c55e41ae48f66a6421c41, type: 2}
+<<<<<<< HEAD
+=======
+--- !u!137 &48029550 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 8031475627189022106, guid: b1684ffb35c2dad49b1449ca02f7d99e, type: 3}
+  m_PrefabInstance: {fileID: 500732611}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &126104385 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 5041576152288954086, guid: ed476b515737cad42b1158acc9f749eb, type: 3}
+  m_PrefabInstance: {fileID: 457117631}
+  m_PrefabAsset: {fileID: 0}
+>>>>>>> parent of 605b72c (Revert "Merge pull request #41 from woderggininder/new-model-and-limbs")
 --- !u!1 &147306535
 GameObject:
   m_ObjectHideFlags: 0
@@ -220,6 +233,40 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
+<<<<<<< HEAD
+=======
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &304268454
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 304268455}
+  m_Layer: 0
+  m_Name: PatrolPoint1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &304268455
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 304268454}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 10.76, y: 0.11999952, z: 14.88}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+>>>>>>> parent of 605b72c (Revert "Merge pull request #41 from woderggininder/new-model-and-limbs")
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &457117631
 PrefabInstance:
@@ -278,6 +325,126 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed476b515737cad42b1158acc9f749eb, type: 3}
+<<<<<<< HEAD
+=======
+--- !u!1001 &500732611
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1471050230939469161, guid: b1684ffb35c2dad49b1449ca02f7d99e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 1471050230939469161, guid: b1684ffb35c2dad49b1449ca02f7d99e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 2599411738143849622, guid: b1684ffb35c2dad49b1449ca02f7d99e, type: 3}
+      propertyPath: StolenState
+      value: 
+      objectReference: {fileID: 11400000, guid: 411f2f927a692b74a883ec6d7d60ba34, type: 2}
+    - target: {fileID: 2599411738143849622, guid: b1684ffb35c2dad49b1449ca02f7d99e, type: 3}
+      propertyPath: _defaultState
+      value: 
+      objectReference: {fileID: 11400000, guid: 519383103ffd75347a1ab40db23b32b8, type: 2}
+    - target: {fileID: 2599411738143849622, guid: b1684ffb35c2dad49b1449ca02f7d99e, type: 3}
+      propertyPath: PatrolPointOne
+      value: 
+      objectReference: {fileID: 304268454}
+    - target: {fileID: 2599411738143849622, guid: b1684ffb35c2dad49b1449ca02f7d99e, type: 3}
+      propertyPath: PatrolPointTwo
+      value: 
+      objectReference: {fileID: 642895332}
+    - target: {fileID: 2599411738143849622, guid: b1684ffb35c2dad49b1449ca02f7d99e, type: 3}
+      propertyPath: MaterialRenderer
+      value: 
+      objectReference: {fileID: 48029550}
+    - target: {fileID: 2599411738143849622, guid: b1684ffb35c2dad49b1449ca02f7d99e, type: 3}
+      propertyPath: EnemyInvisMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: b160e13861254c340838688accf245e8, type: 2}
+    - target: {fileID: 2599411738143849622, guid: b1684ffb35c2dad49b1449ca02f7d99e, type: 3}
+      propertyPath: EnemyDefaultMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: b414308fabc24b145a867665ca2b0a03, type: 2}
+    - target: {fileID: 2599411738143849622, guid: b1684ffb35c2dad49b1449ca02f7d99e, type: 3}
+      propertyPath: PatrolPoints.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2599411738143849622, guid: b1684ffb35c2dad49b1449ca02f7d99e, type: 3}
+      propertyPath: PatrolPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 304268455}
+    - target: {fileID: 2599411738143849622, guid: b1684ffb35c2dad49b1449ca02f7d99e, type: 3}
+      propertyPath: PatrolPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 642895333}
+    - target: {fileID: 4120086862255468786, guid: b1684ffb35c2dad49b1449ca02f7d99e, type: 3}
+      propertyPath: m_Name
+      value: Invis Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4120086862255468786, guid: b1684ffb35c2dad49b1449ca02f7d99e, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 7457753416530206946, guid: b1684ffb35c2dad49b1449ca02f7d99e, type: 3}
+      propertyPath: m_AutoRepath
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8031475627189022106, guid: b1684ffb35c2dad49b1449ca02f7d99e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b414308fabc24b145a867665ca2b0a03, type: 2}
+    - target: {fileID: 8911606214208892057, guid: b1684ffb35c2dad49b1449ca02f7d99e, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8911606214208892057, guid: b1684ffb35c2dad49b1449ca02f7d99e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 7.8304
+      objectReference: {fileID: 0}
+    - target: {fileID: 8911606214208892057, guid: b1684ffb35c2dad49b1449ca02f7d99e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.00000047683716
+      objectReference: {fileID: 0}
+    - target: {fileID: 8911606214208892057, guid: b1684ffb35c2dad49b1449ca02f7d99e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 10.023296
+      objectReference: {fileID: 0}
+    - target: {fileID: 8911606214208892057, guid: b1684ffb35c2dad49b1449ca02f7d99e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8911606214208892057, guid: b1684ffb35c2dad49b1449ca02f7d99e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8911606214208892057, guid: b1684ffb35c2dad49b1449ca02f7d99e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8911606214208892057, guid: b1684ffb35c2dad49b1449ca02f7d99e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8911606214208892057, guid: b1684ffb35c2dad49b1449ca02f7d99e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8911606214208892057, guid: b1684ffb35c2dad49b1449ca02f7d99e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8911606214208892057, guid: b1684ffb35c2dad49b1449ca02f7d99e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b1684ffb35c2dad49b1449ca02f7d99e, type: 3}
+>>>>>>> parent of 605b72c (Revert "Merge pull request #41 from woderggininder/new-model-and-limbs")
 --- !u!1001 &569925138
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -350,10 +517,45 @@ PrefabInstance:
 --- !u!1001 &617863100
 PrefabInstance:
   m_ObjectHideFlags: 0
+<<<<<<< HEAD
+=======
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 642895333}
+  m_Layer: 0
+  m_Name: PatrolPoint2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &642895333
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 642895332}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 7.24, y: 1.1805367, z: 7.91}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &657681316
+PrefabInstance:
+  m_ObjectHideFlags: 0
+>>>>>>> parent of 605b72c (Revert "Merge pull request #41 from woderggininder/new-model-and-limbs")
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+<<<<<<< HEAD
     - target: {fileID: 2166229810569067096, guid: 4fe837a622fb96f4d895e92758ea077c, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -404,6 +606,70 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4fe837a622fb96f4d895e92758ea077c, type: 3}
+=======
+    - target: {fileID: 663329223315562275, guid: 0e550c6f3be1df34291d8e87d6b34ee0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 2166229810569067096, guid: 0e550c6f3be1df34291d8e87d6b34ee0, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2166229810569067096, guid: 0e550c6f3be1df34291d8e87d6b34ee0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.4770384
+      objectReference: {fileID: 0}
+    - target: {fileID: 2166229810569067096, guid: 0e550c6f3be1df34291d8e87d6b34ee0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.31000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 2166229810569067096, guid: 0e550c6f3be1df34291d8e87d6b34ee0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 10.954979
+      objectReference: {fileID: 0}
+    - target: {fileID: 2166229810569067096, guid: 0e550c6f3be1df34291d8e87d6b34ee0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2166229810569067096, guid: 0e550c6f3be1df34291d8e87d6b34ee0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2166229810569067096, guid: 0e550c6f3be1df34291d8e87d6b34ee0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2166229810569067096, guid: 0e550c6f3be1df34291d8e87d6b34ee0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2166229810569067096, guid: 0e550c6f3be1df34291d8e87d6b34ee0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2166229810569067096, guid: 0e550c6f3be1df34291d8e87d6b34ee0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2166229810569067096, guid: 0e550c6f3be1df34291d8e87d6b34ee0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4315771647155822789, guid: 0e550c6f3be1df34291d8e87d6b34ee0, type: 3}
+      propertyPath: m_Name
+      value: VaultLegEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 6235809814258306860, guid: 0e550c6f3be1df34291d8e87d6b34ee0, type: 3}
+      propertyPath: _defaultState
+      value: 
+      objectReference: {fileID: 11400000, guid: 85e394fef356f234cba84b475568864b, type: 2}
+    - target: {fileID: 6235809814258306860, guid: 0e550c6f3be1df34291d8e87d6b34ee0, type: 3}
+      propertyPath: MaterialRenderer
+      value: 
+      objectReference: {fileID: 126104385}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0e550c6f3be1df34291d8e87d6b34ee0, type: 3}
+>>>>>>> parent of 605b72c (Revert "Merge pull request #41 from woderggininder/new-model-and-limbs")
 --- !u!1 &834347606
 GameObject:
   m_ObjectHideFlags: 0
