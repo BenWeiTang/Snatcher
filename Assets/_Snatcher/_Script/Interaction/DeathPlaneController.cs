@@ -11,7 +11,7 @@ namespace Snatcher
             if (other.CompareTag("Player"))
             {
                 // Reload the current scene
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                SceneManager.LoadScene((int)SceneIndex.LoseScene);
             }
         }
     }

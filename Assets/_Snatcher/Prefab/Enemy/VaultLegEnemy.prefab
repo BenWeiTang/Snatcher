@@ -679,6 +679,7 @@ GameObject:
   - component: {fileID: 663329223315562275}
   - component: {fileID: 1578441235997430616}
   - component: {fileID: 6235809814258306860}
+  - component: {fileID: 6621847048609236819}
   m_Layer: 0
   m_Name: Vault Leg Enemy
   m_TagString: Enemy
@@ -749,6 +750,19 @@ MonoBehaviour:
   - {fileID: 8257627856250856926}
   - {fileID: 8257627856587254940}
   destinationPointIndex: 0
+--- !u!65 &6621847048609236819
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5455409343383208776}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.86, y: 2.98, z: 1.58}
+  m_Center: {x: 0, y: 1.26, z: 0}
 --- !u!1 &5578046862204062312
 GameObject:
   m_ObjectHideFlags: 0
