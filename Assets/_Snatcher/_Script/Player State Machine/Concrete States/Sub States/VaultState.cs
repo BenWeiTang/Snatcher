@@ -1,52 +1,61 @@
-﻿using System.Threading.Tasks;
-using UnityEngine;
+﻿using UnityEngine;
 using DG.Tweening;
+using DG.Tweening.Core;
+using DG.Tweening.Plugins.Options;
 
 namespace Snatcher
 {
     public class VaultState : ASubState
     {
-        private Vector3 _destination;
         private Vector3 _apex;
-        
-        public VaultState(PlayerStateMachine currentContext) : base(currentContext)
-        {
-        }
+        private TweenerCore<Vector3, Vector3, VectorOptions> _vaultUpTween;
 
-        public override async void EnterState()
+        public VaultState(PlayerStateMachine currentContext) : base(currentContext) { }
+
+        //TODO: set animations once they are ready
+        public override void EnterState()
         {
             if (Context.Debug) this.Log("Enter");
-            
+
             CalculateWaypoints();
-            await VaultUp();
-            await VaultDown();
-            Context.SwitchSubState(Factory.Idle);
+            VaultUp();
         }
 
+        //TODO: set animations once they are ready
         public override void ExitState() { }
 
-        public override void UpdateState() { }
+        public override void UpdateState() => CheckSwitchState();
 
-        protected override void CheckSwitchState() { }
+        protected override void CheckSwitchState() => ForwardOrDownwardCheck();
 
         private void CalculateWaypoints()
         {
             Transform t = Context.transform;
-            
+            Vector3 tPos = t.position;
+            Vector3 tForward = t.forward;
+
             //TODO: parameterize distance and height
-            _destination = t.position + t.forward * 5f;
-            _apex = 0.5f * (_destination + t.position);
+            _apex = tPos + 4f * tForward;
             _apex.y += 5f;
         }
-        
-        private async Task VaultUp()
+
+        private void VaultUp()
         {
-            await Context.transform.DOMove(_apex, 0.25f).SetEase(Ease.OutQuad).AsyncWaitForCompletion();
+            _vaultUpTween = Context.transform.DOMove(_apex, 0.25f).SetEase(Ease.OutQuad);
+            _vaultUpTween.onComplete += () =>
+            {
+                Context.SwitchSubState(Factory.Idle);
+            };
         }
         
-        private async Task VaultDown()
+        private void ForwardOrDownwardCheck()
         {
-            await Context.transform.DOMove(_destination, 0.25f).SetEase(Ease.InQuad).AsyncWaitForCompletion();
+            if (!ForwardGroundCheck(0.25f))
+                return;
+
+            _vaultUpTween.Pause();
+            _vaultUpTween.Kill();
+            Context.SwitchSubState(Factory.Idle);
         }
     }
 }
