@@ -11,6 +11,7 @@ namespace Snatcher
         public int IsFallingHash { get; }
         public int IsDashingHash { get; }
         public int IsAbilityActiveHash { get; }
+        public abstract int IsInSuperStateHash { get; protected set; }
 
         protected ASuperState(PlayerStateMachine currentContext) : base(currentContext)
         {
@@ -23,6 +24,7 @@ namespace Snatcher
         public override void EnterState()
         {
             Context.PlayerInput.Player.SwitchLimb.started += OnSwitchLimbPressed;
+            Context.Animator.SetBool(IsInSuperStateHash, true);
 
             LimbManager.Instance.OnLimbForcedSwitched += ForceSwitchSuperState;
         }
@@ -30,6 +32,7 @@ namespace Snatcher
         public override void ExitState()
         {
             Context.PlayerInput.Player.SwitchLimb.started -= OnSwitchLimbPressed;
+            Context.Animator.SetBool(IsInSuperStateHash, false);
             
             LimbManager.Instance.OnLimbForcedSwitched -= ForceSwitchSuperState;
         }
