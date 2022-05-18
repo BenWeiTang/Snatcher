@@ -14,7 +14,6 @@ namespace Snatcher
         UpperWorld = 4,
         Dungeon01 = 5,
         Dungeon02 = 6,
-        Dungeon03 = 10,
         WinScene = 7,
         LoseScene = 8,
         Shop = 9

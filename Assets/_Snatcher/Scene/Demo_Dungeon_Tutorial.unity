@@ -3140,13 +3140,10 @@ PrefabInstance:
       value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 6276389110876645161, guid: f93e71c7c8cf43749a6968d4539cb5d9, type: 3}
-<<<<<<< Updated upstream
       propertyPath: _value
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6276389110876645161, guid: f93e71c7c8cf43749a6968d4539cb5d9, type: 3}
-=======
->>>>>>> Stashed changes
       propertyPath: _destroyAfterInteraction
       value: 1
       objectReference: {fileID: 0}
