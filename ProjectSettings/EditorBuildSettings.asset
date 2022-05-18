@@ -35,4 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Snatcher/Scene/Shop_V1.unity
     guid: 1f54f617e65c95540a81a9ca8eb89db3
+  - enabled: 1
+    path: Assets/_Snatcher/Scene/Alpha_Dungeon_3.unity
+    guid: 6dfbc46877cf2b344aef83504fe7bd88
   m_configObjects: {}
