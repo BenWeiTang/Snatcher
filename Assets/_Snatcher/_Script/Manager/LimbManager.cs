@@ -99,6 +99,13 @@ namespace Snatcher
             _onLimbSwitched.Raise();
         }
 
+        public void DropActiveLimb()
+        {
+            _inventory.Remove(CurrentLimb);
+            _index--;
+            _onLimbSwitched.Raise();
+        }
+
         public void ResetInventory()
         {
             _inventory.Clear();
