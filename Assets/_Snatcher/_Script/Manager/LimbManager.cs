@@ -9,6 +9,8 @@ namespace Snatcher
     public class LimbManager : ASingletonScriptableObject<LimbManager>
     {
         public ALimb CurrentLimb => _inventory[_index];
+        private protected float MaxStamina = 100f;
+        public float CurrentStamina;
 
         /// <summary>
         /// The next limb in the current limb selection rotation. Is is what should appear in the right slot of the UI. Returns null if there are less than two available limbs.
@@ -63,10 +65,23 @@ namespace Snatcher
             _onLimbSwitched.Raise();
         }
 
-        public void DecrementLimbDurability()
+        public float GetMaxStam()
         {
-            CurrentLimb.DecrementDurability();
-            _onAbilityUsed.Raise();
+            return MaxStamina;
+        }
+
+        public void EatLimbStaminaCost()
+        {
+            if(CurrentStamina > CurrentLimb.StaminaCost)
+            {
+                CurrentStamina -= CurrentLimb.StaminaCost;
+                _onAbilityUsed.Raise();
+                Debug.Log("Limb Manager Raising On Ability Used");
+            }
+            else
+            {
+                //_insufficientStaminaForLimb.Raise();
+            }
         }
 
         public void TryAddLimb(LimbType type)
@@ -108,6 +123,7 @@ namespace Snatcher
 
         protected override void OnInitialized()
         {
+            CurrentStamina = MaxStamina;
             _index = 0;
             _inventory = new List<ALimb>();
 
@@ -135,6 +151,21 @@ namespace Snatcher
 
             return currentIndex - 1;
         }
+
+        public void RecoverStamina(float amount)
+        {
+            if(CurrentStamina+amount < MaxStamina)
+            {
+                CurrentStamina += amount;
+            }
+            else
+            {
+                CurrentStamina = MaxStamina;
+            }
+            //Debug.Log("recovering some stamina, snatcher now has " + CurrentStamina + " stamina");
+        }
+
+
 
 
     }

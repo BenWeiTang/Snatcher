@@ -49,5 +49,10 @@ namespace Snatcher
                 //_skinnedMeshRenderer.BakeMesh(_legLimb);
             }
         }
+        private void Update()
+        { 
+            LimbManager.Instance.RecoverStamina(2f*Time.deltaTime);
+        }
     }
+
 }
