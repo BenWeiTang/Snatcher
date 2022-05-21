@@ -21,7 +21,8 @@ ModelImporter:
     optimizeGameObjects: 0
     removeConstantScaleCurves: 1
     motionNodeName: 
-    rigImportErrors: 
+    rigImportErrors: "Invalid Avatar Rig Configuration. Missing or invalid transform:\n\tRequired
+      human bone 'RightLowerArm' not found\n"
     rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
@@ -29,7 +30,7 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -85,7 +86,292 @@ ModelImporter:
   humanDescription:
     serializedVersion: 3
     human: []
-    skeleton: []
+    skeleton:
+    - name: Snatcher_With_Propeller(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Character2_Reference
+      parentName: Snatcher_With_Propeller(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: snatcher16:Character2_Hips
+      parentName: Character2_Reference
+      position: {x: -0, y: 0.5000027, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: snatcher16:Character2_LeftUpLeg
+      parentName: snatcher16:Character2_Hips
+      position: {x: -0.07486163, y: -0.062699996, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: snatcher16:Character2_LeftLeg
+      parentName: snatcher16:Character2_LeftUpLeg
+      position: {x: -0, y: -0.19829184, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: snatcher16:Character2_LeftFoot
+      parentName: snatcher16:Character2_LeftLeg
+      position: {x: -1.7763568e-17, y: -0.15962747, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: snatcher16:Character2_LeftToeBase
+      parentName: snatcher16:Character2_LeftFoot
+      position: {x: -0.000000099999994, y: -0.062623195, z: 0.129547}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: snatcher16:Character2_RightUpLeg
+      parentName: snatcher16:Character2_Hips
+      position: {x: 0.07250881, y: -0.062699996, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: snatcher16:Character2_RightLeg
+      parentName: snatcher16:Character2_RightUpLeg
+      position: {x: -0, y: -0.16817926, z: 0.00000439024}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: snatcher16:Character2_RightFoot
+      parentName: snatcher16:Character2_RightLeg
+      position: {x: -0, y: -0.1900161, z: -5.4210107e-22}
+      rotation: {x: 0, y: 0.00004189127, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: snatcher16:Character2_RightToeBase
+      parentName: snatcher16:Character2_RightFoot
+      position: {x: 0.00000004617204, y: -0.062623195, z: 0.1295476}
+      rotation: {x: 0.000025417168, y: 6.7762636e-21, z: -1.7223343e-25, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: snatcher16:Character2_Spine
+      parentName: snatcher16:Character2_Hips
+      position: {x: -0, y: 0.07, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: snatcher16:Character2_Spine1
+      parentName: snatcher16:Character2_Spine
+      position: {x: -0, y: 0.12666667, z: 0}
+      rotation: {x: 0.9832549, y: -0, z: -0, w: 0.18223563}
+      scale: {x: 1, y: 1, z: 1}
+    - name: snatcher16:Character2_Spine2
+      parentName: snatcher16:Character2_Spine1
+      position: {x: -0, y: -0.10316624, z: 0}
+      rotation: {x: -0.9302575, y: -0, z: -0, w: 0.36690742}
+      scale: {x: 1, y: 1, z: 1}
+    - name: snatcher16:Character2_LeftShoulder
+      parentName: snatcher16:Character2_Spine2
+      position: {x: -0.07, y: 0.14255166, z: 0}
+      rotation: {x: 0, y: -0, z: -0.000006416546, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: snatcher16:Character2_LeftArm
+      parentName: snatcher16:Character2_LeftShoulder
+      position: {x: -0.05257873, y: 0.0000013252524, z: 0}
+      rotation: {x: 0, y: 0, z: 0.000006416546, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: snatcher16:Character2_LeftForeArm
+      parentName: snatcher16:Character2_LeftArm
+      position: {x: -0.18650267, y: 2.842171e-16, z: 0}
+      rotation: {x: 0, y: 0, z: 3.3881318e-21, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: snatcher16:Character2_LeftHand
+      parentName: snatcher16:Character2_LeftForeArm
+      position: {x: -0.14069256, y: 0, z: 0}
+      rotation: {x: -0.7205208, y: -2.4412194e-21, z: 2.3494436e-21, w: 0.69343334}
+      scale: {x: 1, y: 1, z: 1}
+    - name: snatcher16:Character2_LeftHandThumb1
+      parentName: snatcher16:Character2_LeftHand
+      position: {x: -0.043487, y: -0.0070381793, z: 0.018121578}
+      rotation: {x: -0.26564983, y: -0.18027568, z: -0.33826146, w: 0.884596}
+      scale: {x: 1, y: 1, z: 1}
+    - name: snatcher16:Character2_LeftHandThumb2
+      parentName: snatcher16:Character2_LeftHandThumb1
+      position: {x: -0.019332048, y: -0.005790028, z: 0.01826802}
+      rotation: {x: 0.05683448, y: -0.07420216, z: 0.036629353, w: 0.9949484}
+      scale: {x: 1, y: 1, z: 1}
+    - name: snatcher16:Character2_LeftHandThumb3
+      parentName: snatcher16:Character2_LeftHandThumb2
+      position: {x: -0.0115265185, y: -0.00063608517, z: 0.016597241}
+      rotation: {x: 0.00000032037494, y: -0.03508896, z: -0.0013473233, w: 0.99938333}
+      scale: {x: 1, y: 1, z: 1}
+    - name: snatcher16:Character2_LeftHandThumb4
+      parentName: snatcher16:Character2_LeftHandThumb3
+      position: {x: -0.010057672, y: -0.00078408583, z: 0.020456841}
+      rotation: {x: 2.434e-42, y: -3.3916372e-21, z: 7.176582e-22, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: snatcher16:Character2_LeftHandIndex1
+      parentName: snatcher16:Character2_LeftHand
+      position: {x: -0.088219, y: 0.0031657317, z: 0.0042242776}
+      rotation: {x: -0.004304439, y: -0.10161595, z: -0.022894941, w: 0.99455094}
+      scale: {x: 1, y: 1, z: 1}
+    - name: snatcher16:Character2_LeftHandIndex2
+      parentName: snatcher16:Character2_LeftHandIndex1
+      position: {x: -0.034389526, y: -0.00026611506, z: 0.007223864}
+      rotation: {x: 3.4694449e-18, y: -1.0408341e-17, z: -1.5170337e-18, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: snatcher16:Character2_LeftHandIndex3
+      parentName: snatcher16:Character2_LeftHandIndex2
+      position: {x: -0.0161837, y: -0.00007388628, z: 0.0022909928}
+      rotation: {x: -0.0000012144443, y: 0.018114453, z: 0.0005757739, w: 0.99983585}
+      scale: {x: 1, y: 1, z: 1}
+    - name: snatcher16:Character2_LeftHandIndex4
+      parentName: snatcher16:Character2_LeftHandIndex3
+      position: {x: -0.018438272, y: -0.000014697877, z: 0.00042495245}
+      rotation: {x: 3.469406e-18, y: 5.877402e-39, z: 1.6940659e-21, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: snatcher16:Character2_LeftHandMiddle1
+      parentName: snatcher16:Character2_LeftHand
+      position: {x: -0.088098, y: 0.0060149967, z: -0.013199842}
+      rotation: {x: 4.8572257e-17, y: 0.000031095955, z: 1.0306981e-21, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: snatcher16:Character2_LeftHandMiddle2
+      parentName: snatcher16:Character2_LeftHandMiddle1
+      position: {x: -0.052108865, y: 0.0003106755, z: -0.008105721}
+      rotation: {x: 1.0045e-41, y: -4.7433845e-20, z: 2.1175824e-22, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: snatcher16:Character2_LeftHandMiddle3
+      parentName: snatcher16:Character2_LeftHandMiddle2
+      position: {x: -0.015677664, y: 0.0001035585, z: -0.0027011351}
+      rotation: {x: 4.305e-42, y: -6.7762636e-21, z: 2.1175824e-22, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: snatcher16:Character2_LeftHandMiddle4
+      parentName: snatcher16:Character2_LeftHandMiddle3
+      position: {x: -0.023533106, y: 0.0001627348, z: -0.004246044}
+      rotation: {x: 1.4349e-41, y: -2.032879e-20, z: 4.2351647e-22, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: snatcher16:Character2_LeftHandPinky1
+      parentName: snatcher16:Character2_LeftHand
+      position: {x: -0.084959365, y: -0.0025678254, z: -0.039570842}
+      rotation: {x: 0.0014575124, y: 0.013227322, z: -0.0037074857, w: 0.99990463}
+      scale: {x: 1, y: 1, z: 1}
+    - name: snatcher16:Character2_LeftHandPinky2
+      parentName: snatcher16:Character2_LeftHandPinky1
+      position: {x: -0.02117068, y: 0.00028080543, z: -0.0073336205}
+      rotation: {x: 0, y: 0, z: -3.3881318e-21, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: snatcher16:Character2_LeftHandPinky3
+      parentName: snatcher16:Character2_LeftHandPinky2
+      position: {x: -0.022062583, y: 0.00022161727, z: -0.0057897004}
+      rotation: {x: 0, y: 0, z: -1.6940659e-21, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: snatcher16:Character2_LeftHandPinky4
+      parentName: snatcher16:Character2_LeftHandPinky3
+      position: {x: -0.015894476, y: 0.00019211126, z: -0.00501774}
+      rotation: {x: 0, y: 0, z: -1.6940659e-21, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: snatcher16:Character2_RightShoulder
+      parentName: snatcher16:Character2_Spine2
+      position: {x: 0.07, y: 0.14255166, z: 0}
+      rotation: {x: 0, y: 0, z: 0.000020231517, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: snatcher16:Character2_RightArm
+      parentName: snatcher16:Character2_RightShoulder
+      position: {x: 0.046616506, y: 0.0000031137547, z: 0}
+      rotation: {x: 0, y: 0, z: -0.000020231517, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: snatcher16:Character2_RightForeArm
+      parentName: snatcher16:Character2_RightArm
+      position: {x: 0.14721236, y: -1.998701e-21, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: snatcher16:Character2_RightHand
+      parentName: snatcher16:Character2_RightForeArm
+      position: {x: 0.1704904, y: -2.1149984e-21, z: 0}
+      rotation: {x: -0.7074401, y: 0, z: -0, w: 0.70677334}
+      scale: {x: 1, y: 1, z: 1}
+    - name: snatcher16:Character2_RightHandThumb1
+      parentName: snatcher16:Character2_RightHand
+      position: {x: 0.041890506, y: -0.0079673575, z: 0.024116285}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: snatcher16:Character2_RightHandThumb2
+      parentName: snatcher16:Character2_RightHandThumb1
+      position: {x: 0.013580407, y: -0.005362126, z: 0.008271172}
+      rotation: {x: 0, y: 0, z: 0.0000052541914, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: snatcher16:Character2_RightHandThumb3
+      parentName: snatcher16:Character2_RightHandThumb2
+      position: {x: 0.013472282, y: -0.000018159522, z: 0.019998137}
+      rotation: {x: 0, y: 0, z: -0.0000018377619, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: snatcher16:Character2_RightHandThumb4
+      parentName: snatcher16:Character2_RightHandThumb3
+      position: {x: 0.017096026, y: -0.000021513131, z: 0.02362445}
+      rotation: {x: 0, y: 0, z: 4.2351647e-22, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: snatcher16:Character2_RightHandIndex1
+      parentName: snatcher16:Character2_RightHand
+      position: {x: 0.097372845, y: 0.002025153, z: 0.004865121}
+      rotation: {x: 0, y: 0.01745297, z: -0, w: 0.9998477}
+      scale: {x: 1, y: 1, z: 1}
+    - name: snatcher16:Character2_RightHandIndex2
+      parentName: snatcher16:Character2_RightHandIndex1
+      position: {x: 0.024580183, y: -0.000004504488, z: 0.0041643856}
+      rotation: {x: 0, y: -1.9198622e-10, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: snatcher16:Character2_RightHandIndex3
+      parentName: snatcher16:Character2_RightHandIndex2
+      position: {x: 0.020815961, y: -0.0000041291137, z: 0.0041828994}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: snatcher16:Character2_RightHandIndex4
+      parentName: snatcher16:Character2_RightHandIndex3
+      position: {x: 0.016246019, y: -0.0000041291137, z: 0.004266056}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: snatcher16:Character2_RightHandMiddle1
+      parentName: snatcher16:Character2_RightHand
+      position: {x: 0.10277671, y: 0.0050359983, z: -0.015579757}
+      rotation: {x: 0, y: 0.01745297, z: -0, w: 0.9998477}
+      scale: {x: 1, y: 1, z: 1}
+    - name: snatcher16:Character2_RightHandMiddle2
+      parentName: snatcher16:Character2_RightHandMiddle1
+      position: {x: 0.034063812, y: 0.0000041291137, z: -0.004889491}
+      rotation: {x: 0, y: -1.9198622e-10, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: snatcher16:Character2_RightHandMiddle3
+      parentName: snatcher16:Character2_RightHandMiddle2
+      position: {x: 0.025404476, y: 0.0000037537397, z: -0.0040613795}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: snatcher16:Character2_RightHandMiddle4
+      parentName: snatcher16:Character2_RightHandMiddle3
+      position: {x: 0.019769477, y: 0.000003002992, z: -0.00319644}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: snatcher16:Character2_RightHandPinky1
+      parentName: snatcher16:Character2_RightHand
+      position: {x: 0.08527332, y: -0.0031167646, z: -0.038933262}
+      rotation: {x: 0.00000018904437, y: 0.01745297, z: -0.000010829995, w: 0.9998477}
+      scale: {x: 1, y: 1, z: 1}
+    - name: snatcher16:Character2_RightHandPinky2
+      parentName: snatcher16:Character2_RightHandPinky1
+      position: {x: 0.028731538, y: 0.00000524503, z: -0.006032437}
+      rotation: {x: -5.293956e-22, y: -1.9198623e-10, z: 1.693881e-20, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: snatcher16:Character2_RightHandPinky3
+      parentName: snatcher16:Character2_RightHandPinky2
+      position: {x: 0.019642081, y: 0.0000067389383, z: -0.0077717807}
+      rotation: {x: 1.5881868e-22, y: -6.938894e-18, z: -6.783654e-21, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: snatcher16:Character2_RightHandPinky4
+      parentName: snatcher16:Character2_RightHandPinky3
+      position: {x: 0.0120612355, y: 0.0000043009713, z: -0.004451919}
+      rotation: {x: 1.0587912e-22, y: -7.19e-43, z: -6.7855015e-21, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: snatcher16:Character2_Neck
+      parentName: snatcher16:Character2_Spine2
+      position: {x: -0, y: 0.12666667, z: 0}
+      rotation: {x: -0.93025756, y: -0, z: -0, w: 0.3669073}
+      scale: {x: 1, y: 1, z: 1}
+    - name: snatcher16:Character2_Head
+      parentName: snatcher16:Character2_Neck
+      position: {x: -0, y: 0.19999999, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Snatcher1
+      parentName: Snatcher_With_Propeller(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
