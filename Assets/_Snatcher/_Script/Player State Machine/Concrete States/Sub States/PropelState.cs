@@ -37,7 +37,6 @@ namespace Snatcher
 
         protected override void CheckSwitchState() 
         { 
-            Debug.Log(FrontGroundCheck(0.1f));
             if (!FrontGroundCheck(0.1f) || isFirstJump) {
                 isFirstJump = false;
                 return;
