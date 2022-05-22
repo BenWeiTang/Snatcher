@@ -21,10 +21,10 @@ namespace Snatcher
 
         private void OnEnable()
         {
-            //_propellerLimb.enabled = false;
-            //_vaultArm.enabled = false;
-            //_vaultLegL.enabled = false;
-            //_vaultLegR.enabled = false;
+            _propellerLimb.enabled = false;
+            _vaultArm.enabled = false;
+            _vaultLegL.enabled = false;
+            _vaultLegR.enabled = false;
             _onLimbSwitched.RegisterListener(OnLimbSwitched);
         }
         
@@ -46,7 +46,6 @@ namespace Snatcher
                 _defaultLegL.enabled = true;
                 _defaultLegR.enabled = true;
                 _defaultLeftArm.enabled = true;
-                _defaultRightArm.enabled = true;
                 _propellerLimb.enabled = false;
                 _vaultArm.enabled = false;
                 _vaultLegL.enabled = false;
@@ -70,7 +69,6 @@ namespace Snatcher
                 _defaultLegL.enabled = true;
                 _defaultLegR.enabled = true;
                 _defaultLeftArm.enabled = true;
-                _defaultRightArm.enabled = true;
                 //_skinnedMeshRenderer.sharedMesh = _legLimb;
                 //_skinnedMeshRenderer.BakeMesh(_legLimb);
             }
