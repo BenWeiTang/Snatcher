@@ -74,6 +74,7 @@ namespace Snatcher
             speed = speed + propelStateGravity * Time.deltaTime;
 
             if (Input.GetKeyDown(KeyCode.Mouse0)) {
+                LimbManager.Instance.EatLimbStaminaCost();
                 speed = -flapSpeed;
             }
         }
