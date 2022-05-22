@@ -107,6 +107,7 @@ MonoBehaviour:
   _groundCheck: {fileID: 781422762216056254}
   _limbSlot: {fileID: 0}
   _canGrapple: {fileID: 11400000, guid: 24083f218e1b49948b33c190cbcc4910, type: 2}
+  _limbController: {fileID: 5354913756358246086}
 --- !u!114 &1136104968581629001
 MonoBehaviour:
   m_ObjectHideFlags: 0

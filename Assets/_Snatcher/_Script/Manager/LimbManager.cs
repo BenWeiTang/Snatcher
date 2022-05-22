@@ -103,6 +103,7 @@ namespace Snatcher
         {
             _inventory.Remove(CurrentLimb);
             _index--;
+            OnLimbForcedSwitched?.Invoke(CurrentType);
             _onLimbSwitched.Raise();
         }
 
