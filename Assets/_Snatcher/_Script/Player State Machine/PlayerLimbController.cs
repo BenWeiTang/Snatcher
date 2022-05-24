@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 namespace Snatcher
@@ -48,6 +47,10 @@ namespace Snatcher
                 //_skinnedMeshRenderer.sharedMesh = _legLimb;
                 //_skinnedMeshRenderer.BakeMesh(_legLimb);
             }
+        }
+        private void Update()
+        { 
+            LimbManager.Instance.RecoverStamina(3f*Time.deltaTime);
         }
     }
 }
