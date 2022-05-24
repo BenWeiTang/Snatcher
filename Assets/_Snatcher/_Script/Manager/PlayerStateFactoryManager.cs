@@ -23,9 +23,7 @@ namespace Snatcher
         public InvisIdleState InvisIdle { get; private set; }
         public InvisMoveState InvisMove { get; private set; }
         public VaultState Vault { get; private set; }
-
-        public PropellerIdleState PropellerIdle { get; private set; }
-        public PropellerMoveState PropellerMove { get; private set; }
+        public PropelState Propel { get; private set; }
 
 
         public void InitContext(PlayerStateMachine context)
@@ -53,8 +51,7 @@ namespace Snatcher
             // Leg
             Vault = new VaultState(context);
             //Propeller
-            PropellerIdle = new PropellerIdleState(context);
-            PropellerMove = new PropellerMoveState(context);
+            Propel = new PropelState(context);
         }
     }
 }
