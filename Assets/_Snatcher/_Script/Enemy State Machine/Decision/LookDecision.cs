@@ -27,6 +27,11 @@ namespace Snatcher
                 if(hitCollider.tag == "Player")
                 {
                     //Check if player is invisible
+                    ASuperState playerState = NonPlayerPlayerStateReference.Instance.CurrentState;
+                    if (playerState.GetType() == typeof(InvisState))
+                    {
+                        return false;
+                    }
 
 
 

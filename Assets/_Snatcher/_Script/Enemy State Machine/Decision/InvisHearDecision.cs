@@ -21,8 +21,12 @@ namespace Snatcher
             {
                 if (hitCollider.tag == "Player")
                 {
-                    context.ChaseTarget = hitCollider.transform;
-                    return true;
+                    ASuperState playerState = NonPlayerPlayerStateReference.Instance.CurrentState;
+                    if (playerState.GetType() == typeof(InvisState))
+                    {
+                        context.ChaseTarget = hitCollider.transform;
+                        return true;
+                    }
                 }
             }
 
