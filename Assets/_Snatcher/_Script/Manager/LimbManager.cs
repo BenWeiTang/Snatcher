@@ -109,6 +109,14 @@ namespace Snatcher
             _onLimbSwitched.Raise();
         }
 
+        public void DropActiveLimb()
+        {
+            _inventory.Remove(CurrentLimb);
+            _index--;
+            OnLimbForcedSwitched?.Invoke(CurrentType);
+            _onLimbSwitched.Raise();
+        }
+
         public void ResetInventory()
         {
             _inventory.Clear();
