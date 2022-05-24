@@ -91,6 +91,7 @@ namespace Snatcher
         {
             _currentSuperState.UpdateState();
             _currentSubState.UpdateState();
+            NonPlayerPlayerStateReference.Instance.CurrentState = _currentSuperState;
         }
     }
     

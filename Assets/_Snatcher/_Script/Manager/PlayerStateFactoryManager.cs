@@ -27,6 +27,7 @@ namespace Snatcher
         public PropellerIdleState PropellerIdle { get; private set; }
         public PropellerMoveState PropellerMove { get; private set; }
 
+        public ASuperState CurrentState;
 
         public void InitContext(PlayerStateMachine context)
         {
@@ -55,6 +56,7 @@ namespace Snatcher
             //Propeller
             PropellerIdle = new PropellerIdleState(context);
             PropellerMove = new PropellerMoveState(context);
+
         }
     }
 }
