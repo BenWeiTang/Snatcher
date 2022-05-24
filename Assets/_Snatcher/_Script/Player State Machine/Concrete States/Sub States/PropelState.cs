@@ -19,6 +19,9 @@ namespace Snatcher
         public override void EnterState()
         {
             if (Context.Debug) this.Log("Enter");
+            posOffset = Context.transform.position;
+            posOffset.y += 0.1f;
+            
             isFirstJump = true;
             speed = -flapSpeed;
         }
@@ -37,11 +40,15 @@ namespace Snatcher
 
         protected override void CheckSwitchState() 
         { 
-            if (!FrontGroundCheck(0.1f) || isFirstJump) {
-                isFirstJump = false;
+            if (isFirstJump) {
+                if (Context.transform.position.y > posOffset.y) {
+                    isFirstJump = false;
+                }
                 return;
             }
-            Context.SwitchSubState(Factory.Fall);
+            if (FrontGroundCheck(0.1f)) {
+                Context.SwitchSubState(Factory.Idle);
+            }
         }
 
         private void UpdateDirection()
@@ -70,10 +77,12 @@ namespace Snatcher
             velocity *= SuperState.StateConfig.MoveSpeed;
 
             Context.Controller.Move(0.5f * (velocity) * Time.deltaTime);
-            Context.transform.DOMove(Context.transform.position + Vector3.down * Time.deltaTime * speed, Time.deltaTime);
+            //Context.transform.DOMove(Context.transform.position + Vector3.down * Time.deltaTime * speed, Time.deltaTime);
+            Context.transform.position = Context.transform.position + Vector3.down * Time.deltaTime * speed;
             speed = speed + propelStateGravity * Time.deltaTime;
 
             if (Input.GetKeyDown(KeyCode.Mouse0)) {
+                Debug.Log(isFirstJump);
                 LimbManager.Instance.EatLimbStaminaCost();
                 speed = -flapSpeed;
             }
