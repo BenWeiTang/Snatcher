@@ -13,6 +13,7 @@ namespace Snatcher
         private float propelStateGravity = 9.0f;
         private float flapSpeed = 5.0f;
         private bool isFirstJump;
+        private bool ateStamina;
 
         Vector3 posOffset = new Vector3 ();
 
@@ -22,7 +23,11 @@ namespace Snatcher
             posOffset = Context.transform.position;
             posOffset.y += 0.1f;
             
+            ateStamina = false;
             isFirstJump = true;
+
+            if(LimbManager.Instance.CurrentLimb.StaminaCost > LimbManager.Instance.CurrentStamina) 
+                return;
             speed = -flapSpeed;
         }
 
@@ -40,15 +45,17 @@ namespace Snatcher
 
         protected override void CheckSwitchState() 
         { 
-            if (isFirstJump) {
-                if (Context.transform.position.y > posOffset.y) {
+            if (isFirstJump) 
+            {
+                if (Context.transform.position.y > posOffset.y) 
                     isFirstJump = false;
-                }
+                
                 return;
             }
-            if (FrontGroundCheck(0.1f)) {
+
+            if (FrontGroundCheck(0.1f)) 
                 Context.SwitchSubState(Factory.Idle);
-            }
+                
         }
 
         private void UpdateDirection()
@@ -78,14 +85,25 @@ namespace Snatcher
 
             Context.Controller.Move(0.5f * (velocity) * Time.deltaTime);
             //Context.transform.DOMove(Context.transform.position + Vector3.down * Time.deltaTime * speed, Time.deltaTime);
+            if(LimbManager.Instance.CurrentLimb.StaminaCost > LimbManager.Instance.CurrentStamina && FrontGroundCheck(0.1f) && !ateStamina) 
+            {
+                Context.SwitchSubState(Factory.Idle);
+                return;
+            }
+
             Context.transform.position = Context.transform.position + Vector3.down * Time.deltaTime * speed;
             speed = speed + propelStateGravity * Time.deltaTime;
 
-            if (Input.GetKeyDown(KeyCode.Mouse0)) {
-                Debug.Log(isFirstJump);
+            if (Input.GetKeyDown(KeyCode.Mouse0)) 
+            {
+                if(LimbManager.Instance.CurrentLimb.StaminaCost > LimbManager.Instance.CurrentStamina) 
+                    return;
+                ateStamina = true;
                 LimbManager.Instance.EatLimbStaminaCost();
                 speed = -flapSpeed;
             }
         }
+
+
     }
 }
