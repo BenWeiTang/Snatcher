@@ -24,6 +24,7 @@ namespace Snatcher
         public override void EnterState()
         {
             Context.PlayerInput.Player.SwitchLimb.started += OnSwitchLimbPressed;
+            Context.PlayerInput.Player.DropLimb.performed += OnDropLimbPressed;
             Context.Animator.SetBool(IsInSuperStateHash, true);
 
             LimbManager.Instance.OnLimbForcedSwitched += ForceSwitchSuperState;
@@ -32,6 +33,7 @@ namespace Snatcher
         public override void ExitState()
         {
             Context.PlayerInput.Player.SwitchLimb.started -= OnSwitchLimbPressed;
+            Context.PlayerInput.Player.DropLimb.performed -= OnDropLimbPressed;
             Context.Animator.SetBool(IsInSuperStateHash, false);
             
             LimbManager.Instance.OnLimbForcedSwitched -= ForceSwitchSuperState;
@@ -54,6 +56,8 @@ namespace Snatcher
                 Context.Animator.SetBool(IsAbilityActiveHash, false);
             }
         }
+
+        private void OnDropLimbPressed(InputAction.CallbackContext callbackContext) => LimbManager.Instance.DropActiveLimb();
 
         private void ForceSwitchSuperState(LimbType type)
         {
