@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d5ac67b54a1d1748a31b2855886700e, type: 3}
   m_Name: Leg State Config
   m_EditorClassIdentifier: 
-  MoveSpeed: 7.5
-  TurnSpeed: 15
+  MoveSpeed: 5
+  TurnSpeed: 12
   GroundedGravity: -5
   AirborneGravity: -9.8
   MaxFallSpeed: 50
-  DashDuration: 0.5
-  DashDistance: 5
+  DashDuration: 0.3
+  DashDistance: 3
   EaseMode: 6
   StartupWindow: 0.25
   ActiveWindow: 0.25
