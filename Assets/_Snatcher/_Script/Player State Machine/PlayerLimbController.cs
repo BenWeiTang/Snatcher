@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 namespace Snatcher
@@ -51,8 +50,7 @@ namespace Snatcher
         }
         private void Update()
         { 
-            LimbManager.Instance.RecoverStamina(2f*Time.deltaTime);
+            LimbManager.Instance.RecoverStamina(3f*Time.deltaTime);
         }
     }
-
 }
