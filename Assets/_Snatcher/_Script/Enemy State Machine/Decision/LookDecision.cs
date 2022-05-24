@@ -29,14 +29,15 @@ namespace Snatcher
                     //Check if player is invisible
 
 
+
                     target = hitCollider.transform;
                     
                     Vector3 directionToTarget = (target.position - context.transform.position).normalized;
-                    if (Vector3.Angle(context.transform.forward, directionToTarget) < angle / 2)
+                    if (Vector3.Angle(context.transform.forward, directionToTarget) <= angle)
                     {
-                        if (Physics.Raycast(context.transform.position, directionToTarget,out hitInfo, context.EnemyLookDistance))
+                        if (Physics.Raycast(context.transform.position + Vector3.up * 1f, directionToTarget,out hitInfo, context.EnemyLookDistance))
                         {
-                            if (hitInfo.collider.tag == "Player")
+                            if (hitInfo.collider.CompareTag("Player"))
                             {
                                 context.ChaseTarget = hitCollider.transform;
                                 return true;
