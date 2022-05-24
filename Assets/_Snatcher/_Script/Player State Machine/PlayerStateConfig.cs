@@ -29,7 +29,7 @@ namespace Snatcher
 
         [Header("Visual")]
         public GameObject Limb;
-        
+
         private void Reset()
         {
             // Locomotion

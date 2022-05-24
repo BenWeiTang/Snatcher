@@ -6,7 +6,7 @@ namespace Snatcher
 {
     public class Cheater : MonoBehaviour
     {
-        [SerializeField, Min(0)] private SceneIndex _targetScene;
+        [SerializeField, Min(0)] private int _targetSceneIndex;
         [SerializeField] private Transform _spawnPoint;
         [SerializeField] private Transform _destination;
 
@@ -38,7 +38,7 @@ namespace Snatcher
         private void OnCheatOnePressed(InputAction.CallbackContext callbackContext)
         {
             this.Log(1);
-            SceneManager.LoadScene((int)_targetScene);
+            SceneManager.LoadScene(_targetSceneIndex);
         }
         
         private void OnCheatTwoPressed(InputAction.CallbackContext callbackContext)
@@ -90,7 +90,7 @@ namespace Snatcher
             }
             
             // Check if _targetSceneIndex is valid
-            if ((int)_targetScene >= SceneManager.sceneCountInBuildSettings)
+            if (_targetSceneIndex >= SceneManager.sceneCountInBuildSettings)
             {
                 this.LogWarning("Target Scene Index is out of the range specified by the Build Settings");
             }

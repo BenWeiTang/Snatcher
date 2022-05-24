@@ -73,15 +73,6 @@ namespace Snatcher
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""DropLimb"",
-                    ""type"": ""Button"",
-                    ""id"": ""755cffff-b17e-47dc-bbe4-a995fb38521d"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -348,28 +339,6 @@ namespace Snatcher
                     ""action"": ""SwitchLimb"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""30b224ab-1f7f-4833-b69c-fcadc244742c"",
-                    ""path"": ""<Keyboard>/x"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""DropLimb"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""56976dbd-a6e8-432d-8d68-30f05fb74bf9"",
-                    ""path"": ""<Gamepad>/buttonWest"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""DropLimb"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -519,7 +488,6 @@ namespace Snatcher
             m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
             m_Player_Dash = m_Player.FindAction("Dash", throwIfNotFound: true);
             m_Player_SwitchLimb = m_Player.FindAction("SwitchLimb", throwIfNotFound: true);
-            m_Player_DropLimb = m_Player.FindAction("DropLimb", throwIfNotFound: true);
             // Debug
             m_Debug = asset.FindActionMap("Debug", throwIfNotFound: true);
             m_Debug_Cheat1 = m_Debug.FindAction("Cheat 1", throwIfNotFound: true);
@@ -591,7 +559,6 @@ namespace Snatcher
         private readonly InputAction m_Player_Interact;
         private readonly InputAction m_Player_Dash;
         private readonly InputAction m_Player_SwitchLimb;
-        private readonly InputAction m_Player_DropLimb;
         public struct PlayerActions
         {
             private @PlayerControls m_Wrapper;
@@ -601,7 +568,6 @@ namespace Snatcher
             public InputAction @Interact => m_Wrapper.m_Player_Interact;
             public InputAction @Dash => m_Wrapper.m_Player_Dash;
             public InputAction @SwitchLimb => m_Wrapper.m_Player_SwitchLimb;
-            public InputAction @DropLimb => m_Wrapper.m_Player_DropLimb;
             public InputActionMap Get() { return m_Wrapper.m_Player; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -626,9 +592,6 @@ namespace Snatcher
                     @SwitchLimb.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwitchLimb;
                     @SwitchLimb.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwitchLimb;
                     @SwitchLimb.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwitchLimb;
-                    @DropLimb.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDropLimb;
-                    @DropLimb.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDropLimb;
-                    @DropLimb.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDropLimb;
                 }
                 m_Wrapper.m_PlayerActionsCallbackInterface = instance;
                 if (instance != null)
@@ -648,9 +611,6 @@ namespace Snatcher
                     @SwitchLimb.started += instance.OnSwitchLimb;
                     @SwitchLimb.performed += instance.OnSwitchLimb;
                     @SwitchLimb.canceled += instance.OnSwitchLimb;
-                    @DropLimb.started += instance.OnDropLimb;
-                    @DropLimb.performed += instance.OnDropLimb;
-                    @DropLimb.canceled += instance.OnDropLimb;
                 }
             }
         }
@@ -745,7 +705,6 @@ namespace Snatcher
             void OnInteract(InputAction.CallbackContext context);
             void OnDash(InputAction.CallbackContext context);
             void OnSwitchLimb(InputAction.CallbackContext context);
-            void OnDropLimb(InputAction.CallbackContext context);
         }
         public interface IDebugActions
         {

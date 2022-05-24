@@ -23,20 +23,10 @@ namespace Snatcher
         /// Cast a downward ray from the character's toe for a distance to do a raycast check.
         /// </summary>
         /// <param name="maxDistance">The distance the ray will travel for the raycast check</param>
-        /// <returns>True if something is hit, otherwise false</returns>
+        /// <returns></returns>
         protected virtual bool FrontGroundCheck(float maxDistance = 0.5f)
         {
             return Physics.Raycast(Context.GroundCheck.position, Vector3.down, maxDistance);
-        }
-
-        /// <summary>
-        /// Cast a forward ray from the character's toe for a distance to do a raycast check.
-        /// </summary>
-        /// <param name="maxDistance">The distance the ray will travel for the raycast check</param>
-        /// <returns>True if something is hit, otherwise false</returns>
-        protected virtual bool ForwardGroundCheck(float maxDistance = 0.5f)
-        {
-            return Physics.Raycast(Context.GroundCheck.position, Context.transform.forward, maxDistance);
         }
     }
 }

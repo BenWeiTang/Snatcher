@@ -5,7 +5,9 @@ namespace Snatcher
 {
     public class HookController : MonoBehaviour
     {
-        public event Action<LimbType> OnEnemyHit;
+        //TODO: we want to read what type of enemy we hit
+        //TODO: we want to determine if the timing is right and we can snatch the ability
+        public event Action OnEnemyHit;
         public event Action<Vector3> OnGrappleHit;
         
         [SerializeField] private BoxCollider _collider;
@@ -47,8 +49,7 @@ namespace Snatcher
         {
             if (other.CompareTag("Enemy"))
             {
-                var type = other.GetComponent<ISnatchable>().RequestSnatchLimb();
-                OnEnemyHit?.Invoke(type);
+                OnEnemyHit?.Invoke();
             }
             else if (other.CompareTag("Grapple"))
             {

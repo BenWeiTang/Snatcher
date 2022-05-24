@@ -1,5 +1,3 @@
-using System;
-using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,9 +6,9 @@ namespace Snatcher
     [CreateAssetMenu(menuName = "Snatcher/Manager/Limb Manager", fileName = "LimbManager")]
     public class LimbManager : ASingletonScriptableObject<LimbManager>
     {
-        public ALimb CurrentLimb => _inventory[_index];
-        public float MaxStamina { get; } = 100f;
-        public float CurrentStamina { get; private set; }
+        public ALimb CurrentLimb { get; private set; }
+        
+        [SerializeField] private VoidEvent _onAbilityUsed;
 
         /// <summary>
         /// The next limb in the current limb selection rotation. Is is what should appear in the right slot of the UI. Returns null if there are less than two available limbs.
@@ -37,11 +35,8 @@ namespace Snatcher
         }
 
         public LimbType CurrentType => CurrentLimb.Type;
-        
-        public event Action<LimbType> OnLimbForcedSwitched;
 
         [SerializeField] private VoidEvent _onLimbSwitched;
-        [SerializeField] private VoidEvent _onAbilityUsed;
         private List<ALimb> _inventory;
         private int _index;
 
@@ -49,88 +44,37 @@ namespace Snatcher
         {
             if (forward)
             {
-                if (_index == _inventory.Count - 1)
-                    return;
-                
                 _index++;
+                _index = Mathf.Min(_index, _inventory.Count - 1);
             }
             else
             {
-                if (_index == 0)
-                    return;
-                
                 _index--;
+                _index = Mathf.Max(_index, 0);
             }
-
-            _onLimbSwitched.Raise();
-        }
-
-        public void EatLimbStaminaCost()
-        {
-            if(CurrentStamina > CurrentLimb.StaminaCost)
+            ALimb priorLimb = CurrentLimb;
+            CurrentLimb = _inventory[_index];
+            if (CurrentLimb.Equals(priorLimb))
             {
-                CurrentStamina -= CurrentLimb.StaminaCost;
-                _onAbilityUsed.Raise();
-                Debug.Log("Limb Manager Raising On Ability Used");
-            }
-            else
-            {
-                //_insufficientStaminaForLimb.Raise();
-            }
-        }
-
-        public void TryAddLimb(LimbType type)
-        {
-            if (_inventory.Any(item => item.Type == type))
-                return;
-
-            ALimb limbToAdd = type switch
-            {
-                LimbType.Invis => new InvisLimb(),
-                LimbType.Leg => new LegLimb(),
-                LimbType.Propeller => new PropellerLimb(),
-                //TODO: add propeller limb
-                _ => null
-            };
-
-            if (limbToAdd == null)
-            {
-                this.LogError("Unable to identify appropriate Limb to add!");
                 return;
             }
-            
-            // Insert Limb to front of inventory but after basic
-            _inventory.Insert(1, limbToAdd);
-            
-            // Automatically jump to the newly snatched Limb
-            _index = 1;
-            
-            OnLimbForcedSwitched?.Invoke(type);
             _onLimbSwitched.Raise();
         }
 
-        public void DropActiveLimb()
+        public void DecrementLimbDurability()
         {
-            _inventory.Remove(CurrentLimb);
-            _index--;
-            OnLimbForcedSwitched?.Invoke(CurrentType);
-            _onLimbSwitched.Raise();
-        }
-
-        public void ResetInventory()
-        {
-            _inventory.Clear();
-            _inventory.Add(new BasicLimb());
-            _index = 0;
+            CurrentLimb.DecrementDurability();
+            _onAbilityUsed.Raise();
         }
 
         protected override void OnInitialized()
         {
-            CurrentStamina = MaxStamina;
             _index = 0;
             _inventory = new List<ALimb>();
+            CurrentLimb = new BasicLimb();
 
-            _inventory.Add(new BasicLimb());
+            _inventory.Add(CurrentLimb);
+            _inventory.Add(new InvisLimb());
         }
 
         /// <summary>
@@ -140,7 +84,7 @@ namespace Snatcher
         {
             if (currentIndex == total - 1)
                 return -1;
-
+            
             return currentIndex + 1;
         }
 
@@ -153,12 +97,6 @@ namespace Snatcher
                 return -1;
 
             return currentIndex - 1;
-        }
-
-        public void RecoverStamina(float amount)
-        {
-            CurrentStamina += amount;
-            CurrentStamina = Mathf.Min(100f, CurrentStamina);
         }
     }
 }

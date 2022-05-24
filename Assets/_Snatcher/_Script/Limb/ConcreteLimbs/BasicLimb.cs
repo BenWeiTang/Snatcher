@@ -10,9 +10,9 @@ namespace Snatcher
         public override string Name => "Basic";
         public override ASuperState SuperState => PlayerStateFactoryManager.Instance.BasicState;
         public sealed override List<AUpgrade> Upgrades { get; protected set; }
-        //public override float Durability { get; protected set; } = 100f;
-        //public override float MaxDurability { get; protected set; } = 100f;
-        public override float StaminaCost { get; } = 5f;
+        public override float Durability { get; protected set; } = 100f;
+        public override float MaxDurability { get; protected set; } = 100f;
+        protected override float DecrementDelta { get; set; } = 1f;
 
         public BasicLimb() : base()
         {
