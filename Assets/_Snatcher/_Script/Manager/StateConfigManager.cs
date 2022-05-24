@@ -7,5 +7,8 @@ namespace Snatcher
     {
         public PlayerStateConfig BasicStateConfig;
         public PlayerStateConfig InvisStateConfig;
+        public PlayerStateConfig LegStateConfig;
+
+        public PlayerStateConfig PropellerStateConfig;
     }
 }

@@ -1,6 +1,7 @@
-﻿using System.Threading.Tasks;
-using UnityEngine;
+﻿using UnityEngine;
 using DG.Tweening;
+using DG.Tweening.Core;
+using DG.Tweening.Plugins.Options;
 
 namespace Snatcher
 {
@@ -8,34 +9,51 @@ namespace Snatcher
     {
         private Vector3 _dashDirection;
         private Vector3 _destination;
-        
+        private TweenerCore<Vector3, Vector3, VectorOptions> _dashTween;
+
         public DashState(PlayerStateMachine currentContext) : base(currentContext) { }
 
-        public override async void EnterState()
+        public override void EnterState()
         {
             if (Context.Debug) this.Log("Enter");
-            
+
             _dashDirection = Context.transform.forward;
             CalculateDestination();
             Context.Animator.SetBool(SuperState.IsDashingHash, true);
-            await DoDash();
+            DoDash();
+        }
+
+        public override void ExitState()
+        {
             Context.Animator.SetBool(SuperState.IsDashingHash, false);
         }
 
-        public override void ExitState() { }
+        public override void UpdateState() => CheckSwitchState();
 
-        public override void UpdateState() { }
+        protected override void CheckSwitchState() => ForwardCheck();
 
-        protected override void CheckSwitchState() { }
-        
         private void CalculateDestination()
         {
             _destination = Context.transform.position + _dashDirection * SuperState.StateConfig.DashDistance;
         }
-        
-        private async Task DoDash()
+
+        private void DoDash()
         {
-            await Context.transform.DOMove(_destination, SuperState.StateConfig.DashDuration).SetEase(SuperState.StateConfig.EaseMode).AsyncWaitForCompletion();
+            _dashTween = Context.transform.DOMove(_destination, SuperState.StateConfig.DashDuration).SetEase(SuperState.StateConfig.EaseMode);
+            _dashTween.SetAutoKill(false);
+            _dashTween.onComplete += () =>
+            {
+                Context.SwitchSubState(Factory.Idle);
+            };
+        }
+
+        private void ForwardCheck()
+        {
+            if (!ForwardGroundCheck(0.25f))
+                return;
+            
+            _dashTween.Pause();
+            _dashTween.Kill();
             Context.SwitchSubState(Factory.Idle);
         }
     }

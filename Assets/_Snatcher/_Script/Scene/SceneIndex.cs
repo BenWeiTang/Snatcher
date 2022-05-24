@@ -12,8 +12,11 @@ namespace Snatcher
         TutorialUpperWorld = 2,
         TutorialDungeon = 3,
         UpperWorld = 4,
-        Dungeon = 5,
-        UpperWorldAfterLadder = 6,
+        Dungeon01 = 5,
+        Dungeon02 = 6,
+        Dungeon03 = 10,
         WinScene = 7,
+        LoseScene = 8,
+        Shop = 9
     }
 }

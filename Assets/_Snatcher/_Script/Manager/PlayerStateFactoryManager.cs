@@ -9,6 +9,9 @@ namespace Snatcher
         // Super states
         public BasicState BasicState { get; private set; }
         public InvisState InvisState { get; private set; }
+        public LegState LegState { get; private set; }
+
+        public PropellerState PropellerState { get; private set; }
         
         // Sub states
         public IdleState Idle { get; private set; }
@@ -19,13 +22,18 @@ namespace Snatcher
         public GrappleTowardState GrappleToward { get; private set; }
         public InvisIdleState InvisIdle { get; private set; }
         public InvisMoveState InvisMove { get; private set; }
-        
+        public VaultState Vault { get; private set; }
+        public PropelState Propel { get; private set; }
+
+
         public void InitContext(PlayerStateMachine context)
         {
             // Cache instances of concrete states
             // Super states
             BasicState = new BasicState(context);
             InvisState = new InvisState(context);
+            LegState = new LegState(context);
+            PropellerState = new PropellerState(context);
 
             // Sub state
             Idle = new IdleState(context);
@@ -40,6 +48,10 @@ namespace Snatcher
             // Invis
             InvisIdle = new InvisIdleState(context);
             InvisMove = new InvisMoveState(context);
+            // Leg
+            Vault = new VaultState(context);
+            //Propeller
+            Propel = new PropelState(context);
         }
     }
 }
