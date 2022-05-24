@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -48,11 +49,6 @@ namespace Snatcher
             _onAbilityUsed.UnregisterListener(UpdateUIDisplay);
         }
 
-        public void Update()
-        {
-            _activeDurabilityText.text = LimbManager.Instance.CurrentStamina.ToString("F0") + "/" + LimbManager.Instance.MaxStamina;
-        }
-
         private void UpdateUIDisplay(Void _)
         {
             if (_debug)
@@ -64,7 +60,7 @@ namespace Snatcher
             _currentLimbDisplayText.text = LimbManager.Instance.CurrentLimb != null ? LimbManager.Instance.CurrentLimb.Name : "";
             _priorLimbDisplayText.text = LimbManager.Instance.PriorLimb != null ? LimbManager.Instance.PriorLimb.Name : "";
             _nextLimbDisplayText.text = LimbManager.Instance.NextLimb != null ? LimbManager.Instance.NextLimb.Name : "";
-            //_activeDurabilityText.text = LimbManager.Instance.CurrentStamina + "/" + LimbManager.Instance.MaxStamina;
+            _activeDurabilityText.text = LimbManager.Instance.CurrentLimb.Durability + "/" + LimbManager.Instance.CurrentLimb.MaxDurability;
         }
     }
 }

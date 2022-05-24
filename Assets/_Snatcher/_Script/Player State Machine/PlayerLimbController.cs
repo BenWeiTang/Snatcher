@@ -1,21 +1,17 @@
+using System;
 using UnityEngine;
 
 namespace Snatcher
 {
     public class PlayerLimbController : MonoBehaviour
     {
-        //[SerializeField] private SkinnedMeshRenderer _skinnedMeshRenderer;
+        [SerializeField] private SkinnedMeshRenderer _skinnedMeshRenderer;
         [SerializeField] private VoidEvent _onLimbSwitched;
         [SerializeField] private Mesh _oneArmMesh;
-        //[SerializeField] private Mesh _twoArmMesh;
-
-        [SerializeField] private GameObject _propellerLimb;
-        [SerializeField] private GameObject _legLimb;
+        [SerializeField] private Mesh _twoArmMesh;
 
         private void OnEnable()
         {
-            _propellerLimb.SetActive(false);
-            _legLimb.SetActive(false);
             _onLimbSwitched.RegisterListener(OnLimbSwitched);
         }
         
@@ -24,33 +20,17 @@ namespace Snatcher
             _onLimbSwitched.UnregisterListener(OnLimbSwitched);
         }
         
+        //TODO: delete later
         private void OnLimbSwitched(Void _)
         {
-            _propellerLimb.SetActive(false);
-            _legLimb.SetActive(false);
-
             if (LimbManager.Instance.CurrentLimb.Type == LimbType.Basic)
             {
-                _propellerLimb.SetActive(false);
-                _legLimb.SetActive(false);
-                //_skinnedMeshRenderer.sharedMesh = _oneArmMesh;
+                _skinnedMeshRenderer.sharedMesh = _oneArmMesh;
             }
-            else if (LimbManager.Instance.CurrentLimb.Type == LimbType.Leg)
+            else if (LimbManager.Instance.CurrentLimb.Type == LimbType.Invis)
             {
-                _legLimb.SetActive(true);
-                //_skinnedMeshRenderer.sharedMesh = _propellerLimb;
-                //_skinnedMeshRenderer.BakeMesh(_propellerLimb);
+                _skinnedMeshRenderer.sharedMesh = _twoArmMesh;
             }
-            else if (LimbManager.Instance.CurrentLimb.Type == LimbType.Propeller)
-            {
-                _propellerLimb.SetActive(true);
-                //_skinnedMeshRenderer.sharedMesh = _legLimb;
-                //_skinnedMeshRenderer.BakeMesh(_legLimb);
-            }
-        }
-        private void Update()
-        { 
-            LimbManager.Instance.RecoverStamina(3f*Time.deltaTime);
         }
     }
 }

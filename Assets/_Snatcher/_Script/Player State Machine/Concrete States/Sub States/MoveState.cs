@@ -44,6 +44,8 @@ namespace Snatcher
             }
         }
         
+        private void OnMovementCanceled(InputAction.CallbackContext callbackContext) => Context.SwitchSubState(Factory.Idle);
+        
         private void UpdateDirection()
         {
             Vector2 currentInput = Context.PlayerInput.Player.Movement.ReadValue<Vector2>();
@@ -74,8 +76,6 @@ namespace Snatcher
             
             Context.Controller.Move(velocity * Time.deltaTime);
         }
-        
-        private void OnMovementCanceled(InputAction.CallbackContext callbackContext) => Context.SwitchSubState(Factory.Idle);
         
         private void OnDashPressed(InputAction.CallbackContext _) => Context.SwitchSubState(Factory.Dash);
         
