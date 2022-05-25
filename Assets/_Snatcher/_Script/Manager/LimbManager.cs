@@ -131,6 +131,7 @@ namespace Snatcher
             _inventory = new List<ALimb>();
 
             _inventory.Add(new BasicLimb());
+            _inventory.Add(new InvisLimb());
         }
 
         /// <summary>

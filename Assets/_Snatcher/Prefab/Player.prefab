@@ -107,7 +107,8 @@ MonoBehaviour:
   _groundCheck: {fileID: 781422762216056254}
   _limbSlot: {fileID: 0}
   _canGrapple: {fileID: 11400000, guid: 24083f218e1b49948b33c190cbcc4910, type: 2}
-  _limbController: {fileID: 5354913756358246086}
+  _currentSuperStateRef: {fileID: 11400000, guid: 2f447ed5e85464649831e0b5ef23ec59, type: 2}
+  _currentSubStateRef: {fileID: 11400000, guid: 730f3644d464f1045ba36f7f35dbe1e3, type: 2}
 --- !u!114 &1136104968581629001
 MonoBehaviour:
   m_ObjectHideFlags: 0

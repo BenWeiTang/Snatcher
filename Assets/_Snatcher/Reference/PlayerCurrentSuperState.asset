@@ -9,8 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d78a41f0f8c54e4388fc83170f328e1, type: 3}
-  m_Name: LookDecision
+  m_Script: {fileID: 11500000, guid: eaff2e04b6d02be4788101122b68e8c0, type: 3}
+  m_Name: PlayerCurrentSuperState
   m_EditorClassIdentifier: 
-  _currentPlayerSubState: {fileID: 11400000, guid: 730f3644d464f1045ba36f7f35dbe1e3, type: 2}
-  _viewAngleRef: {fileID: 11400000, guid: 915f778bb50ee7a418faeb971f349cd9, type: 2}

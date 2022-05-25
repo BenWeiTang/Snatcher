@@ -8,6 +8,7 @@ namespace Snatcher
     [CreateAssetMenu(menuName = "Snatcher/Enemy State Machine/Decision/Hear Decision", fileName = "HearDecision")]
     public class InvisHearDecision : ADecision
     {
+        [SerializeField] private PlayerStateReference _currentPlayerSubState;
         public override bool Decide(EnemyStateMachine context)
         {
             bool targetVisible = Hear(context);
@@ -19,10 +20,10 @@ namespace Snatcher
             Collider[] hitColliders = Physics.OverlapSphere(context.transform.position, context.EnemyLookDistance);
             foreach (var hitCollider in hitColliders)
             {
-                if (hitCollider.tag == "Player")
+                if (hitCollider.CompareTag("Player"))
                 {
-                    ASuperState playerState = NonPlayerPlayerStateReference.Instance.CurrentState;
-                    if (playerState.GetType() == typeof(InvisState))
+                    var currentType = _currentPlayerSubState.Value.GetType();
+                    if (currentType == typeof(InvisIdleState) || currentType == typeof(InvisMoveState))
                     {
                         context.ChaseTarget = hitCollider.transform;
                         return true;

@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e14557e93a89c144ab55f4b46efd3e86, type: 3}
   m_Name: HearDecision
   m_EditorClassIdentifier: 
+  _currentPlayerSubState: {fileID: 11400000, guid: 730f3644d464f1045ba36f7f35dbe1e3, type: 2}
