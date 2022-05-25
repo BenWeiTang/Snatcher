@@ -9,6 +9,7 @@ namespace Snatcher
         public PropelState(PlayerStateMachine currentContext) : base(currentContext) { }
         private Vector3 _currentDirection;
 
+        //TODO: refer to coding convention and name thing accordingly
         private float speed = 1.0f;
         private float propelStateGravity = 9.0f;
         private float flapSpeed = 5.0f;
@@ -94,6 +95,8 @@ namespace Snatcher
             Context.transform.position = Context.transform.position + Vector3.down * Time.deltaTime * speed;
             speed = speed + propelStateGravity * Time.deltaTime;
 
+            //TODO: use the new input system with callbacks; talk to ben for detail
+            //TODO: separate the logics in a different method
             if (Input.GetKeyDown(KeyCode.Mouse0)) 
             {
                 if(LimbManager.Instance.CurrentLimb.StaminaCost > LimbManager.Instance.CurrentStamina) 
@@ -103,7 +106,5 @@ namespace Snatcher
                 speed = -flapSpeed;
             }
         }
-
-
     }
 }

@@ -19,6 +19,7 @@ namespace Snatcher
 
             CalculateWaypoints();
             VaultUp();
+            LimbManager.Instance.EatLimbStaminaCost();
         }
 
         //TODO: set animations once they are ready
