@@ -42,11 +42,11 @@ namespace Snatcher
                 var currentType = _currentPlayerSubState.Value.GetType();
                 if (currentType == typeof(InvisIdleState) || currentType == typeof(InvisMoveState))
                 {
-                    LimbManager.Instance.RecoverStamina(-8f * Time.deltaTime);
+                    LimbManager.Instance.RecoverStamina(-9f * Time.deltaTime);
                 }
                 else
                 {
-                    LimbManager.Instance.RecoverStamina(4f * Time.deltaTime);
+                    LimbManager.Instance.RecoverStamina(5f * Time.deltaTime);
                 }
             }
         }

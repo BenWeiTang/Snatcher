@@ -15,14 +15,16 @@ namespace Snatcher
             Context.HookController.OnEnemyHit += OnHookHitEnemy;
             Context.HookController.OnGrappleHit += OnHootHitGrapple;
             
-            // This state is the entry state of basic, so we always set animation bool to true here
-            Context.Animator.SetBool(SuperState.IsAbilityActiveHash, true);
-            
             // If we can be in hook out, we must be in basic super state
             // When we enter this state, we used the ability once if we have the stamina to do so
-            LimbManager.Instance.EatLimbStaminaCost();
+            if (LimbManager.Instance.EatLimbStaminaCost())
+            {
+                // This state is the entry state of basic, so we always set animation bool to true here
+                Context.Animator.SetBool(SuperState.IsAbilityActiveHash, true);
+                await HandleHitBoxActivation();
+            }
+            
 
-            await HandleHitBoxActivation();
         }
 
         public override void ExitState()

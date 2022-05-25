@@ -65,17 +65,19 @@ namespace Snatcher
             _onLimbSwitched.Raise();
         }
 
-        public void EatLimbStaminaCost()
+        public bool EatLimbStaminaCost()
         {
             if(CurrentStamina > CurrentLimb.StaminaCost)
             {
                 CurrentStamina -= CurrentLimb.StaminaCost;
                 _onAbilityUsed.Raise();
                 Debug.Log("Limb Manager Raising On Ability Used");
+                return true;
             }
             else
             {
                 //_insufficientStaminaForLimb.Raise();
+                return false;
             }
         }
 
@@ -131,8 +133,8 @@ namespace Snatcher
             _inventory = new List<ALimb>();
 
             _inventory.Add(new BasicLimb());
-            _inventory.Add(new LegLimb());
-            _inventory.Add(new PropellerLimb());
+            //_inventory.Add(new LegLimb());
+            //_inventory.Add(new PropellerLimb());
         }
 
         /// <summary>

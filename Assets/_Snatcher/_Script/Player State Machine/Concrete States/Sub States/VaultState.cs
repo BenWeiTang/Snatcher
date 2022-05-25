@@ -18,8 +18,10 @@ namespace Snatcher
             if (Context.Debug) this.Log("Enter");
 
             CalculateWaypoints();
-            VaultUp();
-            LimbManager.Instance.EatLimbStaminaCost();
+            if (LimbManager.Instance.EatLimbStaminaCost())
+            {
+                VaultUp();
+            }
         }
 
         //TODO: set animations once they are ready

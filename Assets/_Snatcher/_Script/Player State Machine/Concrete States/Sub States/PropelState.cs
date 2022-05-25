@@ -12,7 +12,7 @@ namespace Snatcher
         //TODO: refer to coding convention and name thing accordingly
         private float speed = 1.0f;
         private float propelStateGravity = 9.0f;
-        private float flapSpeed = 5.0f;
+        private float flapSpeed = 6.0f;
         private bool isFirstJump;
         private bool ateStamina;
 
@@ -24,7 +24,6 @@ namespace Snatcher
             posOffset = Context.transform.position;
             posOffset.y += 0.1f;
             
-            ateStamina = false;
             isFirstJump = true;
 
             if(LimbManager.Instance.CurrentLimb.StaminaCost > LimbManager.Instance.CurrentStamina) 
@@ -86,11 +85,12 @@ namespace Snatcher
 
             Context.Controller.Move(0.5f * (velocity) * Time.deltaTime);
             //Context.transform.DOMove(Context.transform.position + Vector3.down * Time.deltaTime * speed, Time.deltaTime);
+            /**
             if(LimbManager.Instance.CurrentLimb.StaminaCost > LimbManager.Instance.CurrentStamina && FrontGroundCheck(0.1f) && !ateStamina) 
             {
                 Context.SwitchSubState(Factory.Idle);
                 return;
-            }
+            }*/
 
             Context.transform.position = Context.transform.position + Vector3.down * Time.deltaTime * speed;
             speed = speed + propelStateGravity * Time.deltaTime;
@@ -99,11 +99,10 @@ namespace Snatcher
             //TODO: separate the logics in a different method
             if (Input.GetKeyDown(KeyCode.Mouse0)) 
             {
-                if(LimbManager.Instance.CurrentLimb.StaminaCost > LimbManager.Instance.CurrentStamina) 
-                    return;
-                ateStamina = true;
-                LimbManager.Instance.EatLimbStaminaCost();
-                speed = -flapSpeed;
+                if (LimbManager.Instance.EatLimbStaminaCost())
+                {
+                    speed = -flapSpeed;
+                }
             }
         }
     }
