@@ -137,6 +137,7 @@ MonoBehaviour:
   _oneArmMesh: {fileID: -856059019632272089, guid: 0446a7d9baf43dd4da94c0e2ebd63d98, type: 3}
   _propellerLimb: {fileID: 18974286435675130}
   _legLimb: {fileID: 169716119377534949}
+  _currentPlayerSubState: {fileID: 11400000, guid: 730f3644d464f1045ba36f7f35dbe1e3, type: 2}
 --- !u!1 &3681592159268552322
 GameObject:
   m_ObjectHideFlags: 0
