@@ -107,6 +107,8 @@ MonoBehaviour:
   _groundCheck: {fileID: 781422762216056254}
   _limbSlot: {fileID: 0}
   _canGrapple: {fileID: 11400000, guid: 24083f218e1b49948b33c190cbcc4910, type: 2}
+  _currentSuperStateRef: {fileID: 11400000, guid: 2f447ed5e85464649831e0b5ef23ec59, type: 2}
+  _currentSubStateRef: {fileID: 11400000, guid: 730f3644d464f1045ba36f7f35dbe1e3, type: 2}
 --- !u!114 &1136104968581629001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,6 +143,7 @@ MonoBehaviour:
   _defaultLegR: {fileID: 2613550446731924782}
   _defaultLeftArm: {fileID: 6601959198106731275}
   _defaultRightArm: {fileID: 8609483101443639792}
+  _currentPlayerSubState: {fileID: 11400000, guid: 730f3644d464f1045ba36f7f35dbe1e3, type: 2}
 --- !u!1 &3681592159268552322
 GameObject:
   m_ObjectHideFlags: 0
@@ -519,15 +522,7 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: cf1a1754f80b0144a93e8d2f60870a2b, type: 2}
     - target: {fileID: 5866666021909216657, guid: af9c65ca1e7ca4e49b4c1905ddd37313, type: 3}
       propertyPath: m_WarningMessage
-      value: "\nBinding warning: Some generic clip(s) animate transforms that are
-        already bound by a Humanoid avatar. These transforms can only be changed
-        by Humanoid clips.\n\tTransform 'Character2_Reference'\n\tTransform 'Character2_Reference'\n\tFrom
-        animation clip 'Snatcher Idle'\n\tFrom animation clip 'Snatcher Run'\n\tFrom
-        animation clip 'Snatcher Fall'\n\tFrom animation clip 'Snatcher Slide'\n\tFrom
-        animation clip 'Snatcher Throw'\n\tFrom animation clip 'Snatcher Idle'\n\tFrom
-        animation clip 'Snatcher Run'\n\tFrom animation clip 'Snatcher Fall'\n\tFrom
-        animation clip 'Snatcher Slide'\n\tFrom animation clip 'Snatcher Crouch Idle'\n\tand
-        more ..."
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: af9c65ca1e7ca4e49b4c1905ddd37313, type: 3}
       propertyPath: m_ApplyRootMotion

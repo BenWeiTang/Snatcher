@@ -18,6 +18,7 @@ namespace Snatcher
         [SerializeField] private SkinnedMeshRenderer _defaultLegR;
         [SerializeField] private SkinnedMeshRenderer _defaultLeftArm;
         [SerializeField] private SkinnedMeshRenderer _defaultRightArm;
+        [SerializeField] private PlayerStateReference _currentPlayerSubState;
 
         private void OnEnable()
         {
@@ -33,6 +34,23 @@ namespace Snatcher
             _onLimbSwitched.UnregisterListener(OnLimbSwitched);
         }
         
+        private void Update()
+        {
+            if (_currentPlayerSubState.Value != null)
+            {
+                // Debug.Log(_currentPlayerSubState.Value.ToString());
+                var currentType = _currentPlayerSubState.Value.GetType();
+                if (currentType == typeof(InvisIdleState) || currentType == typeof(InvisMoveState))
+                {
+                    LimbManager.Instance.RecoverStamina(-8f * Time.deltaTime);
+                }
+                else
+                {
+                    LimbManager.Instance.RecoverStamina(4f * Time.deltaTime);
+                }
+            }
+        }
+
         private void OnLimbSwitched(Void _)
         {
             _propellerLimb.enabled = false;
@@ -71,6 +89,17 @@ namespace Snatcher
                 _defaultLeftArm.enabled = true;
                 //_skinnedMeshRenderer.sharedMesh = _legLimb;
                 //_skinnedMeshRenderer.BakeMesh(_legLimb);
+            }
+            else if (LimbManager.Instance.CurrentLimb.Type == LimbType.Invis)
+            {
+                _defaultLegL.enabled = true;
+                _defaultLegR.enabled = true;
+                _defaultLeftArm.enabled = true;
+                _propellerLimb.enabled = false;
+                _vaultArm.enabled = false;
+                _vaultLegL.enabled = false;
+                _vaultLegR.enabled = false;
+                //_skinnedMeshRenderer.sharedMesh = _oneArmMesh;
             }
         }
     }
