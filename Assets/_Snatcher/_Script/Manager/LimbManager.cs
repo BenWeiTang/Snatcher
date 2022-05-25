@@ -158,7 +158,14 @@ namespace Snatcher
         public void RecoverStamina(float amount)
         {
             CurrentStamina += amount;
-            CurrentStamina = Mathf.Min(100f, CurrentStamina);
+            if (amount < 0)
+            {
+                CurrentStamina = Mathf.Max(0f, CurrentStamina);
+            }
+            else
+            {
+                CurrentStamina = Mathf.Min(100f, CurrentStamina);
+            }
         }
     }
 }

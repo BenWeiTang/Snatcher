@@ -11,6 +11,7 @@ namespace Snatcher
 
         [SerializeField] private GameObject _propellerLimb;
         [SerializeField] private GameObject _legLimb;
+        [SerializeField] private PlayerStateReference _currentPlayerSubState;
 
         private void OnEnable()
         {
@@ -35,6 +36,13 @@ namespace Snatcher
                 _legLimb.SetActive(false);
                 //_skinnedMeshRenderer.sharedMesh = _oneArmMesh;
             }
+            else if (LimbManager.Instance.CurrentLimb.Type == LimbType.Invis)
+            {
+                _propellerLimb.SetActive(false);
+                _legLimb.SetActive(false);
+                //_skinnedMeshRenderer.sharedMesh = _propellerLimb;
+                //_skinnedMeshRenderer.BakeMesh(_propellerLimb);
+            }
             else if (LimbManager.Instance.CurrentLimb.Type == LimbType.Leg)
             {
                 _legLimb.SetActive(true);
@@ -49,8 +57,20 @@ namespace Snatcher
             }
         }
         private void Update()
-        { 
-            LimbManager.Instance.RecoverStamina(3f*Time.deltaTime);
+        {
+            if (_currentPlayerSubState.Value != null)
+            {
+                Debug.Log(_currentPlayerSubState.Value.ToString());
+                var currentType = _currentPlayerSubState.Value.GetType();
+                if (currentType == typeof(InvisIdleState) || currentType == typeof(InvisMoveState))
+                {
+                    LimbManager.Instance.RecoverStamina(-8f * Time.deltaTime);
+                }
+                else
+                {
+                    LimbManager.Instance.RecoverStamina(4f * Time.deltaTime);
+                }
+            }
         }
     }
 }
