@@ -49,6 +49,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "DropLimb",
+                    "type": "Button",
+                    "id": "755cffff-b17e-47dc-bbe4-a995fb38521d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -315,6 +324,28 @@
                     "action": "SwitchLimb",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "30b224ab-1f7f-4833-b69c-fcadc244742c",
+                    "path": "<Keyboard>/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DropLimb",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "56976dbd-a6e8-432d-8d68-30f05fb74bf9",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DropLimb",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },

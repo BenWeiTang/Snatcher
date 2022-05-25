@@ -30,6 +30,8 @@ namespace Snatcher
         [SerializeField] private Transform _groundCheck;
         [SerializeField] private Transform _limbSlot;
         [SerializeField] private BoolReference _canGrapple;
+        [SerializeField] private PlayerStateReference _currentSuperStateRef;
+        [SerializeField] private PlayerStateReference _currentSubStateRef;
         private ASuperState _currentSuperState;
         private ASubState _currentSubState;
         private PlayerControls _playerInput;
@@ -39,6 +41,7 @@ namespace Snatcher
         {
             _currentSuperState.ExitState();
             _currentSuperState = nextSuperState;
+            _currentSuperStateRef.Value = nextSuperState;
             _currentSuperState.EnterState();
         }
         
@@ -46,6 +49,7 @@ namespace Snatcher
         {
             _currentSubState.ExitState();
             _currentSubState = nextSubState;
+            _currentSubStateRef.Value = nextSubState;
             _currentSubState.EnterState();
         }
 
