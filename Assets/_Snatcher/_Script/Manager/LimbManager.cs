@@ -76,6 +76,7 @@ namespace Snatcher
             }
             else
             {
+                _onAbilityUsed.Raise();
                 //_insufficientStaminaForLimb.Raise();
                 return false;
             }
