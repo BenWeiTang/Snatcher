@@ -9,8 +9,6 @@ namespace Snatcher
     public class LimbManager : ASingletonScriptableObject<LimbManager>
     {
         public ALimb CurrentLimb => _inventory[_index];
-        public float MaxStamina { get; } = 100f;
-        public float CurrentStamina { get; private set; }
 
         /// <summary>
         /// The next limb in the current limb selection rotation. Is is what should appear in the right slot of the UI. Returns null if there are less than two available limbs.
@@ -65,18 +63,10 @@ namespace Snatcher
             _onLimbSwitched.Raise();
         }
 
-        public void EatLimbStaminaCost()
+        public void DecrementLimbDurability()
         {
-            if(CurrentStamina > CurrentLimb.StaminaCost)
-            {
-                CurrentStamina -= CurrentLimb.StaminaCost;
-                _onAbilityUsed.Raise();
-                Debug.Log("Limb Manager Raising On Ability Used");
-            }
-            else
-            {
-                //_insufficientStaminaForLimb.Raise();
-            }
+            CurrentLimb.DecrementDurability();
+            _onAbilityUsed.Raise();
         }
 
         public void TryAddLimb(LimbType type)
@@ -109,14 +99,6 @@ namespace Snatcher
             _onLimbSwitched.Raise();
         }
 
-        public void DropActiveLimb()
-        {
-            _inventory.Remove(CurrentLimb);
-            _index--;
-            OnLimbForcedSwitched?.Invoke(CurrentType);
-            _onLimbSwitched.Raise();
-        }
-
         public void ResetInventory()
         {
             _inventory.Clear();
@@ -126,7 +108,6 @@ namespace Snatcher
 
         protected override void OnInitialized()
         {
-            CurrentStamina = MaxStamina;
             _index = 0;
             _inventory = new List<ALimb>();
 
@@ -157,17 +138,6 @@ namespace Snatcher
             return currentIndex - 1;
         }
 
-        public void RecoverStamina(float amount)
-        {
-            CurrentStamina += amount;
-            if (amount < 0)
-            {
-                CurrentStamina = Mathf.Max(0f, CurrentStamina);
-            }
-            else
-            {
-                CurrentStamina = Mathf.Min(100f, CurrentStamina);
-            }
-        }
+
     }
 }

@@ -4,9 +4,8 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
+  - audioPlayer: {fileID: 5242210724368583660, guid: 94299ea49deb9bb42b8de49b4efc68dd, type: 3}
   - _onLimbSwitched: {instanceID: 0}
-  - _onAbilityUsed: {instanceID: 0}
-  - _currentPlayerSubState: {fileID: 11400000, guid: 730f3644d464f1045ba36f7f35dbe1e3, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

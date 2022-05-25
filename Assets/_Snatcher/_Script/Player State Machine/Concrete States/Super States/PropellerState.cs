@@ -20,7 +20,7 @@ namespace Snatcher
             if (Context.Debug) this.Log("Enter");
             
             base.EnterState();
-            AbilityEntryState = PlayerStateFactoryManager.Instance.Propel;
+            AbilityEntryState = PlayerStateFactoryManager.Instance.PropellerIdle;
         }
 
         public override void ExitState()

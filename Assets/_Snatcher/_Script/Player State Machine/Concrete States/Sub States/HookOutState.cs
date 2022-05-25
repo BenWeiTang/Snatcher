@@ -19,8 +19,8 @@ namespace Snatcher
             Context.Animator.SetBool(SuperState.IsAbilityActiveHash, true);
             
             // If we can be in hook out, we must be in basic super state
-            // When we enter this state, we used the ability once if we have the stamina to do so
-            LimbManager.Instance.EatLimbStaminaCost();
+            // When we enter this state, we used the ability once
+            LimbManager.Instance.DecrementLimbDurability();
 
             await HandleHitBoxActivation();
         }
