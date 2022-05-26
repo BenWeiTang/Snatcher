@@ -2988,10 +2988,6 @@ PrefabInstance:
       value: -224
       objectReference: {fileID: 0}
     - target: {fileID: 3644173651538830089, guid: 091832a7de8df1a46a5a9a5620640047, type: 3}
-      propertyPath: _delay
-      value: 0.03
-      objectReference: {fileID: 0}
-    - target: {fileID: 3644173651538830089, guid: 091832a7de8df1a46a5a9a5620640047, type: 3}
       propertyPath: _entireText
       value: You are the Snatcher, a creature who has lived for one goal. The hook
         you possess is your only  tool for survival.  The Snatcher fires its hook
@@ -2999,10 +2995,6 @@ PrefabInstance:
         has the terrifying ability to attach these severed limbs onto its body and
         use their powers as its own.  Use this power to traverse dungeons where you
         will discover the secrets and bounds of your abilities.
-      objectReference: {fileID: 0}
-    - target: {fileID: 3644173651538830089, guid: 091832a7de8df1a46a5a9a5620640047, type: 3}
-      propertyPath: _persistedDuration
-      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3644173651538830095, guid: 091832a7de8df1a46a5a9a5620640047, type: 3}
       propertyPath: m_Pivot.x

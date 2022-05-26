@@ -22,7 +22,6 @@ namespace Snatcher
             {
                 VaultUp();
             }
-            Context.SwitchSubState(Factory.Idle);
         }
 
         //TODO: set animations once they are ready
