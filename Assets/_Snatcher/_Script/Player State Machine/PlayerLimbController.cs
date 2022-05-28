@@ -81,7 +81,7 @@ namespace Snatcher
                 //_skinnedMeshRenderer.sharedMesh = _propellerLimb;
                 //_skinnedMeshRenderer.BakeMesh(_propellerLimb);
             }
-            else if (LimbManager.Instance.CurrentLimb.Type == LimbType.Propeller)
+            else if (LimbManager.Instance.CurrentLimb.Type == LimbType.Wing)
             {
                 _propellerLimb.enabled = true;
                 _defaultLegL.enabled = true;
