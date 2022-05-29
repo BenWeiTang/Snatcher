@@ -112,6 +112,14 @@ namespace Snatcher
 
         public void DropActiveLimb()
         {
+            // Shouldn't drop basic limb
+            if (_index == 0)
+                return;
+            
+            Vector3 playerPosition = GameObject.FindWithTag("Player").transform.position;
+            playerPosition.y -= 0.05f;
+            var go = Instantiate(CurrentLimb.Model, playerPosition, Quaternion.identity);
+
             _inventory.Remove(CurrentLimb);
             _index--;
             OnLimbForcedSwitched?.Invoke(CurrentType);
@@ -132,8 +140,6 @@ namespace Snatcher
             _inventory = new List<ALimb>();
 
             _inventory.Add(new BasicLimb());
-            //_inventory.Add(new LegLimb());
-            //_inventory.Add(new PropellerLimb());
         }
 
         /// <summary>
