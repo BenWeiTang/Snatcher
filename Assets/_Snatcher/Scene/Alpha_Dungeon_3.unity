@@ -4314,7 +4314,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2523104969208874171, guid: f93e71c7c8cf43749a6968d4539cb5d9, type: 3}
       propertyPath: m_Name
-      value: Key_to_UpperWorld
+      value: Key_to_Dungeon 4
       objectReference: {fileID: 0}
     - target: {fileID: 4752861098428166070, guid: f93e71c7c8cf43749a6968d4539cb5d9, type: 3}
       propertyPath: m_RootOrder
@@ -4404,6 +4404,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 34.816
       objectReference: {fileID: 0}
+    - target: {fileID: 6276389110876645161, guid: f93e71c7c8cf43749a6968d4539cb5d9, type: 3}
+      propertyPath: _reference
+      value: 
+      objectReference: {fileID: 11400000, guid: 90c13e88c20c616469e4b1efcb087c5f, type: 2}
     - target: {fileID: 6276389110876645161, guid: f93e71c7c8cf43749a6968d4539cb5d9, type: 3}
       propertyPath: _destroyAfterInteraction
       value: 1

@@ -4973,6 +4973,10 @@ PrefabInstance:
       value: 34.816
       objectReference: {fileID: 0}
     - target: {fileID: 6276389110876645161, guid: f93e71c7c8cf43749a6968d4539cb5d9, type: 3}
+      propertyPath: _reference
+      value: 
+      objectReference: {fileID: 11400000, guid: 67f4c5ea121b35643b22eb0ce780a49e, type: 2}
+    - target: {fileID: 6276389110876645161, guid: f93e71c7c8cf43749a6968d4539cb5d9, type: 3}
       propertyPath: _destroyAfterInteraction
       value: 1
       objectReference: {fileID: 0}
@@ -12556,10 +12560,10 @@ Transform:
   - {fileID: 1494663436}
   - {fileID: 42013092}
   - {fileID: 2035495533}
-  - {fileID: 655302582}
-  - {fileID: 187670706}
   - {fileID: 845298343}
+  - {fileID: 187670706}
   - {fileID: 509520647}
+  - {fileID: 655302582}
   - {fileID: 1370718183}
   - {fileID: 1324280283}
   - {fileID: 789367732}

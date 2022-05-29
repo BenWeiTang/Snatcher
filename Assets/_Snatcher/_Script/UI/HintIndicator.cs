@@ -42,6 +42,7 @@ namespace Snatcher
             if (!other.CompareTag("Player"))
                 return;
             SetCanvasGroupActivate(true);
+            _hintText.text = _textToShow;
         }
 
         private void OnTriggerExit(Collider other)

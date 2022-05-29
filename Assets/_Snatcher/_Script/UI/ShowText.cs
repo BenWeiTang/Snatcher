@@ -7,7 +7,7 @@ public class ShowText : MonoBehaviour
 {
     [SerializeField] private float _delay = .1f;
     [SerializeField] private string _entireText;
-    private string _currentText = "";
+    // private string _currentText = "";
     [SerializeField] private Text _target;
     [SerializeField] private AudioSource _textBlip;
     [SerializeField] private int _persistedDuration;
@@ -15,7 +15,7 @@ public class ShowText : MonoBehaviour
     void OnEnable()
     {
         _target.text = "";
-        _currentText = "";
+        // _currentText = "";
         StartCoroutine(genText(_entireText));
     }
 

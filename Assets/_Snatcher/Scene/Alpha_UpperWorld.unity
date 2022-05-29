@@ -17337,6 +17337,10 @@ PrefabInstance:
       propertyPath: m_Follow
       value: 
       objectReference: {fileID: 851092262}
+    - target: {fileID: 587026133166843523, guid: 0c377ac55a642c94fa1dbb735aa6bf82, type: 3}
+      propertyPath: m_Lens.OrthographicSize
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 587026133166843548, guid: 0c377ac55a642c94fa1dbb735aa6bf82, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -25723,7 +25727,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1075935072996180206, guid: 1fa12254d2ac6324a8476e5563a8989f, type: 3}
       propertyPath: m_Name
-      value: Interactable_Well (1)
+      value: Interactable_Well D2
       objectReference: {fileID: 0}
     - target: {fileID: 1075935072996180206, guid: 1fa12254d2ac6324a8476e5563a8989f, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -25836,6 +25840,22 @@ PrefabInstance:
     - target: {fileID: 7944716721892097706, guid: 1fa12254d2ac6324a8476e5563a8989f, type: 3}
       propertyPath: _targetScene
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7944716721892097706, guid: 1fa12254d2ac6324a8476e5563a8989f, type: 3}
+      propertyPath: _rejectionText
+      value: Need the key for Dungeon 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7944716721892097706, guid: 1fa12254d2ac6324a8476e5563a8989f, type: 3}
+      propertyPath: _requirements.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7944716721892097706, guid: 1fa12254d2ac6324a8476e5563a8989f, type: 3}
+      propertyPath: _requirements.Array.data[0]._reference
+      value: 
+      objectReference: {fileID: 11400000, guid: 1afd523eae580024cae439a1447af936, type: 2}
+    - target: {fileID: 7944716721892097706, guid: 1fa12254d2ac6324a8476e5563a8989f, type: 3}
+      propertyPath: _requirements.Array.data[0]._requirement
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8014101916052033589, guid: 1fa12254d2ac6324a8476e5563a8989f, type: 3}
       propertyPath: m_Size.x
@@ -55520,10 +55540,10 @@ Transform:
   - {fileID: 1476655848}
   - {fileID: 1679487161}
   - {fileID: 1396179070}
-  - {fileID: 1086659447}
-  - {fileID: 810901825}
-  - {fileID: 2102510297}
   - {fileID: 1788010623}
+  - {fileID: 810901825}
+  - {fileID: 1086659447}
+  - {fileID: 2102510297}
   m_Father: {fileID: 1227748272}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -55623,7 +55643,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1075935072996180206, guid: 1fa12254d2ac6324a8476e5563a8989f, type: 3}
       propertyPath: m_Name
-      value: Interactable_Well
+      value: Interactable_Well D3
       objectReference: {fileID: 0}
     - target: {fileID: 1075935072996180206, guid: 1fa12254d2ac6324a8476e5563a8989f, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -55679,7 +55699,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7789026523133045731, guid: 1fa12254d2ac6324a8476e5563a8989f, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7789026523133045731, guid: 1fa12254d2ac6324a8476e5563a8989f, type: 3}
       propertyPath: m_LocalScale.x
@@ -55736,6 +55756,22 @@ PrefabInstance:
     - target: {fileID: 7944716721892097706, guid: 1fa12254d2ac6324a8476e5563a8989f, type: 3}
       propertyPath: _targetScene
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7944716721892097706, guid: 1fa12254d2ac6324a8476e5563a8989f, type: 3}
+      propertyPath: _rejectionText
+      value: Need the key for Dungeon 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7944716721892097706, guid: 1fa12254d2ac6324a8476e5563a8989f, type: 3}
+      propertyPath: _requirements.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7944716721892097706, guid: 1fa12254d2ac6324a8476e5563a8989f, type: 3}
+      propertyPath: _requirements.Array.data[0]._reference
+      value: 
+      objectReference: {fileID: 11400000, guid: 67f4c5ea121b35643b22eb0ce780a49e, type: 2}
+    - target: {fileID: 7944716721892097706, guid: 1fa12254d2ac6324a8476e5563a8989f, type: 3}
+      propertyPath: _requirements.Array.data[0]._requirement
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8014101916052033589, guid: 1fa12254d2ac6324a8476e5563a8989f, type: 3}
       propertyPath: m_Size.x
@@ -59102,7 +59138,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1075935072996180206, guid: 1fa12254d2ac6324a8476e5563a8989f, type: 3}
       propertyPath: m_Name
-      value: Interactable_Well (3)
+      value: Interactable_Well D1
       objectReference: {fileID: 0}
     - target: {fileID: 1075935072996180206, guid: 1fa12254d2ac6324a8476e5563a8989f, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -59158,7 +59194,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7789026523133045731, guid: 1fa12254d2ac6324a8476e5563a8989f, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7789026523133045731, guid: 1fa12254d2ac6324a8476e5563a8989f, type: 3}
       propertyPath: m_LocalScale.x
@@ -69418,7 +69454,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1075935072996180206, guid: 1fa12254d2ac6324a8476e5563a8989f, type: 3}
       propertyPath: m_Name
-      value: Interactable_Well (2)
+      value: Interactable_Well D4
       objectReference: {fileID: 0}
     - target: {fileID: 1075935072996180206, guid: 1fa12254d2ac6324a8476e5563a8989f, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -69474,7 +69510,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7789026523133045731, guid: 1fa12254d2ac6324a8476e5563a8989f, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7789026523133045731, guid: 1fa12254d2ac6324a8476e5563a8989f, type: 3}
       propertyPath: m_LocalScale.x
@@ -69531,6 +69567,22 @@ PrefabInstance:
     - target: {fileID: 7944716721892097706, guid: 1fa12254d2ac6324a8476e5563a8989f, type: 3}
       propertyPath: _targetScene
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7944716721892097706, guid: 1fa12254d2ac6324a8476e5563a8989f, type: 3}
+      propertyPath: _rejectionText
+      value: Need the key for Dungeon 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7944716721892097706, guid: 1fa12254d2ac6324a8476e5563a8989f, type: 3}
+      propertyPath: _requirements.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7944716721892097706, guid: 1fa12254d2ac6324a8476e5563a8989f, type: 3}
+      propertyPath: _requirements.Array.data[0]._reference
+      value: 
+      objectReference: {fileID: 11400000, guid: 90c13e88c20c616469e4b1efcb087c5f, type: 2}
+    - target: {fileID: 7944716721892097706, guid: 1fa12254d2ac6324a8476e5563a8989f, type: 3}
+      propertyPath: _requirements.Array.data[0]._requirement
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8014101916052033589, guid: 1fa12254d2ac6324a8476e5563a8989f, type: 3}
       propertyPath: m_Size.x
