@@ -71,7 +71,6 @@ namespace Snatcher
             {
                 CurrentStamina -= CurrentLimb.StaminaCost;
                 _onAbilityUsed.Raise();
-                Debug.Log("Limb Manager Raising On Ability Used");
                 return true;
             }
             else
