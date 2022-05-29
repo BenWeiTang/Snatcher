@@ -79,7 +79,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Propeller Enemy
+  m_Text: Wing Enemy
 --- !u!1 &2210054816771625727
 GameObject:
   m_ObjectHideFlags: 0
@@ -159,7 +159,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Propeller Enemy
+  m_Text: Wing Enemy
 --- !u!1 &2374584983075307275
 GameObject:
   m_ObjectHideFlags: 0
@@ -477,7 +477,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Propeller Enemy
+  m_Text: Wing Enemy
 --- !u!1 &4225225697241536036
 GameObject:
   m_ObjectHideFlags: 0
@@ -566,7 +566,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2166229810569067096}
   m_Layer: 0
-  m_Name: PropellerEnemy
+  m_Name: WingEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1265,4 +1265,4 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Propeller Enemy
+  m_Text: Wing Enemy

@@ -10,7 +10,7 @@ namespace Snatcher
         [SerializeField] private Mesh _oneArmMesh;
         //[SerializeField] private Mesh _twoArmMesh;
 
-        [SerializeField] private SkinnedMeshRenderer _propellerLimb;
+        [SerializeField] private SkinnedMeshRenderer _wingLimb;
         [SerializeField] private SkinnedMeshRenderer _vaultArm;
         [SerializeField] private SkinnedMeshRenderer _vaultLegL;
         [SerializeField] private SkinnedMeshRenderer _vaultLegR;
@@ -22,7 +22,7 @@ namespace Snatcher
 
         private void OnEnable()
         {
-            _propellerLimb.enabled = false;
+            _wingLimb.enabled = false;
             _vaultArm.enabled = false;
             _vaultLegL.enabled = false;
             _vaultLegR.enabled = false;
@@ -53,7 +53,7 @@ namespace Snatcher
 
         private void OnLimbSwitched(Void _)
         {
-            _propellerLimb.enabled = false;
+            _wingLimb.enabled = false;
             _vaultArm.enabled = false;
             _vaultLegL.enabled = false;
             _vaultLegR.enabled = false;
@@ -64,7 +64,7 @@ namespace Snatcher
                 _defaultLegL.enabled = true;
                 _defaultLegR.enabled = true;
                 _defaultLeftArm.enabled = true;
-                _propellerLimb.enabled = false;
+                _wingLimb.enabled = false;
                 _vaultArm.enabled = false;
                 _vaultLegL.enabled = false;
                 _vaultLegR.enabled = false;
@@ -83,7 +83,7 @@ namespace Snatcher
             }
             else if (LimbManager.Instance.CurrentLimb.Type == LimbType.Wing)
             {
-                _propellerLimb.enabled = true;
+                _wingLimb.enabled = true;
                 _defaultLegL.enabled = true;
                 _defaultLegR.enabled = true;
                 _defaultLeftArm.enabled = true;
@@ -95,7 +95,7 @@ namespace Snatcher
                 _defaultLegL.enabled = true;
                 _defaultLegR.enabled = true;
                 _defaultLeftArm.enabled = true;
-                _propellerLimb.enabled = false;
+                _wingLimb.enabled = false;
                 _vaultArm.enabled = false;
                 _vaultLegL.enabled = false;
                 _vaultLegR.enabled = false;

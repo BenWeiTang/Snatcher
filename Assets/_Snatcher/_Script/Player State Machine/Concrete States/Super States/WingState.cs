@@ -6,7 +6,7 @@ namespace Snatcher
 {
     public class WingState : ASuperState
     {
-        public sealed override PlayerStateConfig StateConfig { get; protected set; } = StateConfigManager.Instance.PropellerStateConfig;
+        public sealed override PlayerStateConfig StateConfig { get; protected set; } = StateConfigManager.Instance.WingStateConfig;
         public sealed override ASubState AbilityEntryState { get; protected set; }
         public sealed override int IsInSuperStateHash { get; protected set; }
 
