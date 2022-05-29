@@ -30,31 +30,11 @@ namespace Snatcher
         /// </summary>
         public abstract List<AUpgrade> Upgrades { get; protected set; }
         
-        /// <summary>
-        /// The current Durability of this Limb Ability.
-        /// </summary>
-        //public abstract float Durability { get; protected set; }
+       /// <summary>
+       /// The amount of decrement every time the Durability decreases.
+       /// </summary>
+       public abstract float StaminaCost { get; } 
         
-        /// <summary>
-        /// The max Durability of this Limb Ability
-        /// </summary>
-        //public abstract float MaxDurability { get; protected set; }
-        
-        /// <summary>
-        /// The amount of decrement every time the Durability decreases.
-        /// </summary>
-       public abstract float StaminaCost { get; }
-        
-        protected ALimb() { }
-
-        /// <summary>
-        /// Decrease the Durability by DecrementDelta.
-        /// </summary>
-        //public void DecrementDurability() => Durability = Mathf.Max(0f, Durability - StaminaCost);
-
-        /// <summary>
-        /// Repair Durability to its maximum.
-        /// </summary>
-        //public void Repair() => Durability = MaxDurability;
+       protected ALimb() { }
     }
 }
