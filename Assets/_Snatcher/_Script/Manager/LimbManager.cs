@@ -176,5 +176,15 @@ namespace Snatcher
                 CurrentStamina = Mathf.Min(100f, CurrentStamina);
             }
         }
+
+        public float GetInventoryWeight()
+        {
+            float net_weight = 0f;
+            foreach(ALimb limb in _inventory)
+            {
+                net_weight += limb.Weight;
+            }
+            return net_weight;
+        }
     }
 }
