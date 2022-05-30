@@ -16,9 +16,9 @@ namespace Snatcher
         [SerializeField] private AudioSource _textBlip;
         [SerializeField] private int _persistedDuration;
 
-        async void Start()
+        async void OnEnable()
         {
-            if (_needsIntro)
+            if (_needsIntro.Value)
             {
                 _target.text = "";
                 // _currentText = "";
