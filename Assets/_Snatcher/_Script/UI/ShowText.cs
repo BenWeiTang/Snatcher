@@ -1,8 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
-using System;
 
 namespace Snatcher
 {
@@ -11,25 +9,21 @@ namespace Snatcher
         [SerializeField] private BoolReference _needsIntro;
         [SerializeField] private float _delay = .1f;
         [SerializeField] private string _entireText;
-        // private string _currentText = "";
         [SerializeField] private Text _target;
         [SerializeField] private AudioSource _textBlip;
         [SerializeField] private int _persistedDuration;
 
-        async void OnEnable()
+        private void OnEnable()
         {
             if (_needsIntro.Value)
             {
                 _target.text = "";
-                // _currentText = "";
-                StartCoroutine(genText(_entireText));
+                StartCoroutine(GenText(_entireText));
                 _needsIntro.Value = false;
             }
-
         }
 
-
-        IEnumerator genText(string textToGen)
+        private IEnumerator GenText(string textToGen)
         {
             string currentText = "";
             foreach (char c in textToGen)
@@ -43,7 +37,6 @@ namespace Snatcher
             yield return new WaitForSeconds(_persistedDuration);
             _target.enabled = false;
             _target.text = "";
-            textToGen = "";
         }
     }
 }
