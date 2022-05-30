@@ -11,6 +11,13 @@ namespace Snatcher
         public ALimb CurrentLimb => _inventory[_index];
         public float MaxStamina { get; } = 100f;
         public float CurrentStamina { get; private set; }
+        public Dictionary<string, float> WeightMods { get; private set; } = new Dictionary<string, float>
+        {
+            {"Very Heavy", .5f},
+            {"Heavy", .66f},
+            {"Medium", .75f },
+            {"Lightweight", 1f}
+        };
 
         /// <summary>
         /// The next limb in the current limb selection rotation. Is is what should appear in the right slot of the UI. Returns null if there are less than two available limbs.
@@ -192,19 +199,19 @@ namespace Snatcher
             float net_weight = GetInventoryWeight();
             if (net_weight > 0f && net_weight < 10f)
             {
-                return 1f;
+                return WeightMods["Lightweight"];
             }
             else if (net_weight < 20f)
             {
-                return .75f;
+                return WeightMods["Medium"];
             }
             else if (net_weight < 30f)
             {
-                return .66f;
+                return WeightMods["Heavy"];
             }
             else
             {
-                return .5f;
+                return WeightMods["Very Heavy"];
             }
         }
     }

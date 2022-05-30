@@ -72,7 +72,7 @@ namespace Snatcher
             velocity *= SuperState.StateConfig.MoveSpeed;
             velocity.y = SuperState.StateConfig.GroundedGravity;
             
-            Context.Controller.Move(velocity * Time.deltaTime);
+            Context.Controller.Move((velocity * LimbManager.Instance.GetWeightConsequenceModifier()) * Time.deltaTime);
         }
         
         private void OnMovementCanceled(InputAction.CallbackContext callbackContext) => Context.SwitchSubState(Factory.Idle);

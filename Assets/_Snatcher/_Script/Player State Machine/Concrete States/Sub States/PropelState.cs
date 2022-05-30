@@ -101,7 +101,7 @@ namespace Snatcher
             {
                 if (LimbManager.Instance.EatLimbStaminaCost())
                 {
-                    speed = -flapSpeed;
+                    speed = -flapSpeed*LimbManager.Instance.GetWeightConsequenceModifier();
                 }
             }
         }

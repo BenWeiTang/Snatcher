@@ -77,7 +77,7 @@ namespace Snatcher
             velocity.y = SuperState.StateConfig.GroundedGravity;
             
             //TODO: make the speed reduction configurable
-            Context.Controller.Move(0.5f * velocity * Time.deltaTime);
+            Context.Controller.Move(((0.5f * velocity) * LimbManager.Instance.GetWeightConsequenceModifier()) * Time.deltaTime);
         }
     }
 }

@@ -34,7 +34,7 @@ namespace Snatcher
 
         private void CalculateDestination()
         {
-            _destination = Context.transform.position + _dashDirection * SuperState.StateConfig.DashDistance;
+            _destination = Context.transform.position + _dashDirection * (SuperState.StateConfig.DashDistance * LimbManager.Instance.GetWeightConsequenceModifier());
         }
 
         private void DoDash()

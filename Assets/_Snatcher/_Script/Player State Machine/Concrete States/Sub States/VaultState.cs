@@ -42,8 +42,8 @@ namespace Snatcher
             Vector3 tForward = t.forward;
 
             //TODO: parameterize distance and height
-            _apex = tPos + 4f * tForward;
-            _apex.y += 5f;
+            _apex = tPos + (4f * LimbManager.Instance.GetWeightConsequenceModifier()) * tForward;
+            _apex.y += 5f * LimbManager.Instance.GetWeightConsequenceModifier();
         }
 
         private void VaultUp()
