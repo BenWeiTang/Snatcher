@@ -186,5 +186,26 @@ namespace Snatcher
             }
             return net_weight;
         }
+
+        public float GetWeightConsequenceModifier()
+        {
+            float net_weight = GetInventoryWeight();
+            if (net_weight > 0f && net_weight < 10f)
+            {
+                return 1f;
+            }
+            else if (net_weight < 20f)
+            {
+                return .75f;
+            }
+            else if (net_weight < 30f)
+            {
+                return .66f;
+            }
+            else
+            {
+                return .5f;
+            }
+        }
     }
 }
