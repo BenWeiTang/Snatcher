@@ -4824,7 +4824,7 @@ GameObject:
   - component: {fileID: 8492262611098684614}
   - component: {fileID: 8492262611098684615}
   m_Layer: 0
-  m_Name: LandingIndicator
+  m_Name: WingLandingIndicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4860,4 +4860,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _followedObject: {fileID: 0}
   _currentSubStateRef: {fileID: 0}
-  _indicator: {fileID: 0}
