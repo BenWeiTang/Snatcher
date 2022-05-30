@@ -2996,6 +2996,10 @@ PrefabInstance:
         use their powers as its own.  Use this power to traverse dungeons where you
         will discover the secrets and bounds of your abilities.
       objectReference: {fileID: 0}
+    - target: {fileID: 3644173651538830089, guid: 091832a7de8df1a46a5a9a5620640047, type: 3}
+      propertyPath: _needsIntro
+      value: 
+      objectReference: {fileID: 11400000, guid: ed1030ef36bf64f44b2b56c00fc40dc2, type: 2}
     - target: {fileID: 3644173651538830095, guid: 091832a7de8df1a46a5a9a5620640047, type: 3}
       propertyPath: m_Pivot.x
       value: 0
