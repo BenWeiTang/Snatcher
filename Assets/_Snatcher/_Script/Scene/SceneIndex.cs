@@ -16,7 +16,8 @@ namespace Snatcher
         Dungeon02 = 6,
         Dungeon03 = 10,
         WinScene = 7,
-        LoseScene = 8,
-        Shop = 9
+        DeathByFalling = 8,
+        Shop = 9,
+        DeathByEnemy = 11
     }
 }
