@@ -13,7 +13,7 @@ namespace Snatcher
         //public override float Durability { get; protected set; }
         //public override float MaxDurability { get; protected set; }
         public override float Weight { get; protected set; } = 10f;
-        public override float StaminaCost { get; } = 10f;
+        public override float StaminaCost { get; } = 10f + (1-LimbManager.Instance.GetWeightConsequenceModifier())*10f;
         public PropellerLimb() : base()
         {
             Upgrades = new List<AUpgrade>();
