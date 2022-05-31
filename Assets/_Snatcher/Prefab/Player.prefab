@@ -135,7 +135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _onLimbSwitched: {fileID: 11400000, guid: b1c09df237308ab4d94b96eeef467076, type: 2}
   _oneArmMesh: {fileID: -856059019632272089, guid: 0446a7d9baf43dd4da94c0e2ebd63d98, type: 3}
-  _propellerLimb: {fileID: 4687035364621620664}
+  _wingLimb: {fileID: 4687035364621620664}
   _vaultArm: {fileID: 3698346204404547700}
   _vaultLegL: {fileID: 3729498097660813008}
   _vaultLegR: {fileID: 3076015058187003096}
@@ -548,6 +548,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: af9c65ca1e7ca4e49b4c1905ddd37313, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3071180390171350127, guid: af9c65ca1e7ca4e49b4c1905ddd37313, type: 3}
+      propertyPath: m_Name
+      value: Wing
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: af9c65ca1e7ca4e49b4c1905ddd37313, type: 3}
       propertyPath: m_Name

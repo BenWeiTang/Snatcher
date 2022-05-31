@@ -11,7 +11,7 @@ namespace Snatcher
         public InvisState InvisState { get; private set; }
         public LegState LegState { get; private set; }
 
-        public PropellerState PropellerState { get; private set; }
+        public WingState WingState { get; private set; }
         
         // Sub states
         public IdleState Idle { get; private set; }
@@ -34,7 +34,7 @@ namespace Snatcher
             BasicState = new BasicState(context);
             InvisState = new InvisState(context);
             LegState = new LegState(context);
-            PropellerState = new PropellerState(context);
+            WingState = new WingState(context);
 
             // Sub state
             Idle = new IdleState(context);
@@ -51,7 +51,7 @@ namespace Snatcher
             InvisMove = new InvisMoveState(context);
             // Leg
             Vault = new VaultState(context);
-            //Propeller
+            // Wing
             Propel = new PropelState(context);
         }
     }

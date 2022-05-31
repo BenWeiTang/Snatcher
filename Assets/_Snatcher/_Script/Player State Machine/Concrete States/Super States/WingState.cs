@@ -4,15 +4,15 @@ using UnityEngine;
 
 namespace Snatcher
 {
-    public class PropellerState : ASuperState
+    public class WingState : ASuperState
     {
-        public sealed override PlayerStateConfig StateConfig { get; protected set; } = StateConfigManager.Instance.PropellerStateConfig;
+        public sealed override PlayerStateConfig StateConfig { get; protected set; } = StateConfigManager.Instance.WingStateConfig;
         public sealed override ASubState AbilityEntryState { get; protected set; }
         public sealed override int IsInSuperStateHash { get; protected set; }
 
-        public PropellerState(PlayerStateMachine currentContext) : base(currentContext) 
+        public WingState(PlayerStateMachine currentContext) : base(currentContext) 
         {
-            IsInSuperStateHash = Animator.StringToHash("IsPropeller");
+            IsInSuperStateHash = Animator.StringToHash("IsWing");
         }
 
         public override void EnterState()
