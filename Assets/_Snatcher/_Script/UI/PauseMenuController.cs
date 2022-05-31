@@ -58,7 +58,7 @@ namespace Snatcher
 
         public void Restart()
         {
-            gameObject.GetComponent<GameStateManager>().Reset();
+            //gameObject.GetComponent<GameStateManager>().Reset();
             Time.timeScale = 1;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
