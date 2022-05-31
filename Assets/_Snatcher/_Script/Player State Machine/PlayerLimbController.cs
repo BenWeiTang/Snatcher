@@ -10,7 +10,7 @@ namespace Snatcher
         [SerializeField] private Mesh _oneArmMesh;
         //[SerializeField] private Mesh _twoArmMesh;
 
-        [SerializeField] private SkinnedMeshRenderer _propellerLimb;
+        [SerializeField] private SkinnedMeshRenderer _wingLimb;
         [SerializeField] private SkinnedMeshRenderer _vaultArm;
         [SerializeField] private SkinnedMeshRenderer _vaultLegL;
         [SerializeField] private SkinnedMeshRenderer _vaultLegR;
@@ -19,10 +19,10 @@ namespace Snatcher
         [SerializeField] private SkinnedMeshRenderer _defaultLeftArm;
         [SerializeField] private SkinnedMeshRenderer _defaultRightArm;
         [SerializeField] private PlayerStateReference _currentPlayerSubState;
-
+        
         private void OnEnable()
         {
-            _propellerLimb.enabled = false;
+            _wingLimb.enabled = false;
             _vaultArm.enabled = false;
             _vaultLegL.enabled = false;
             _vaultLegR.enabled = false;
@@ -53,7 +53,7 @@ namespace Snatcher
 
         private void OnLimbSwitched(Void _)
         {
-            _propellerLimb.enabled = false;
+            _wingLimb.enabled = false;
             _vaultArm.enabled = false;
             _vaultLegL.enabled = false;
             _vaultLegR.enabled = false;
@@ -63,7 +63,7 @@ namespace Snatcher
                 _defaultLegL.enabled = true;
                 _defaultLegR.enabled = true;
                 _defaultLeftArm.enabled = true;
-                _propellerLimb.enabled = false;
+                _wingLimb.enabled = false;
                 _vaultArm.enabled = false;
                 _vaultLegL.enabled = false;
                 _vaultLegR.enabled = false;
@@ -80,12 +80,13 @@ namespace Snatcher
                 //_skinnedMeshRenderer.sharedMesh = _propellerLimb;
                 //_skinnedMeshRenderer.BakeMesh(_propellerLimb);
             }
-            else if (LimbManager.Instance.CurrentLimb.Type == LimbType.Propeller)
+            else if (LimbManager.Instance.CurrentLimb.Type == LimbType.Wing)
             {
-                _propellerLimb.enabled = true;
+                _wingLimb.enabled = true;
                 _defaultLegL.enabled = true;
                 _defaultLegR.enabled = true;
                 _defaultLeftArm.enabled = true;
+                
                 //_skinnedMeshRenderer.sharedMesh = _legLimb;
                 //_skinnedMeshRenderer.BakeMesh(_legLimb);
             }
@@ -94,7 +95,7 @@ namespace Snatcher
                 _defaultLegL.enabled = true;
                 _defaultLegR.enabled = true;
                 _defaultLeftArm.enabled = true;
-                _propellerLimb.enabled = false;
+                _wingLimb.enabled = false;
                 _vaultArm.enabled = false;
                 _vaultLegL.enabled = false;
                 _vaultLegR.enabled = false;

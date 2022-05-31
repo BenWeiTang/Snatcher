@@ -74,7 +74,7 @@ namespace Snatcher
             {
                 LimbType.Invis => new InvisLimb(),
                 LimbType.Leg => new LegLimb(),
-                LimbType.Propeller => new PropellerLimb(),
+                LimbType.Wing => new WingLimb(),
                 //TODO: add propeller limb
                 _ => null
             };
