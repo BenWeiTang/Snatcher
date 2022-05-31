@@ -4647,7 +4647,7 @@ PrefabInstance:
     - target: {fileID: 6276389110876645161, guid: f93e71c7c8cf43749a6968d4539cb5d9, type: 3}
       propertyPath: _reference
       value: 
-      objectReference: {fileID: 11400000, guid: 67f4c5ea121b35643b22eb0ce780a49e, type: 2}
+      objectReference: {fileID: 11400000, guid: 996968a5ad01df541a6860786488f8a1, type: 2}
     - target: {fileID: 6276389110876645161, guid: f93e71c7c8cf43749a6968d4539cb5d9, type: 3}
       propertyPath: _destroyAfterInteraction
       value: 1
