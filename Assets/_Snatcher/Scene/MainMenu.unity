@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1169,6 +1169,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0e71de6b3d330145bb34fa47dffb62f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _needsIntro: {fileID: 11400000, guid: ed1030ef36bf64f44b2b56c00fc40dc2, type: 2}
+  _dungeon2KeyRef: {fileID: 11400000, guid: 1afd523eae580024cae439a1447af936, type: 2}
+  _dungeon3KeyRef: {fileID: 11400000, guid: 67f4c5ea121b35643b22eb0ce780a49e, type: 2}
+  _dungeon4KeyRef: {fileID: 11400000, guid: 90c13e88c20c616469e4b1efcb087c5f, type: 2}
 --- !u!1 &1391501176
 GameObject:
   m_ObjectHideFlags: 0

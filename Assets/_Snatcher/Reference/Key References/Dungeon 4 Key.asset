@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 949cdebccfb5e3a4ba4f1346ece9f406, type: 3}
-  m_Name: HasKey
+  m_Name: Dungeon 4 Key
   m_EditorClassIdentifier: 
   Value: 0

@@ -81,3 +81,16 @@ MonoBehaviour:
   _debug: 0
   _targetScene: 1
   _requirements: []
+  _textRef: {fileID: 7334087229736607373}
+  _rejectionText: 
+--- !u!114 &7334087229736607373 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2400426072939023301, guid: b6b3d5d722ad9984c9f9ca7579e539e6, type: 3}
+  m_PrefabInstance: {fileID: 4942682662959584584}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

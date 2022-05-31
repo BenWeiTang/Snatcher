@@ -360,6 +360,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3681592159115705365}
     m_Modifications:
+    - target: {fileID: 4328169670376719997, guid: 94299ea49deb9bb42b8de49b4efc68dd, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5242210724368583660, guid: 94299ea49deb9bb42b8de49b4efc68dd, type: 3}
       propertyPath: m_Name
       value: Player Listeners
@@ -418,6 +422,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94299ea49deb9bb42b8de49b4efc68dd, type: 3}
+--- !u!82 &1082864962403105497 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4328169670376719997, guid: 94299ea49deb9bb42b8de49b4efc68dd, type: 3}
+  m_PrefabInstance: {fileID: 3681592159278759076}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4627343676290508455 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8295635042984417795, guid: 94299ea49deb9bb42b8de49b4efc68dd, type: 3}
@@ -459,6 +468,34 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: play
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5167987413716321268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8923801783140611912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f721376b58b4750841a5381a56bedc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameEvent: {fileID: 11400000, guid: 364f906055c5de649bfeaa490b3aa499, type: 2}
+  _unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1082864962403105497}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1001 &5354740468279083194

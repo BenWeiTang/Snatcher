@@ -60,7 +60,6 @@ namespace Snatcher
 
             if (LimbManager.Instance.CurrentLimb.Type == LimbType.Basic)
             {
-                Debug.Log("Basic limb active, turninf odd propeller and vault");
                 _defaultLegL.enabled = true;
                 _defaultLegR.enabled = true;
                 _defaultLeftArm.enabled = true;

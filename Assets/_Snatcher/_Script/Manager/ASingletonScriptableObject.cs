@@ -22,7 +22,7 @@ namespace Snatcher
                     _instance = Resources.Load<T>(path);
                     if (_instance == null)
                     {
-                        Debug.LogError("Did not load an instance from /Assets/_Snatcher/Resources/Manager. Did you forget to put in the Scriptable Object Singleton?");
+                        Logger.LogError("Did not load an instance from /Assets/_Snatcher/Resources/Manager. Did you forget to put in the Scriptable Object Singleton?");
                         return null;
                     }
                     

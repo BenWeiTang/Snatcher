@@ -14,6 +14,7 @@ namespace Snatcher
             
             Context.HookController.OnEnemyHit += OnHookHitEnemy;
             Context.HookController.OnGrappleHit += OnHootHitGrapple;
+            Context.PlayerInput.Player.SwitchLimb.Disable();
             
             // If we can be in hook out, we must be in basic super state
             // When we enter this state, we used the ability once if we have the stamina to do so
@@ -23,8 +24,6 @@ namespace Snatcher
                 Context.Animator.SetBool(SuperState.IsAbilityActiveHash, true);
                 await HandleHitBoxActivation();
             }
-            
-
         }
 
         public override void ExitState()
@@ -34,6 +33,7 @@ namespace Snatcher
             Context.HookController.ActivateCollider(false);
             Context.HookController.ResetRotation();
             Context.Animator.SetBool(SuperState.IsAbilityActiveHash, false);
+            Context.PlayerInput.Player.Enable();
         }
 
         public override void UpdateState() { }

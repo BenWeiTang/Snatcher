@@ -11,33 +11,18 @@ namespace Snatcher
         public ALimb CurrentLimb => _inventory[_index];
         public float MaxStamina { get; } = 100f;
         public float CurrentStamina { get; private set; }
-
-        /// <summary>
-        /// The next limb in the current limb selection rotation. Is is what should appear in the right slot of the UI. Returns null if there are less than two available limbs.
-        /// </summary>
-        public ALimb NextLimb
-        {
-            get
-            {
-                int nextIndex = GetNextIndex(_index, _inventory.Count);
-                return nextIndex == -1 ? null : _inventory[nextIndex];
-            }
-        }
-
-        /// <summary>
-        /// The prior limb in the current limb selection rotation. It is what should appear in the left slot of the UI. Returns null if there are less than three available limbs.
-        /// </summary>
-        public ALimb PriorLimb
-        {
-            get
-            {
-                int priorIndex = GetPriorIndex(_index, _inventory.Count);
-                return priorIndex == -1 ? null : _inventory[priorIndex];
-            }
-        }
-
+        public ALimb NextLimb => _index == _inventory.Count - 1 ? null : _inventory[_index + 1];
+        public ALimb PriorLimb => _index == 0 ? null : _inventory[_index - 1];
         public LimbType CurrentType => CurrentLimb.Type;
-        
+        public float InventoryWeight => _inventory.Sum(limb => limb.Weight);
+        public float WeightConsequenceModifier => InventoryWeight switch
+        {
+            > 0f and < 10f => 1f,
+            < 20f => .75f,
+            < 30f => .66f,
+            _ => .5f
+        };
+
         public event Action<LimbType> OnLimbForcedSwitched;
 
         [SerializeField] private VoidEvent _onLimbSwitched;
@@ -51,14 +36,14 @@ namespace Snatcher
             {
                 if (_index == _inventory.Count - 1)
                     return;
-                
+
                 _index++;
             }
             else
             {
                 if (_index == 0)
                     return;
-                
+
                 _index--;
             }
 
@@ -67,11 +52,10 @@ namespace Snatcher
 
         public bool EatLimbStaminaCost()
         {
-            if(CurrentStamina > CurrentLimb.StaminaCost)
+            if (CurrentStamina > CurrentLimb.StaminaCost)
             {
                 CurrentStamina -= CurrentLimb.StaminaCost;
                 _onAbilityUsed.Raise();
-                Debug.Log("Limb Manager Raising On Ability Used");
                 return true;
             }
             else
@@ -100,19 +84,27 @@ namespace Snatcher
                 this.LogError("Unable to identify appropriate Limb to add!");
                 return;
             }
-            
+
             // Insert Limb to front of inventory but after basic
             _inventory.Insert(1, limbToAdd);
-            
+
             // Automatically jump to the newly snatched Limb
             _index = 1;
-            
+
             OnLimbForcedSwitched?.Invoke(type);
             _onLimbSwitched.Raise();
         }
 
         public void DropActiveLimb()
         {
+            // Shouldn't drop basic limb
+            if (_index == 0)
+                return;
+
+            Vector3 playerPosition = GameObject.FindWithTag("Player").transform.position;
+            playerPosition.y -= 0.05f;
+            var go = Instantiate(CurrentLimb.Model, playerPosition, Quaternion.identity);
+
             _inventory.Remove(CurrentLimb);
             _index--;
             OnLimbForcedSwitched?.Invoke(CurrentType);
@@ -126,39 +118,6 @@ namespace Snatcher
             _index = 0;
         }
 
-        protected override void OnInitialized()
-        {
-            CurrentStamina = MaxStamina;
-            _index = 0;
-            _inventory = new List<ALimb>();
-
-            _inventory.Add(new BasicLimb());
-            //_inventory.Add(new LegLimb());
-            //_inventory.Add(new PropellerLimb());
-        }
-
-        /// <summary>
-        /// Returns the next index given the current index and the total count of elements in the collection. Returns -1 if total is less than 2.
-        /// </summary>
-        private static int GetNextIndex(int currentIndex, int total)
-        {
-            if (currentIndex == total - 1)
-                return -1;
-
-            return currentIndex + 1;
-        }
-
-        /// <summary>
-        /// Returns the previous index given the current index and the total count of elements in the collection. Returns -1 if total is less than 3.
-        /// </summary>
-        private static int GetPriorIndex(int currentIndex, int total)
-        {
-            if (currentIndex == 0)
-                return -1;
-
-            return currentIndex - 1;
-        }
-
         public void RecoverStamina(float amount)
         {
             CurrentStamina += amount;
@@ -170,6 +129,15 @@ namespace Snatcher
             {
                 CurrentStamina = Mathf.Min(100f, CurrentStamina);
             }
+        }
+
+        protected override void OnInitialized()
+        {
+            CurrentStamina = MaxStamina;
+            _index = 0;
+            _inventory = new List<ALimb>();
+
+            _inventory.Add(new BasicLimb());
         }
     }
 }

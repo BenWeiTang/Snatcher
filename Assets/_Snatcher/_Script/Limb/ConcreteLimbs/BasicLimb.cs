@@ -12,6 +12,7 @@ namespace Snatcher
         public sealed override List<AUpgrade> Upgrades { get; protected set; }
         //public override float Durability { get; protected set; } = 100f;
         //public override float MaxDurability { get; protected set; } = 100f;
+        public override float Weight { get; protected set; } = 1f;
         public override float StaminaCost { get; } = 5f;
 
         public BasicLimb() : base()

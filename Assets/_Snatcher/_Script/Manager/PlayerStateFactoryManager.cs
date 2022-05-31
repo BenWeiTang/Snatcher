@@ -26,8 +26,9 @@ namespace Snatcher
         public PropelState Propel { get; private set; }
 
 
+
         public void InitContext(PlayerStateMachine context)
-        {
+        {   
             // Cache instances of concrete states
             // Super states
             BasicState = new BasicState(context);
