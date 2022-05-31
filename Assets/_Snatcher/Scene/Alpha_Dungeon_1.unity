@@ -9467,6 +9467,10 @@ PrefabInstance:
       value: 34.816
       objectReference: {fileID: 0}
     - target: {fileID: 6276389110876645161, guid: f93e71c7c8cf43749a6968d4539cb5d9, type: 3}
+      propertyPath: _event
+      value: 
+      objectReference: {fileID: 11400000, guid: 364f906055c5de649bfeaa490b3aa499, type: 2}
+    - target: {fileID: 6276389110876645161, guid: f93e71c7c8cf43749a6968d4539cb5d9, type: 3}
       propertyPath: _destroyAfterInteraction
       value: 1
       objectReference: {fileID: 0}
