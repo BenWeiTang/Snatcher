@@ -4859,4 +4859,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _followedObject: {fileID: 0}
-  _currentSubStateRef: {fileID: 0}
+  _currentSubStateRef: {fileID: 11400000, guid: 730f3644d464f1045ba36f7f35dbe1e3, type: 2}

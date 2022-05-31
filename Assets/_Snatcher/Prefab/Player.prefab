@@ -135,7 +135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _onLimbSwitched: {fileID: 11400000, guid: b1c09df237308ab4d94b96eeef467076, type: 2}
   _oneArmMesh: {fileID: -856059019632272089, guid: 0446a7d9baf43dd4da94c0e2ebd63d98, type: 3}
-  _wingLimb: {fileID: 0}
+  _wingLimb: {fileID: 4687035364621620664}
   _vaultArm: {fileID: 3698346204404547700}
   _vaultLegL: {fileID: 3729498097660813008}
   _vaultLegR: {fileID: 3076015058187003096}
@@ -562,6 +562,11 @@ SkinnedMeshRenderer:
 --- !u!137 &3729498097660813008 stripped
 SkinnedMeshRenderer:
   m_CorrespondingSourceObject: {fileID: -464421791935340950, guid: af9c65ca1e7ca4e49b4c1905ddd37313, type: 3}
+  m_PrefabInstance: {fileID: 5354740468279083194}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &4687035364621620664 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -8411477528025754366, guid: af9c65ca1e7ca4e49b4c1905ddd37313, type: 3}
   m_PrefabInstance: {fileID: 5354740468279083194}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &5603996811545175889 stripped
