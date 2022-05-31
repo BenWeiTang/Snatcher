@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 using Input = UnityEngine.Input;
 using TMPro;
 using System;
@@ -13,17 +14,20 @@ namespace Snatcher
         [SerializeField] private Slider _playerDashDistanceOrSpeedSlider;
         [SerializeField] private Slider _playerTurnSpeedSlider;
         [SerializeField] private Slider _playerHookLengthSlider;
+        [SerializeField] private Slider _volumeSlider;
         [SerializeField] private TMP_Text _playerDashDistanceText;
         [SerializeField] private TMP_Text _playerTurnSpeedText;
         [SerializeField] private TMP_Text _playerHookLengthText;
-        
+        [SerializeField] private TMP_Text _volumeText;
+
         [Header("Reference")]
         [SerializeField] private FloatReference _playerDashDistance;
         [SerializeField] private FloatReference _playerTurnSpeed;
         [SerializeField] private FloatReference _playerHookLength;
         [SerializeField] private PlayerStateConfig _basicConfig;
         [SerializeField] private PlayerStateConfig _invisConfig;
-        
+        [SerializeField] private AudioMixer _mixer;
+
         //private bool _isOn;
 
         private void Start()
@@ -57,6 +61,9 @@ namespace Snatcher
 
             _playerHookLength.Value = _playerHookLengthSlider.value;
             _playerHookLengthText.text = Math.Round(_playerHookLengthSlider.value) + "";
+
+            _mixer.SetFloat("MasterVolume", Mathf.Log10(_volumeSlider.value) * 20);
+            _volumeText.text = Math.Round(_volumeSlider.value * 100) + "";
         }
 
         private void SetCanvasGroupActivate(bool toActivate)

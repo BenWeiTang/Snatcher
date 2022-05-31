@@ -86,9 +86,10 @@ namespace Snatcher
             _currentSubState = PlayerStateFactoryManager.Instance.Idle;
 #endif
             
-            // There is no previous state in this case, so we enter this state fresh, thus false for the argument
             _currentSuperState.EnterState();
             _currentSubState.EnterState();
+            _currentSuperStateRef.Value = _currentSuperState;
+            _currentSubStateRef.Value = _currentSubState;
         }
 
         private void Update()
