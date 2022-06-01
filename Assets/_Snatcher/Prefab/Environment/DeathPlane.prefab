@@ -75,3 +75,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26c97ffe64a1303459341c3de5bb113f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _snatcherLastScene: {fileID: 11400000, guid: bbb16af72073b934fa89e6d5276f379c, type: 2}
