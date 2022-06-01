@@ -60,6 +60,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6550540365549647437, guid: 3bf3b2c29b7e66847ab3c346b0c2fff2, type: 3}
+      propertyPath: _event
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6550540365549647437, guid: 3bf3b2c29b7e66847ab3c346b0c2fff2, type: 3}
       propertyPath: _value
       value: 1
       objectReference: {fileID: 0}
