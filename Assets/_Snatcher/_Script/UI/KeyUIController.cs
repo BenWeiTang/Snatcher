@@ -9,6 +9,7 @@ namespace Snatcher
         [SerializeField] private GameObject[] _keysToDisplay;
         [SerializeField] private BoolReference[] _keysToDisplayRef;
         [SerializeField] private VoidEvent _onKeyObtained;
+        [SerializeField] private float keyCanvasGroupAlpha;
 
         private void Start()
         {
@@ -27,7 +28,7 @@ namespace Snatcher
 
         private void UpdateKeyUI(Void _) {
             for(int i=0; i<_keysToDisplay.Length; i++) {
-                _keysToDisplay[i].GetComponent<CanvasGroup>().alpha = _keysToDisplayRef[i].Value ? 1f : 0.1f;
+                _keysToDisplay[i].GetComponent<CanvasGroup>().alpha = _keysToDisplayRef[i].Value ? 1f : keyCanvasGroupAlpha;
             }
         }
     }
