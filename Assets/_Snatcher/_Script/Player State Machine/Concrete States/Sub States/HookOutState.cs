@@ -14,16 +14,24 @@ namespace Snatcher
             
             Context.HookController.OnEnemyHit += OnHookHitEnemy;
             Context.HookController.OnGrappleHit += OnHootHitGrapple;
-            
-            // This state is the entry state of basic, so we always set animation bool to true here
-            Context.Animator.SetBool(SuperState.IsAbilityActiveHash, true);
+            Context.PlayerInput.Player.SwitchLimb.Disable();
             
             //TODO: remove later
             // If we can be in hook out, we must be in basic super state
+<<<<<<< HEAD
             // When we enter this state, we used the ability once
             LimbManager.Instance.DecrementLimbDurability();
 
             await HandleHitBoxActivation();
+=======
+            // When we enter this state, we used the ability once if we have the stamina to do so
+            if (LimbManager.Instance.EatLimbStaminaCost())
+            {
+                // This state is the entry state of basic, so we always set animation bool to true here
+                Context.Animator.SetBool(SuperState.IsAbilityActiveHash, true);
+                await HandleHitBoxActivation();
+            }
+>>>>>>> dev
         }
 
         public override void ExitState()
@@ -33,6 +41,7 @@ namespace Snatcher
             Context.HookController.ActivateCollider(false);
             Context.HookController.ResetRotation();
             Context.Animator.SetBool(SuperState.IsAbilityActiveHash, false);
+            Context.PlayerInput.Player.Enable();
         }
 
         public override void UpdateState() { }

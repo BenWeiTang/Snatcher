@@ -18,7 +18,7 @@ namespace Snatcher
             if (Context.Debug) this.Log("Enter");
             
             base.EnterState();
-            AbilityEntryState = Factory.HookOut;
+            AbilityEntryState = PlayerStateFactoryManager.Instance.HookOut;
         }
 
         public override void ExitState()

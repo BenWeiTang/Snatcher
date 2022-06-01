@@ -49,7 +49,17 @@ namespace Snatcher
         {
             if (other.CompareTag("Enemy"))
             {
+<<<<<<< HEAD
                 OnEnemyHit?.Invoke();
+=======
+                var snatchable = other.GetComponent<ISnatchable>();
+                
+                if (snatchable != null)
+                {
+                    var type = snatchable.RequestSnatchLimb();
+                    OnEnemyHit?.Invoke(type);
+                }
+>>>>>>> dev
             }
             else if (other.CompareTag("Grapple"))
             {

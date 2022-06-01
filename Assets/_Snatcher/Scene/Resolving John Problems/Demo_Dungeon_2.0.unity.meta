@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/_Snatcher/Scene/Resolving John Problems/Demo_Dungeon_2.0.unity.meta
 guid: 34d54fa5652195a4685d0a3def5a34e3
 DefaultImporter:
+=======
+guid: 929845f8ebda6a04db80c43883bc574c
+PrefabImporter:
+>>>>>>> dev:Assets/_Snatcher/Resources/Limb/LegLimb.prefab.meta
   externalObjects: {}
   userData: 
   assetBundleName: 

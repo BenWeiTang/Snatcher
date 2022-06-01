@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 0446a7d9baf43dd4da94c0e2ebd63d98
+=======
+guid: d0413c2bdd9f20d4089455e5d0e514c1
+>>>>>>> dev
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable: []
@@ -16,8 +20,12 @@ ModelImporter:
     optimizeGameObjects: 0
     removeConstantScaleCurves: 1
     motionNodeName: 
+<<<<<<< HEAD
     rigImportErrors: "Invalid Avatar Rig Configuration. Missing or invalid transform:\n\tRequired
       human bone 'Hips' not found\n"
+=======
+    rigImportErrors: 
+>>>>>>> dev
     rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 

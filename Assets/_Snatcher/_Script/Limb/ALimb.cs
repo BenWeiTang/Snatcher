@@ -29,6 +29,7 @@ namespace Snatcher
         /// A list of Upgrades that have been applied to this Limb Ability.
         /// </summary>
         public abstract List<AUpgrade> Upgrades { get; protected set; }
+<<<<<<< HEAD
         
         /// <summary>
         /// The current Durability of this Limb Ability.
@@ -56,5 +57,17 @@ namespace Snatcher
         /// Repair Durability to its maximum.
         /// </summary>
         public void Repair() => Durability = MaxDurability;
+=======
+
+        public abstract float Weight { get; protected set; }
+        
+       /// <summary>
+       /// The amount of decrement every time the Durability decreases.
+       /// </summary>
+       public abstract float StaminaCost { get; } 
+
+        
+       protected ALimb() { }
+>>>>>>> dev
     }
 }
