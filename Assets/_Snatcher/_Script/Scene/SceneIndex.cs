@@ -19,6 +19,6 @@ namespace Snatcher
         WinScene = 7,
         DeathByFalling = 8,
         Shop = 9,
-        DeathByEnemy = 11
+        DeathByEnemy = 12
     }
 }
