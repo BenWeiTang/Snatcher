@@ -10,7 +10,8 @@ namespace Snatcher
         [SerializeField] private Mesh _oneArmMesh;
         //[SerializeField] private Mesh _twoArmMesh;
 
-        [SerializeField] private SkinnedMeshRenderer _wingLimb;
+        [SerializeField] private MeshRenderer _wings;
+        [SerializeField] private MeshRenderer _tail;
         [SerializeField] private SkinnedMeshRenderer _vaultArm;
         [SerializeField] private SkinnedMeshRenderer _vaultLegL;
         [SerializeField] private SkinnedMeshRenderer _vaultLegR;
@@ -22,7 +23,8 @@ namespace Snatcher
         
         private void OnEnable()
         {
-            _wingLimb.enabled = false;
+            _wings.enabled = false;
+            _tail.enabled = false;
             _vaultArm.enabled = false;
             _vaultLegL.enabled = false;
             _vaultLegR.enabled = false;
@@ -53,7 +55,8 @@ namespace Snatcher
 
         private void OnLimbSwitched(Void _)
         {
-            _wingLimb.enabled = false;
+            _wings.enabled = false;
+            _tail.enabled = false;
             _vaultArm.enabled = false;
             _vaultLegL.enabled = false;
             _vaultLegR.enabled = false;
@@ -61,9 +64,10 @@ namespace Snatcher
             if (LimbManager.Instance.CurrentLimb.Type == LimbType.Basic)
             {
                 _defaultLegL.enabled = true;
+                _tail.enabled = false;
                 _defaultLegR.enabled = true;
                 _defaultLeftArm.enabled = true;
-                _wingLimb.enabled = false;
+                _wings.enabled = false;
                 _vaultArm.enabled = false;
                 _vaultLegL.enabled = false;
                 _vaultLegR.enabled = false;
@@ -71,6 +75,7 @@ namespace Snatcher
             }
             else if (LimbManager.Instance.CurrentLimb.Type == LimbType.Leg)
             {
+                _tail.enabled = false;
                 _vaultArm.enabled = true;
                 _vaultLegL.enabled = true;
                 _vaultLegR.enabled = true;
@@ -82,7 +87,8 @@ namespace Snatcher
             }
             else if (LimbManager.Instance.CurrentLimb.Type == LimbType.Wing)
             {
-                _wingLimb.enabled = true;
+                _tail.enabled = false;
+                _wings.enabled = true;
                 _defaultLegL.enabled = true;
                 _defaultLegR.enabled = true;
                 _defaultLeftArm.enabled = true;
@@ -95,7 +101,8 @@ namespace Snatcher
                 _defaultLegL.enabled = true;
                 _defaultLegR.enabled = true;
                 _defaultLeftArm.enabled = true;
-                _wingLimb.enabled = false;
+                _tail.enabled = true;
+                _wings.enabled = false;
                 _vaultArm.enabled = false;
                 _vaultLegL.enabled = false;
                 _vaultLegR.enabled = false;
