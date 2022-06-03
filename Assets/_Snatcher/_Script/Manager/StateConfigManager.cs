@@ -9,6 +9,6 @@ namespace Snatcher
         public PlayerStateConfig InvisStateConfig;
         public PlayerStateConfig LegStateConfig;
 
-        public PlayerStateConfig PropellerStateConfig;
+        public PlayerStateConfig WingStateConfig;
     }
 }

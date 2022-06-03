@@ -11,7 +11,7 @@ namespace Snatcher
         {
             if (other.CompareTag("Player"))
             {
-                SceneManager.LoadScene((int)SceneIndex.LoseScene);
+                SceneManager.LoadScene((int)SceneIndex.DeathByEnemy);
             }
         }
 

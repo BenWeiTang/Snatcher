@@ -13,6 +13,7 @@ namespace Snatcher
         //public override float Durability { get; protected set; }
         //public override float MaxDurability { get; protected set; }
         public override float StaminaCost { get; } = 5f;
+        public override float Weight { get; protected set; } = 5f;
 
         public InvisLimb() : base()
         {

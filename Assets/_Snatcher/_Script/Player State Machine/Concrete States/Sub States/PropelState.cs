@@ -8,13 +8,12 @@ namespace Snatcher
     {
         public PropelState(PlayerStateMachine currentContext) : base(currentContext) { }
         private Vector3 _currentDirection;
-
-        //TODO: refer to coding convention and name thing accordingly
-        private float speed = 1.0f;
-        private float propelStateGravity = 9.0f;
-        private float flapSpeed = 6.0f;
-        private bool isFirstJump;
-        private bool ateStamina;
+        private float _speed = 1.0f;
+        private float _propelStateGravity = 9.0f;
+        private float _flapSpeed = 6.0f;
+        private float _propelStateGroundCheckValue = 0.25f;
+        private bool _isFirstJump;
+        private bool _ateFirstJumpStamina;
 
         Vector3 posOffset = new Vector3 ();
 
@@ -22,13 +21,14 @@ namespace Snatcher
         {
             if (Context.Debug) this.Log("Enter");
             posOffset = Context.transform.position;
-            posOffset.y += 0.1f;
+            posOffset.y += _propelStateGroundCheckValue;
             
-            isFirstJump = true;
+            _isFirstJump = true;
+            _ateFirstJumpStamina = false;
 
             if(LimbManager.Instance.CurrentLimb.StaminaCost > LimbManager.Instance.CurrentStamina) 
                 return;
-            speed = -flapSpeed;
+            _speed = -_flapSpeed;
         }
 
         public override void ExitState() 
@@ -45,17 +45,19 @@ namespace Snatcher
 
         protected override void CheckSwitchState() 
         { 
-            if (isFirstJump) 
+            if (_isFirstJump) 
             {
                 if (Context.transform.position.y > posOffset.y) 
-                    isFirstJump = false;
-                
+                    _isFirstJump = false;
+
+                if(LimbManager.Instance.CurrentLimb.StaminaCost > LimbManager.Instance.CurrentStamina && !_ateFirstJumpStamina) 
+                    Context.SwitchSubState(Factory.Idle);
+
                 return;
             }
 
-            if (FrontGroundCheck(0.1f)) 
+            if (FrontGroundCheck(_propelStateGroundCheckValue)) 
                 Context.SwitchSubState(Factory.Idle);
-                
         }
 
         private void UpdateDirection()
@@ -84,16 +86,10 @@ namespace Snatcher
             velocity *= SuperState.StateConfig.MoveSpeed;
 
             Context.Controller.Move(0.5f * (velocity) * Time.deltaTime);
-            //Context.transform.DOMove(Context.transform.position + Vector3.down * Time.deltaTime * speed, Time.deltaTime);
-            /**
-            if(LimbManager.Instance.CurrentLimb.StaminaCost > LimbManager.Instance.CurrentStamina && FrontGroundCheck(0.1f) && !ateStamina) 
-            {
-                Context.SwitchSubState(Factory.Idle);
-                return;
-            }*/
 
-            Context.transform.position = Context.transform.position + Vector3.down * Time.deltaTime * speed;
-            speed = speed + propelStateGravity * Time.deltaTime;
+            //Moves the player along the y axis
+            Context.transform.position = Context.transform.position + Vector3.down * Time.deltaTime * _speed;
+            _speed = _speed + _propelStateGravity * Time.deltaTime;
 
             //TODO: use the new input system with callbacks; talk to ben for detail
             //TODO: separate the logics in a different method
@@ -101,7 +97,8 @@ namespace Snatcher
             {
                 if (LimbManager.Instance.EatLimbStaminaCost())
                 {
-                    speed = -flapSpeed;
+                    _ateFirstJumpStamina = true;
+                    _speed = -_flapSpeed;
                 }
             }
         }

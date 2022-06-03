@@ -18,12 +18,7 @@ namespace Snatcher
         {
             if (_debug) this.Log("Interact");
 
-            if (_requirements == null || _requirements.Length == 0)
-            {
-                return;
-            }
-
-            if (_requirements.All(r => r.Reference.Value == r.Requirement))
+            if (_requirements == null || _requirements.Length == 0 || _requirements.All(r => r.Reference.Value == r.Requirement))
             {
                 SceneManager.LoadScene((int)_targetScene);
             }

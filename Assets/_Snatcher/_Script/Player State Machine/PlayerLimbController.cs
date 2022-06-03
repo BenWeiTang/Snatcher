@@ -20,7 +20,7 @@ namespace Snatcher
         [SerializeField] private SkinnedMeshRenderer _defaultLeftArm;
         [SerializeField] private SkinnedMeshRenderer _defaultRightArm;
         [SerializeField] private PlayerStateReference _currentPlayerSubState;
-
+        
         private void OnEnable()
         {
             _wings.enabled = false;
@@ -85,13 +85,14 @@ namespace Snatcher
                 //_skinnedMeshRenderer.sharedMesh = _propellerLimb;
                 //_skinnedMeshRenderer.BakeMesh(_propellerLimb);
             }
-            else if (LimbManager.Instance.CurrentLimb.Type == LimbType.Propeller)
+            else if (LimbManager.Instance.CurrentLimb.Type == LimbType.Wing)
             {
                 _tail.enabled = false;
                 _wings.enabled = true;
                 _defaultLegL.enabled = true;
                 _defaultLegR.enabled = true;
                 _defaultLeftArm.enabled = true;
+                
                 //_skinnedMeshRenderer.sharedMesh = _legLimb;
                 //_skinnedMeshRenderer.BakeMesh(_legLimb);
             }

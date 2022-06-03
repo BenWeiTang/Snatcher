@@ -1,38 +1,43 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 
-public class ShowText : MonoBehaviour
+namespace Snatcher
 {
-    [SerializeField] private float _delay = .1f;
-    [SerializeField] private string _entireText;
-    // private string _currentText = "";
-    [SerializeField] private Text _target;
-    [SerializeField] private AudioSource _textBlip;
-    [SerializeField] private int _persistedDuration;
-
-    void OnEnable()
+    public class ShowText : MonoBehaviour
     {
-        _target.text = "";
-        // _currentText = "";
-        StartCoroutine(genText(_entireText));
-    }
+        [SerializeField] private BoolReference _needsIntro;
+        [SerializeField] private float _delay = .1f;
+        [SerializeField] private string _entireText;
+        [SerializeField] private Text _target;
+        [SerializeField] private AudioSource _textBlip;
+        [SerializeField] private int _persistedDuration;
 
-
-    IEnumerator genText(string textToGen)
-    {
-        string currentText = "";
-        foreach (char c in textToGen)
+        private void OnEnable()
         {
-            currentText += c;
-            _target.text = currentText;
-            _textBlip.Play();
-            yield return new WaitForSeconds(_delay);
+            if (_needsIntro.Value)
+            {
+                _target.text = "";
+                StartCoroutine(GenText(_entireText));
+                _needsIntro.Value = false;
+            }
         }
 
-        yield return new WaitForSeconds(_persistedDuration);
-        _target.text = "";
-        textToGen = "";
+        private IEnumerator GenText(string textToGen)
+        {
+            string currentText = "";
+            foreach (char c in textToGen)
+            {
+                currentText += c;
+                _target.text = currentText;
+                _textBlip.Play();
+                yield return new WaitForSeconds(_delay);
+            }
+
+            yield return new WaitForSeconds(_persistedDuration);
+            _target.enabled = false;
+            _target.text = "";
+        }
     }
 }
+

@@ -5,6 +5,6 @@ namespace Snatcher
         Basic,
         Invis,
         Leg,
-        Propeller
+        Wing
     }
 }
