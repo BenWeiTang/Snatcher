@@ -12,7 +12,6 @@ namespace Snatcher
         // Start is called before the first frame update
         void Start()
         {
-            windPushSpeed = 5f;
         }
 
         void OnTriggerStay(Collider other) 

@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerController: {fileID: 0}
+  windPushSpeed: 5
 --- !u!65 &1874942235741639645
 BoxCollider:
   m_ObjectHideFlags: 0
