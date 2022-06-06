@@ -27328,30 +27328,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 682841573012831277, guid: 2ab5edf91eafecd47b20f80808bfa6b8, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 682841573012831277, guid: 2ab5edf91eafecd47b20f80808bfa6b8, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 682841573012831277, guid: 2ab5edf91eafecd47b20f80808bfa6b8, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 682841573012831277, guid: 2ab5edf91eafecd47b20f80808bfa6b8, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 682841573012831277, guid: 2ab5edf91eafecd47b20f80808bfa6b8, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 682841573012831277, guid: 2ab5edf91eafecd47b20f80808bfa6b8, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1760277116563660320, guid: 2ab5edf91eafecd47b20f80808bfa6b8, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -27508,14 +27484,6 @@ PrefabInstance:
       propertyPath: _keysToDisplayRef.Array.data[3]
       value: 
       objectReference: {fileID: 11400000, guid: 996968a5ad01df541a6860786488f8a1, type: 2}
-    - target: {fileID: 1760277117698433249, guid: 2ab5edf91eafecd47b20f80808bfa6b8, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 430
-      objectReference: {fileID: 0}
-    - target: {fileID: 1760277117698433249, guid: 2ab5edf91eafecd47b20f80808bfa6b8, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -489
-      objectReference: {fileID: 0}
     - target: {fileID: 1760277118002300944, guid: 2ab5edf91eafecd47b20f80808bfa6b8, type: 3}
       propertyPath: m_Alpha
       value: 1

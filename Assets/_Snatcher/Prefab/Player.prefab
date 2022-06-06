@@ -66,7 +66,7 @@ Transform:
   - {fileID: 781422762216056254}
   - {fileID: 3681592159268552333}
   - {fileID: 4627343676290508455}
-  - {fileID: 5603996811545175889}
+  - {fileID: 1991465564121169756}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -102,7 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _debug: 0
   _initialState: 0
-  _animator: {fileID: 1956050685769268523}
+  _animator: {fileID: 5567354817550001446}
   _hookController: {fileID: 3681592159268552332}
   _groundCheck: {fileID: 781422762216056254}
   _limbSlot: {fileID: 0}
@@ -135,14 +135,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _onLimbSwitched: {fileID: 11400000, guid: b1c09df237308ab4d94b96eeef467076, type: 2}
   _oneArmMesh: {fileID: -856059019632272089, guid: 0446a7d9baf43dd4da94c0e2ebd63d98, type: 3}
-  _wingLimb: {fileID: 4687035364621620664}
-  _vaultArm: {fileID: 3698346204404547700}
-  _vaultLegL: {fileID: 3729498097660813008}
-  _vaultLegR: {fileID: 3076015058187003096}
-  _defaultLegL: {fileID: 3597138601966888332}
-  _defaultLegR: {fileID: 2613550446731924782}
-  _defaultLeftArm: {fileID: 6601959198106731275}
-  _defaultRightArm: {fileID: 8609483101443639792}
+  _wings: {fileID: 622634983411080637}
+  _tail: {fileID: 1120461456802323834}
+  _vaultArm: {fileID: 1505940553148621773}
+  _vaultLegL: {fileID: 2710032309521671239}
+  _vaultLegR: {fileID: 1085619845993697836}
+  _defaultLegL: {fileID: 327303614709967498}
+  _defaultLegR: {fileID: 6400074842084063109}
+  _defaultLeftArm: {fileID: 1191867882199506361}
+  _defaultRightArm: {fileID: 215049866147035411}
   _currentPlayerSubState: {fileID: 11400000, guid: 730f3644d464f1045ba36f7f35dbe1e3, type: 2}
 --- !u!1 &3681592159268552322
 GameObject:
@@ -353,6 +354,7 @@ Transform:
   m_Father: {fileID: 3681592159268552333}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &2029331349950699703
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
