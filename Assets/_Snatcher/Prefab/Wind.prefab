@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dc1bbf27a678e44ab3c1ab0497fdac5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerController: {fileID: 0}
+  _playerController: {fileID: 3681592159115705354, guid: 051ac4b4b0cf31c4e9f4d71b96bb2c38, type: 3}
   windPushSpeed: 5
 --- !u!65 &1874942235741639645
 BoxCollider:
