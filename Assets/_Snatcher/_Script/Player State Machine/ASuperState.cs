@@ -34,7 +34,8 @@ namespace Snatcher
         {
             Context.PlayerInput.Player.SwitchLimb.started -= OnSwitchLimbPressed;
             Context.PlayerInput.Player.DropLimb.performed -= OnDropLimbPressed;
-            Context.Animator.SetBool(IsInSuperStateHash, false);
+            if (Context.Animator != null)
+                Context.Animator.SetBool(IsInSuperStateHash, false);
             
             LimbManager.Instance.OnLimbForcedSwitched -= ForceSwitchSuperState;
         }

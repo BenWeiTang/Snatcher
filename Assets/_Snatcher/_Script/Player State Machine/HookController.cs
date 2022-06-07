@@ -26,9 +26,12 @@ namespace Snatcher
         }
         public void ActivateCollider(bool toActivate)
         {
-            _meshRenderer.enabled = toActivate;
-            _collider.enabled = toActivate;
-            _rotating = true;
+            if (_meshRenderer != null && _collider != null)
+            {
+                _meshRenderer.enabled = toActivate;
+                _collider.enabled = toActivate;
+                _rotating = true;
+            }
         }
         
         private void Update()
