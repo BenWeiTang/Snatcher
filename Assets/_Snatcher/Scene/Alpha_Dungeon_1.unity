@@ -714,9 +714,14 @@ PrefabInstance:
     - target: {fileID: 5354913756358246086, guid: 051ac4b4b0cf31c4e9f4d71b96bb2c38, type: 3}
       propertyPath: _wingLimb
       value: 
-      objectReference: {fileID: 642053035}
+      objectReference: {fileID: 76363150}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 051ac4b4b0cf31c4e9f4d71b96bb2c38, type: 3}
+--- !u!23 &76363150 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 4389114930234657777, guid: 051ac4b4b0cf31c4e9f4d71b96bb2c38, type: 3}
+  m_PrefabInstance: {fileID: 76363149}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &78384274
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4638,11 +4643,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 510248444000824863, guid: 9d3c6113164fd3b488040a35893b058c, type: 3}
   m_PrefabInstance: {fileID: 632622378}
-  m_PrefabAsset: {fileID: 0}
---- !u!137 &642053035 stripped
-SkinnedMeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 4687035364621620664, guid: 051ac4b4b0cf31c4e9f4d71b96bb2c38, type: 3}
-  m_PrefabInstance: {fileID: 76363149}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &694927113
 PrefabInstance:
