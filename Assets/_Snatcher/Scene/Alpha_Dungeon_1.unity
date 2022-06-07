@@ -711,17 +711,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5354913756358246086, guid: 051ac4b4b0cf31c4e9f4d71b96bb2c38, type: 3}
-      propertyPath: _wingLimb
-      value: 
-      objectReference: {fileID: 76363150}
+    - target: {fileID: 8723041762443162474, guid: 051ac4b4b0cf31c4e9f4d71b96bb2c38, type: 3}
+      propertyPath: m_WarningMessage
+      value: "\nBinding warning: Some generic clip(s) animate transforms that are
+        already bound by a Humanoid avatar. These transforms can only be changed
+        by Humanoid clips.\n\tTransform 'snatcher16:Character2_Hips'\n\tTransform
+        'snatcher16:Character2_RightHandPinky1'\n\tTransform 'snatcher16:Character2_LeftHandIndex3'\n\tTransform
+        'snatcher16:Character2_Neck'\n\tTransform 'snatcher16:Character2_LeftHandPinky1'\n\tTransform
+        'snatcher16:Character2_RightHandMiddle3'\n\tTransform 'snatcher16:Character2_LeftShoulder'\n\tTransform
+        'snatcher16:Character2_RightToeBase'\n\tTransform 'snatcher16:Character2_LeftFoot'\n\tTransform
+        'snatcher16:Character2_LeftUpLeg'\n\tand more ...\n\tFrom animation clip
+        'Snatcher Hook'"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 051ac4b4b0cf31c4e9f4d71b96bb2c38, type: 3}
---- !u!23 &76363150 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 4389114930234657777, guid: 051ac4b4b0cf31c4e9f4d71b96bb2c38, type: 3}
-  m_PrefabInstance: {fileID: 76363149}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &78384274
 PrefabInstance:
   m_ObjectHideFlags: 0
