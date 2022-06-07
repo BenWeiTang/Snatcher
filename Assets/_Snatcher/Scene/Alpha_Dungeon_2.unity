@@ -14476,6 +14476,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3681592159115705355, guid: 051ac4b4b0cf31c4e9f4d71b96bb2c38, type: 3}
   m_PrefabInstance: {fileID: 1749313657}
   m_PrefabAsset: {fileID: 0}
+--- !u!143 &1749313660 stripped
+CharacterController:
+  m_CorrespondingSourceObject: {fileID: 3681592159115705354, guid: 051ac4b4b0cf31c4e9f4d71b96bb2c38, type: 3}
+  m_PrefabInstance: {fileID: 1749313657}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1764551104
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17029,6 +17034,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wind
       objectReference: {fileID: 0}
+    - target: {fileID: 1874942235741639634, guid: 65b411d894fd33c47a45e8f7e5fb96bc, type: 3}
+      propertyPath: _playerController
+      value: 
+      objectReference: {fileID: 1749313660}
     - target: {fileID: 1874942235741639635, guid: 65b411d894fd33c47a45e8f7e5fb96bc, type: 3}
       propertyPath: m_RootOrder
       value: 1
