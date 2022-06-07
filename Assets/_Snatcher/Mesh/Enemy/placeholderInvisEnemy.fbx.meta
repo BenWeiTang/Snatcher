@@ -3,7 +3,22 @@ guid: 81b3e64a1395f214992bef9d68397f8a
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SnatcherBodyMat
+    second: {fileID: 2100000, guid: bd8ef950a2418c041a009fa437bb90ee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SnatcherDefaultLimbMat
+    second: {fileID: 2100000, guid: bd8ef950a2418c041a009fa437bb90ee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert4
+    second: {fileID: 2100000, guid: bd8ef950a2418c041a009fa437bb90ee, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -16,7 +31,8 @@ ModelImporter:
     optimizeGameObjects: 0
     removeConstantScaleCurves: 1
     motionNodeName: 
-    rigImportErrors: 
+    rigImportErrors: "Copied Avatar Rig Configuration mis-match. Transform hierarchy
+      does not match:\n\tTransform 'Character2_Hips' for human bone 'Hips' not found\n"
     rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
