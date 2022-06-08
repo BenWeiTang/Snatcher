@@ -58,7 +58,7 @@ namespace Snatcher
                 }
                 else
                 {
-                    LimbManager.Instance.RecoverStamina(5f * Time.deltaTime);
+                    LimbManager.Instance.RecoverStamina(7f * Time.deltaTime);
                 }
             }
         }
