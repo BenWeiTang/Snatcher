@@ -741,7 +741,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _remainState: {fileID: 11400000, guid: 8f7cb5789452faf42b437212bd365fd3, type: 2}
   _defaultState: {fileID: 11400000, guid: 85e394fef356f234cba84b475568864b, type: 2}
-  _animator: {fileID: 0}
+  _animator: {fileID: 3689078647743727485}
   _enemyLookDistance: {fileID: 11400000, guid: 4b337ca433a08ec46982a60fd24ade41, type: 2}
   MaterialRenderer: {fileID: 0}
   EnemyInvisMaterial: {fileID: 2100000, guid: b160e13861254c340838688accf245e8, type: 2}
@@ -1336,6 +1336,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb9d6ee414a7e5246a3d1e4a49ba905a, type: 3}
+--- !u!1 &5019183560580296217 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: eb9d6ee414a7e5246a3d1e4a49ba905a, type: 3}
+  m_PrefabInstance: {fileID: 5289144657078604616}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &3689078647743727485
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5019183560580296217}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 32316d1e4eb266f4390da5f42ec50251, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &5687035292396958883 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: eb9d6ee414a7e5246a3d1e4a49ba905a, type: 3}

@@ -7,7 +7,7 @@ namespace Snatcher
     {
         public override void OnEnterState(EnemyStateMachine context)
         {
-            
+            context.Animator.SetBool("Moving", false);
         }
 
        public override void OnExitState(EnemyStateMachine context)
