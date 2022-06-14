@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 53ba511df9b3fcc4ca5071c3b904d841
+guid: 1d623fcae8cd5fd44b60403eb5e9f026
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable: []
@@ -7,13 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: BarrelLids
-    second: {fileID: 2100000, guid: 9f73db5bd70a7224591f69d7a553a267, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: BarrelWood
-    second: {fileID: 2100000, guid: 9f73db5bd70a7224591f69d7a553a267, type: 2}
+      name: lambert1
+    second: {fileID: 2100000, guid: a16ef62b643772c4b81ac8c4818e2a04, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

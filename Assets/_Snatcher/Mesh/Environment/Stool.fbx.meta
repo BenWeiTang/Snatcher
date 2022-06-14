@@ -3,7 +3,17 @@ guid: e470f1eecafd3a34c91ade5ebb108a9a
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stool_WoodLegs
+    second: {fileID: 2100000, guid: 9f73db5bd70a7224591f69d7a553a267, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stool_WoodSeat
+    second: {fileID: 2100000, guid: 9f73db5bd70a7224591f69d7a553a267, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
