@@ -1,0 +1,5 @@
+# Enemy State Machine
+
+The Enemy State Machine in Snatcher references the [Unity tutorial series](https://www.youtube.com/watch?v=cHUXh5biQMg&list=PLX2vGYjWbI0ROSj_B0_eir_VkHrEkd4pi) for its implementation. In it, the states, the behvaiors while in a state, and the predicates for switching to other states are all implementations of ScriptableObjects.
+
+See [EnemyStateMachine](https://github.com/BenWeiTang/Snatcher/blob/main/Assets/_Snatcher/_Script/Enemy%20State%20Machine/EnemyStateMachine.cs) for state machine implementation. See [AEnemyState](https://github.com/BenWeiTang/Snatcher/blob/main/Assets/_Snatcher/_Script/Enemy%20State%20Machine/AEnemyState.cs) for state implementation. See [AEnemyAction](https://github.com/BenWeiTang/Snatcher/blob/main/Assets/_Snatcher/_Script/Enemy%20State%20Machine/AEnemyAction.cs) for behavior implementation. See [ADecision](https://github.com/BenWeiTang/Snatcher/blob/main/Assets/_Snatcher/_Script/Enemy%20State%20Machine/ADecision.cs) for predicate implementation.
