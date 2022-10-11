@@ -1,6 +1,6 @@
 # Snatcher
 
-[See the trailer](https://drive.google.com/file/d/1ziCWIZM1Kx3NUPmX6s2lT_p8eFH8lk9Y/view?usp=sharing)
+https://user-images.githubusercontent.com/78770681/195188120-4e470569-4842-4235-8b2c-c44c00a34175.mp4
 
 [Jump to scripts](https://github.com/BenWeiTang/Snatcher/tree/main/Assets/_Snatcher/_Script)
 
